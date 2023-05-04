@@ -1,4 +1,4 @@
-package main.java.com.example.fantasy;
+package main.java.ClassesAndDatabaseconnection;
 
 public class Footballer {
 
