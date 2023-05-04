@@ -1,3 +1,5 @@
+package main.java.fantasy;
+
 public class Footballer {
 
     private String name;
@@ -10,7 +12,7 @@ public class Footballer {
     public Footballer(String name,String club,String position,float cost) {
         this.name = name;
         this.club = club;
-        this.position = position
+        this.position = position;
         this.cost = cost;
     }
 

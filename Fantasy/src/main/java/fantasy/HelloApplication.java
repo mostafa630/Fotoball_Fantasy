@@ -1,4 +1,4 @@
-package com.example.fantasy;
+package main.java.fantasy;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
