@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="1108.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/login_photo.jpg'); -fx-border-color: black;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fantasy.LoginController">
+   <children>
+      <Label fx:id="title" layoutX="845.0" layoutY="46.0" prefHeight="93.0" prefWidth="232.0" text="Fantasy" textFill="#8c3e3e">
+         <font>
+            <Font size="64.0" />
+         </font></Label>
+      <TextField fx:id="username" layoutX="845.0" layoutY="278.0" prefHeight="25.0" prefWidth="232.0" />
+      <Label layoutX="782.0" layoutY="282.0" text="username" />
+      <Label layoutX="783.0" layoutY="347.0" text="password" />
+      <PasswordField fx:id="password" layoutX="845.0" layoutY="343.0" prefHeight="25.0" prefWidth="232.0" />
+      <Button layoutX="898.0" layoutY="402.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="login" />
+      <Button layoutX="961.0" layoutY="1.0" mnemonicParsing="false" onAction="#openRegisterFrom" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: light blue;" text="SignUp" />
+      <Button layoutX="1025.0" layoutY="1.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: light blue;" text="Sign In" />
+   </children>
+</Pane>
