@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="567.0" prefWidth="1111.0" style="-fx-background-color: #BC8F8F;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fantasy.MainPageController">
+   <children>
+      <Pane layoutX="-5.0" layoutY="-2.0" prefHeight="291.0" prefWidth="371.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/Dash_Board_Photo.jpg');">
+         <children>
+            <Button layoutX="-13.0" mnemonicParsing="false" prefHeight="291.0" prefWidth="385.0" style="-fx-background-color: light blue;" text="Dash-Board" textFill="#e10b0b">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+         </children></Pane>
+      <Pane layoutX="370.0" layoutY="-2.0" prefHeight="291.0" prefWidth="402.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/My_Team_photo.jpg');">
+         <children>
+            <Button layoutX="4.0" mnemonicParsing="false" prefHeight="264.0" prefWidth="395.0" style="-fx-background-color: light blue;" text="My_Team" textFill="#ff2b2b">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutY="294.0" prefHeight="284.0" prefWidth="365.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/Market_photo.jpg');">
+         <children>
+            <Button layoutY="1.0" mnemonicParsing="false" prefHeight="284.0" prefWidth="344.0" style="-fx-background-color: light blue;" text="Market" textFill="#ff3232">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="372.0" layoutY="294.0" prefHeight="284.0" prefWidth="402.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/Matches_photo.jpg');">
+         <children>
+            <Button layoutX="3.0" mnemonicParsing="false" prefHeight="284.0" prefWidth="395.0" style="-fx-background-color: light blue;" text="Matches" textFill="#ff2b2b">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="778.0" layoutY="-2.0" prefHeight="291.0" prefWidth="333.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/setting_photo.jpg');">
+         <children>
+            <Button layoutX="32.0" layoutY="2.0" mnemonicParsing="false" prefHeight="264.0" prefWidth="293.0" style="-fx-background-color: ligth blue;" text="Settings" textFill="#ff3e3e">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+         </children></Pane>
+      <Pane layoutX="781.0" layoutY="294.0" prefHeight="284.0" prefWidth="327.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/Market_photo.jpg');">
+         <children>
+            <Button layoutX="-2.0" layoutY="1.0" mnemonicParsing="false" onAction="#goToLoginForm" prefHeight="284.0" prefWidth="334.0" style="-fx-background-color: light blue;" text="Logout" textFill="#ff1e1e">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+         </children></Pane>
+   </children>
+</AnchorPane>

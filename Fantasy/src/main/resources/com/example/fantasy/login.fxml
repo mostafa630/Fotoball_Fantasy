@@ -14,8 +14,13 @@
       <Label layoutX="782.0" layoutY="282.0" text="username" />
       <Label layoutX="783.0" layoutY="347.0" text="password" />
       <PasswordField fx:id="password" layoutX="845.0" layoutY="343.0" prefHeight="25.0" prefWidth="232.0" />
-      <Button layoutX="898.0" layoutY="402.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="login" />
+      <Button layoutX="898.0" layoutY="402.0" mnemonicParsing="false" onAction="#openMainPageFrom" prefHeight="25.0" prefWidth="127.0" text="login" />
       <Button layoutX="961.0" layoutY="1.0" mnemonicParsing="false" onAction="#openRegisterFrom" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: light blue;" text="SignUp" />
       <Button layoutX="1025.0" layoutY="1.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: light blue;" text="Sign In" />
+      <Label fx:id="login_failed_label" layoutX="565.0" layoutY="450.0" prefHeight="20.0" prefWidth="378.0" textFill="#ac0000">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
