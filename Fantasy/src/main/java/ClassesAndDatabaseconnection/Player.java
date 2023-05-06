@@ -3,8 +3,7 @@ import java.util.Hashtable;
 public class Player {
     private String id ,userName ,password ;
     private long budget ;
-
-    Hashtable<String ,Footballer>myTeam=new Hashtable<>(); // key-->footballername , value---> object of this player
+    Hashtable<String , Boolean>myTeam=new Hashtable<>(); // key-->fotballer namm  key-->play or substitute
 
     public Player(String id, String userName, String password, long budget) {
         this.id = id;
@@ -45,8 +44,8 @@ public class Player {
         this.budget = budget;
     }
 
-    public void setFootballerInMyTeam(String name ,Footballer footballer){
-        myTeam.put(name ,footballer);
+    public void setFootballerInMyTeam(String name ,Boolean status){
+        myTeam.put(name ,status);
     }
 
 

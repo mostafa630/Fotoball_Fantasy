@@ -3,6 +3,7 @@ package ClassesAndDatabaseconnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Hashtable;
 
 public class Footballer {
 
@@ -12,7 +13,7 @@ public class Footballer {
     private float cost;
     private float totalPoints = 0;
     private float pointsThisWeek = 0;
-
+    public static Hashtable<String,Footballer> footballers=new Hashtable<>();
     public Footballer(String name,String club,String position,float cost) {
         this.name = name;
         this.club = club;
@@ -67,6 +68,12 @@ public class Footballer {
                 ", pointsThisWeek=" + pointsThisWeek +
                 '}';
     }
+
+    public static void putFotballerToFootballers(String name , Footballer footballer)
+    {
+        footballers.put(name,footballer);
+    }
+
 
     public void saveToDatebase(Footballer footballer)
     {
