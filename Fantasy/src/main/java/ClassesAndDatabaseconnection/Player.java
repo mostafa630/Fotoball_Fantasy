@@ -1,9 +1,19 @@
 package ClassesAndDatabaseconnection;
+import javafx.util.Pair;
+
+import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
+
 public class Player {
     private String id ,userName ,password ;
     private long budget ;
-    Hashtable<String , Boolean>myTeam=new Hashtable<>(); // key-->fotballer namm  key-->play or substitute
+
+    public List<Pair<String , Boolean>> myTeam = new ArrayList<>();
+
+    public static Hashtable<String,Player> players = new Hashtable<>();
+
+    public static Hashtable<String , Boolean> playersNationalIDs = new Hashtable<>();
 
     public Player(String id, String userName, String password, long budget) {
         this.id = id;
@@ -44,9 +54,18 @@ public class Player {
         this.budget = budget;
     }
 
-    public void setFootballerInMyTeam(String name ,Boolean status){
-        myTeam.put(name ,status);
+
+    public void putPlayerInMyTeam(String footballerName, Boolean isPlaying){
+        Pair<String , Boolean> myPair = new Pair<>(footballerName , isPlaying);
+        myTeam.add(myPair);
     }
 
+    public static void putPlayerToPlayers(String name , Player player) {
+        players.put(name,player);
+    }
 
-}
+    public static void putNationalIDToNationalIDs(String nationalID) {
+        playersNationalIDs.put(nationalID , true);
+    }
+
+    }

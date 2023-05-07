@@ -14,10 +14,10 @@
             <Font size="64.0" />
          </font></Label>
       <Label layoutX="357.0" layoutY="418.0" text="confirm password" />
-      <PasswordField layoutX="468.0" layoutY="342.0" />
-      <PasswordField layoutX="468.0" layoutY="414.0" />
-      <TextField layoutX="468.0" layoutY="202.0" />
-      <TextField layoutX="468.0" layoutY="273.0" />
+      <PasswordField fx:id="password_text" layoutX="468.0" layoutY="342.0" />
+      <PasswordField fx:id="confirm_password_text" layoutX="468.0" layoutY="414.0" />
+      <TextField fx:id="ID_text" layoutX="468.0" layoutY="202.0" />
+      <TextField fx:id="username_text" layoutX="468.0" layoutY="273.0" />
       <Button layoutX="963.0" layoutY="7.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" style="-fx-background-color: light blue;" text="SignUP" textFill="#e1dbdb">
          <font>
             <Font size="14.0" />
@@ -26,6 +26,6 @@
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Button layoutX="500.0" layoutY="471.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="83.0" text="Submit" />
+      <Button layoutX="500.0" layoutY="471.0" mnemonicParsing="false" onAction="#checkData" prefHeight="26.0" prefWidth="83.0" text="Submit" />
    </children>
 </AnchorPane>

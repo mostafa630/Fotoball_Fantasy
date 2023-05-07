@@ -1,6 +1,7 @@
 package com.example.fantasy;
 import ClassesAndDatabaseconnection.DatabaseConnection;
 import ClassesAndDatabaseconnection.Footballer;
+import ClassesAndDatabaseconnection.Validation;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -37,6 +38,7 @@ public class HelloApplication extends Application {
         for(Map.Entry<String ,Footballer> data :Footballer.footballers.entrySet()) {
             System.out.println(data.getKey()+"--->"+data.getValue().toString());
         }
+
 
          launch();
     }
