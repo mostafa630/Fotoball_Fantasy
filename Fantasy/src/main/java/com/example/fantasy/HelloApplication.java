@@ -24,7 +24,7 @@ public class HelloApplication extends Application {
         Connection con = DatabaseConnection.getConnection();
         if(con==null)
         {
-           System.out.println("falied");
+           System.out.println("failed");
         }
         else
             System.out.println("done");
