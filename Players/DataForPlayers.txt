@@ -1,0 +1,119 @@
+Mohamed Salah#Liverpool#ATT#11000
+Messi#Paris Saint-Germain#ATT#10500
+Cristiano Ronaldo#Al Nassr#ATT#10000
+Mbappe#Paris Saint-Germain#ATT#9000
+Benzema#Real Madrid#ATT#7000
+Haaland#Manchester City#ATT#9000
+Modric#Real Madrid#MID#8000
+De Bruyne#Manchester City#MID#9000
+Lewandowski#Barcelona#ATT#7000
+Vinicius Junior#Real Madrid#ATT#7000
+Thibaut Courtois#Real Madrid#GK#8500
+Sadio Mane#Bayern Munich#ATT#7500
+Neymar#Paris Saint-Germain#ATT#10000
+Harry Kane#Tottenham#ATT#8000
+Jude Bellingham#Borussia Dortmund#MID#5000
+Casemiro#Manchester United#MID#7000
+Achraf Hakimi#Paris Saint-Germain#DEF#9000
+Antoine Griezmann#Atletico Madrid#ATT#8500
+Federico Valverde#Real Madrid#MID#7000
+Pedri#Barcelona#MID#6000
+Emiliano Martinez#Aston Villa#GK#7500
+Enzo Fernandez#Benfica#MID#7000
+Bukayo Saka#Arsenal#ATT#5000
+Rafael Leao#Milan#ATT#7000
+Phil Foden#Manchester City#MID#8000
+Jamal Musiala#Bayern Munich#MID#5000
+Son Heung-min#Tottenham#ATT#7000
+Virgil van Dijk#Liverpool#DEF#8000
+Bruno Fernandes#Manchester United#MID#5000
+Bernardo Silva#Manchester City#MID#7500
+Olivier Giroud#Milan#ATT#6000
+Josko Gvardiol#RB Leipzig#DEF#5000
+Julian Alvarez#Manchester City#ATT#6000
+Christopher Nkunku#RB Leipzig#ATT#5500
+Alisson#Liverpool#GK#8500
+Martin Odegaard#Arsenal#MID#5000
+Joao Cancelo#Manchester City#DEF#6000
+Gavi#Barcelona#MID#5000
+Angel Di Maria#Juventus#ATT#9500
+Toni Kroos#Real Madrid#MID#9000
+Khvicha Kvaratskhelia#Napoli#ATT#5000
+Joshua Kimmich#Bayern Munich#MID#9000
+David Alaba#Real Madrid#DEF#9000
+Yassine Bono#Sevilla#GK#9000
+Ruben Dias#Manchester City#DEF#9000
+Aurelien Tchouameni#Real Madrid#MID#7000
+Theo Hernandez#Milan#DEF#8000
+Alexis Mac Allister#Brighton#MID#5000
+Rodrigo De Paul#Atletico Madrid#MID#5000
+Sofyan Amrabat#Fiorentina#MID#8000
+Cody Gakpo#Liverpool#ATT#5000
+Victor Osimhen#Napoli#ATT#5000
+Rodri#Manchester City#MID#7000
+Ederson#Manchester City#GK#8500
+Ilkay Gundogan#Manchester City#MID#8000
+Antonio Rudiger#Real Madrid#DEF#8500
+Riyad Mahrez#Manchester City#ATT#8000
+Marcus Rashford#Manchester United#ATT#9000
+Luis Diaz#Liverpool#ATT#8000
+Trent Alexander-Arnold#Liverpool#DEF#6000
+Richarlison#Tottenham#ATT#8000
+Gabriel Jesus#Arsenal#ATT#7000
+Hakim Ziyech#Chelsea#ATT#7500
+Alphonso Davies#Bayern Munich#DEF#8500
+Marquinhos#Paris Saint-Germain#DEF#8500
+Dusan Vlahovic#Juventus#ATT#6000
+Eder Militao#Real Madrid#DEF#8000
+Marcelo Brozovic#Internazionale#MID#6000
+Ousmane Dembele#Barcelona#ATT#8500
+Lautaro Martinez#Internazionale#ATT#8000
+Dominik Livakovic#Dinamo Zagreb#GK#6000
+Cristian Romero#Tottenham#DEF#6000
+Nicolo Barella#Internazionale#MID#5000
+Mike Maignan#Milan#GK#8000
+Thiago Silva#Chelsea#DEF#8500
+Hugo Lloris#Tottenham#GK#8500
+Fabinho#Liverpool#MID#8000
+Mehdi Taremi#Porto#ATT#6000
+Azzedine Ounahi#Angers#MID#5000
+Kalidou Koulibaly#Chelsea#DEF#8500
+Lisandro Martinez#Manchester United#DEF#6000
+Darwin Nunez#Liverpool#ATT#7000
+Aleksandar Mitrovic#Fulham#ATT#6000
+Kyle Walker#Manchester City#DEF#8000
+Raphael Varane#Manchester United#DEF#8500
+Dayot Upamecano#Bayern Munich#DEF#8000
+Ciro Immobile#Lazio#ATT#6000
+Declan Rice#West Ham#MID#5000
+Frenkie de Jong#Barcelona#MID#7000
+Bruno Guimaraes#Newcastle#MID#6000
+Manuel Neuer#Bayern Munich#GK#9000
+Giorgian de Arrascaeta#Flamengo#MID#6000
+Rodrygo#Real Madrid#ATT#7500
+Reece James#Chelsea#DEF#5000
+Serge Gnabry#Bayern Munich#ATT#8000
+Sandro Tonali#Milan#MID#6000
+Andrew Robertson#Liverpool#DEF#5000
+Leroy Sane#Bayern Munich#ATT#8500
+Gabriel Barbosa#Flamengo#ATT#6500
+Nicolas Otamendi#Benfica#DEF#8000
+Mesut Ozil#Real Madrid#MID#8500
+Yaya Toure#Manchester City#MID#9000
+Xavi#Barcelona#MID#10000
+Andres Iniesta#Barcelona#MID#10000
+Zlatan Ibrahimovic#Paris Saint-Germain#ATT#9500
+Luis Suarez#Liverpool#ATT#8500
+Sergio Ramos#Real Madrid#DEF#8500
+Vincent Kompany#Manchester City#DEF#8500
+Gerard Pique#Barcelona#DEF#8000
+Philipp Lahm#Bayern Munich#DEF#9500
+Ashley Cole#Chelsea#DEF#9500
+Wayne Rooney#Manchester United#ATT#9500
+Thomas Muller#Bayern Munich#ATT#8500
+Oscar#Chelsea#MID#9500
+Gareth Bale#Tottenham#ATT#8000
+Marcelo#Real Madrid#DEF#8500
+Jordi Alba#Barcelona#DEF#8000
+Patrice Evra#Manchester United#DEF#9500
+Pele#Santos FC#ATT#9500
