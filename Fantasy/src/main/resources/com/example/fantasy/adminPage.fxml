@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="563.0" prefWidth="1108.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fantasy.AdminPageController">
+   <children>
+      <VBox layoutX="942.0" prefHeight="566.0" prefWidth="170.0" style="-fx-background-color: #b0e0e6;">
+         <children>
+            <Pane prefHeight="177.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;">
+               <children>
+                  <Pane layoutX="29.0" layoutY="20.0" prefHeight="132.0" prefWidth="112.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/admin4.png');" />
+               </children></Pane>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;" text="Hello MR. Ahmed" textFill="#a63131">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="193.0" style="-fx-background-color: #abbb95;" text="Add Footballer" />
+            <Button layoutX="10.0" layoutY="59.0" mnemonicParsing="false" onAction="#openDeleteFootballerPage" prefHeight="71.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Delete Footballer" />
+            <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="192.0" style="-fx-background-color: #abbb95;" text="Update Footballer" />
+            <Button layoutX="10.0" layoutY="146.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Add points of the week" />
+            <Button layoutX="10.0" layoutY="436.0" mnemonicParsing="false" onAction="#openLoginForm" prefHeight="68.0" prefWidth="170.0" style="-fx-background-color: #abbb95;" text="Logout" />
+         </children></VBox>
+      <Pane layoutX="-3.0" prefHeight="566.0" prefWidth="948.0" style="-fx-background-color: #d5ddca;">
+         <children>
+            <Pane layoutX="245.0" layoutY="96.0" prefHeight="389.0" prefWidth="472.0" style="-fx-background-color: #bbc8aa;">
+               <children>
+                  <TextField layoutX="177.0" layoutY="83.0" />
+                  <TextField layoutX="177.0" layoutY="141.0" />
+                  <TextField layoutX="177.0" layoutY="274.0" />
+                  <Label layoutX="116.0" layoutY="87.0" text="name" />
+                  <Label layoutX="119.0" layoutY="145.0" text="club" />
+                  <Label layoutX="110.0" layoutY="211.0" text="position" />
+                  <Label layoutX="119.0" layoutY="278.0" text="cost" />
+                  <Button layoutX="208.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #d5ddca;" text="ADD" />
+                  <ComboBox fx:id="position_combobox" editable="true" layoutX="176.0" layoutY="207.0" prefWidth="150.0" promptText="choose position" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

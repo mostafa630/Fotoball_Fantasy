@@ -6,14 +6,13 @@ import java.sql.SQLException;
 import java.util.Hashtable;
 
 public class Footballer {
-
     private String name;
     private String club;
     private String position;
     private float cost;
     private float totalPoints = 0;
     private float pointsThisWeek = 0;
-    public static Hashtable<String,Footballer> footballers=new Hashtable<>();
+    private static Hashtable<String,Footballer> footballers=new Hashtable<>();
     public Footballer(String name,String club,String position,float cost) {
         this.name = name;
         this.club = club;
@@ -57,23 +56,14 @@ public class Footballer {
         return totalPoints;
     }
 
-    @Override
-    public String toString() {
-        return "Footballer{" +
-                "name='" + name + '\'' +
-                ", club='" + club + '\'' +
-                ", position='" + position + '\'' +
-                ", cost=" + cost +
-                ", totalPoints=" + totalPoints +
-                ", pointsThisWeek=" + pointsThisWeek +
-                '}';
-    }
-
     public static void putFotballerToFootballers(String name , Footballer footballer)
     {
         footballers.put(name,footballer);
     }
 
+    public static Hashtable<String, Footballer> getFootballers() {
+        return footballers;
+    }
 
     public void saveToDatebase(Footballer footballer)
     {

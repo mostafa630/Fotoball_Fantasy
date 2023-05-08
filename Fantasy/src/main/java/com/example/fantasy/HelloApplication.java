@@ -1,14 +1,18 @@
 package com.example.fantasy;
 import ClassesAndDatabaseconnection.DatabaseConnection;
 import ClassesAndDatabaseconnection.Footballer;
+import ClassesAndDatabaseconnection.Player;
 import ClassesAndDatabaseconnection.Validation;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.*;
 public class HelloApplication extends Application {
     @Override
@@ -20,7 +24,7 @@ public class HelloApplication extends Application {
         stage.resizableProperty().setValue(Boolean.FALSE);
         stage.show();
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         Connection con = DatabaseConnection.getConnection();
         if(con==null)
         {
@@ -29,17 +33,31 @@ public class HelloApplication extends Application {
         else
             System.out.println("done");
 
-        Footballer foot1 =new Footballer("sasa","arsenal","goolkeeper",1000f);
-        Footballer.putFotballerToFootballers(foot1.getName(),foot1);
-        Footballer foot2 =new Footballer("lokg","arsenal","goolkeeper",1000f);
-        Footballer.putFotballerToFootballers(foot2.getName(),foot2);
-
-
-        for(Map.Entry<String ,Footballer> data :Footballer.footballers.entrySet()) {
-            System.out.println(data.getKey()+"--->"+data.getValue().toString());
-        }
-
-
          launch();
+         /*
+           save data to player tale in ata base :
+            1-we remove all records from database
+            2-we put all data in players has table
+          */
+         String query ="DELETE FROM player";
+         con = DatabaseConnection.getConnection();
+         PreparedStatement preparedStatement = con.prepareStatement(query);
+         preparedStatement.executeUpdate();
+         for(Map.Entry<String ,Player>player:Player.getPlayers().entrySet()) {
+             player.getValue().saveToDatebase(player.getValue());
+         }
+
+          /*
+           save data to Footballer tale in ata base :
+            1-we remove all records from database
+            2-we put all data in footballers has table
+          */
+         query ="DELETE FROM footballer";
+         con = DatabaseConnection.getConnection();
+         preparedStatement = con.prepareStatement(query);
+         preparedStatement.executeUpdate();
+         for(Map.Entry<String ,Footballer>footballer:Footballer.getFootballers().entrySet()) {
+            footballer.getValue().saveToDatebase(footballer.getValue());
+         }
     }
 }

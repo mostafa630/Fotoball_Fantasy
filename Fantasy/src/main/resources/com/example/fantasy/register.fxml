@@ -22,10 +22,15 @@
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Button layoutX="1021.0" layoutY="7.0" mnemonicParsing="false" onAction="#openLoginFrom" prefHeight="26.0" prefWidth="94.0" style="-fx-background-color: light blue;" text="Sign In" textFill="#eae3e3">
+      <Button layoutX="1021.0" layoutY="7.0" mnemonicParsing="false" onAction="#openLoginForm" prefHeight="26.0" prefWidth="94.0" style="-fx-background-color: light blue;" text="Sign In" textFill="#eae3e3">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Button layoutX="500.0" layoutY="471.0" mnemonicParsing="false" onAction="#checkData" prefHeight="26.0" prefWidth="83.0" text="Submit" />
+      <Button layoutX="500.0" layoutY="488.0" mnemonicParsing="false" onAction="#checkData" prefHeight="26.0" prefWidth="83.0" text="Submit" />
+      <Label fx:id="register_failed_label" layoutX="458.0" layoutY="459.0" prefHeight="20.0" prefWidth="266.0" textFill="#ff6262">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

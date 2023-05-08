@@ -10,7 +10,7 @@ public class Validation {
     public static boolean usernameValidation(String username){
         String regularExpression = "^[a-z][a-z0-9]{7,19}$";
 
-        return (username.matches(regularExpression) && !Player.players.containsKey(username));
+        return (username.matches(regularExpression) && !Player.getPlayers().containsKey(username));
 
     }
 
@@ -45,7 +45,7 @@ public class Validation {
         int checkDigit = Integer.parseInt(nationalID.substring(13));
         int remainder = (sum % 11);
         int calculatedCheckDigit = (remainder == 0 || remainder == 1) ? remainder : 11 - remainder;
-        return (checkDigit == calculatedCheckDigit && !Player.playersNationalIDs.containsKey(nationalID));
+        return (checkDigit == calculatedCheckDigit && !Player.getPlayersNationalIDs().containsKey(nationalID));
     }
 
     /*
@@ -64,8 +64,8 @@ public class Validation {
     - if existed, check if the password correct or not.
      */
     public static boolean loginCheck(String username , String password){
-        return (Player.players.containsKey(username) &&
-                password.equals(Player.players.get(username).getPassword()));
+        return (Player.getPlayers().containsKey(username) &&
+                password.equals(Player.getPlayers().get(username).getPassword()));
     }
 
 
