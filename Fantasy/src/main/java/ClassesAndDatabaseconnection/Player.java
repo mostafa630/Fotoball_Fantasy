@@ -3,6 +3,7 @@ import javafx.util.Pair;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -10,9 +11,10 @@ import java.util.List;
 
 public class Player {
     private String id ,userName ,password ;
-    private int budget=100000;
+    private float budget=100000;
+    private int points =0 ;
 
-    public List<Pair<String , Boolean>> myTeam = new ArrayList<>(12); // contain the team of the user
+    public List<Pair<String , Boolean>> myTeam = new ArrayList<>(); // contain the team of the user
     private static Hashtable<String,Player> players = new Hashtable<>(); // contains all user of program
 
     private static Hashtable<String , Boolean> playersNationalIDs = new Hashtable<>(); // contains all users' id
@@ -47,18 +49,32 @@ public class Player {
         this.password = password;
     }
 
-    public long getBudget() {
+    public float getBudget() {
         return budget;
     }
 
-    public void setBudget(int budget) {
+    public void setBudget(float budget) {
         this.budget = budget;
     }
 
+    public int getPoints() {
+        return points;
+    }
 
-    public void putPlayerInMyTeam(String footballerName, Boolean isPlaying){
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
+    public void putFootballerInMyTeam(String footballerName, Boolean isPlaying){
         Pair<String , Boolean> myPair = new Pair<>(footballerName , isPlaying);
-        myTeam.add(myPair);
+        for(int j=0; j<15 ;j++)
+        {
+            if(myTeam.get(j).getKey().equals("null")) {
+                myTeam.set(j, myPair);
+                break;
+            }
+        }
+
     }
 
     public static Hashtable<String, Player> getPlayers() {
@@ -87,12 +103,13 @@ public class Player {
     {
         Connection con = DatabaseConnection.getConnection(); // connect with database
         // SQl command to inser in data base
-        String query ="INSERT INTO player (id ,userName ,password ,budget) VALUES(?,?,?,?);";
+        String query ="INSERT INTO player (id ,userName ,password ,budget,points) VALUES(?,?,?,?,?);";
         try(PreparedStatement preparedStatement = con.prepareStatement(query)) { // replace ? with actual data
             preparedStatement.setString(1,player.getId());
             preparedStatement.setString(2, player.getUserName());
             preparedStatement.setString(3, player.getPassword());
             preparedStatement.setFloat(4,player.getBudget());
+            preparedStatement.setInt(5,player.getPoints());
             preparedStatement.executeUpdate(); // make this updates appear in the database
         }
         catch (SQLException ex)
@@ -108,9 +125,9 @@ public class Player {
         }
          con = DatabaseConnection.getConnection(); // connect with database
         // insert teams of user to database
-         query ="INSERT INTO teams (id ,player1 ,player2 ,player3,player4,player5,player6,player7,player8,player9,player10,player11,player12,player13,player14,player15) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+         query ="INSERT INTO teams (userName ,player1 ,player2 ,player3,player4,player5,player6,player7,player8,player9,player10,player11,player12,player13,player14,player15) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
         try(PreparedStatement preparedStatement = con.prepareStatement(query)) { // replace ? with actual data
-            preparedStatement.setString(1,player.getId());
+            preparedStatement.setString(1,player.getUserName());
             for(int i=2 ,j=0 ;j<myTeam.size();i++,j++) {
                 String temp = player.myTeam.get(i-2).getKey();
                 if(player.myTeam.get(i-2).getValue()==false) {
@@ -131,6 +148,86 @@ public class Player {
                 con.close();
             } catch (SQLException e) {
                 System.out.println("connection close failed for teams");
+            }
+        }
+    }
+
+    // function to load data of players from database
+    public static void loadPlayersFromDatabase() {
+        // load main data of player from player table to player haas table
+        Connection con = DatabaseConnection.getConnection();
+        String query = "SELECT * FROM player;";
+        try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+            ResultSet resultSet =preparedStatement.executeQuery();
+            while (resultSet.next())
+            {
+                String id =resultSet.getString("id");
+                String userNmae=resultSet.getString("userName");
+                String password=resultSet.getString("password");
+                float budget =resultSet.getFloat("budget");
+                int points =resultSet.getInt("points");
+
+                Player player =new Player(id,userNmae,password);
+                player.setBudget(budget);
+                player.setPoints(points);
+                players.put(userNmae,player);
+                playersNationalIDs.put(id ,true);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("load data from footballer table failed");
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+        }
+
+        // load teams from table of teams to list of users' teames
+         con = DatabaseConnection.getConnection();
+         query = "SELECT * FROM teams;";
+        try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+            ResultSet resultSet =preparedStatement.executeQuery();
+            while (resultSet.next())
+            {
+                Boolean isPlaying=false;
+                List<String>footballerOfTeam=new ArrayList<>();
+                String userNmae =resultSet.getString("userName");
+                footballerOfTeam.add(resultSet.getString("player1"));
+                footballerOfTeam.add(resultSet.getString("player2"));
+                footballerOfTeam.add(resultSet.getString("player3"));
+                footballerOfTeam.add(resultSet.getString("player4"));
+                footballerOfTeam.add(resultSet.getString("player5"));
+                footballerOfTeam.add(resultSet.getString("player6"));
+                footballerOfTeam.add(resultSet.getString("player7"));
+                footballerOfTeam.add(resultSet.getString("player8"));
+                footballerOfTeam.add(resultSet.getString("player9"));
+                footballerOfTeam.add(resultSet.getString("player10"));
+                footballerOfTeam.add(resultSet.getString("player11"));
+                footballerOfTeam.add(resultSet.getString("player12"));
+                footballerOfTeam.add(resultSet.getString("player13"));
+                footballerOfTeam.add(resultSet.getString("player14"));
+                footballerOfTeam.add(resultSet.getString("player15"));
+                for(String tempFootballer :footballerOfTeam)
+                {
+                    if(tempFootballer.charAt(tempFootballer.length()-1)=='1')
+                        isPlaying=true;
+                    else
+                        isPlaying=false;
+                    String footballer =tempFootballer.substring(0,tempFootballer.length()-1);
+                    players.get(userNmae).myTeam.add(new Pair<String ,Boolean>(footballer,isPlaying));
+                }
+
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("load data from footballer table failed");
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
             }
         }
     }

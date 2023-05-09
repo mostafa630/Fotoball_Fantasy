@@ -1,0 +1,66 @@
+Ederson#Manhester City#Goalkeeper#5.4#
+Nathan Ake#Manhester City#Defender#5.0#
+Aymeric Laporte#Manhester City#Defender#5.6#
+Manuel Akanji#Manhester City#Defender#5.0#
+Ilkay Gundogan#Manhester City#Midfielder#7.3#
+Kevin De Bruyne#Manhester City#Midfielder#12.2#
+Julian Alvarez#Manhester City#Midfielder#6.0#
+Rico Lewis#Manhester City#Midfielder#3.8#
+Erling Haaland#Manhester City#Forward#12.4#
+Riyad Mahrez#Manhester City#Forward#7.3#
+Phil Foden#Manhester City#Forward#8.0#
+Aaron Ramsdale#Arsenal#Goalkeeper#4.8#
+Ben White#Arsenal#Defender#5.0#
+Gabriel Magalhaes#Arsenal#Defender#5.2#
+Jakub Kiwior#Arsenal#Defender#4.0#
+Oleksandr Zinchenko#Arsenal#Defender#5.1#
+Martin Odegaard#Arsenal#Midfielder#6.7#
+Mohamed Elneny#Arsenal#Midfielder#4.1#
+Granit Xhaka#Arsenal#Midfielder#4.8#
+Bukayo Saka#Arsenal#Forward#8.2#
+Gabriel Jesus#Arsenal#Forward#8.1#
+Gabriel Martinelli#Arsenal#Forward#6.7#
+Nick Pope#Newcastle United#Goalkeeper#5.4#
+Kieran Trippier#Newcastle United#DEF#6.1#
+Sven Botman#Newcastle United#Defender#4.5#
+Fabian Schar#Newcastle United#Defender#5.1#
+Dan Burn#Newcastle United#Defender#4.5#
+Joelinton#Newcastle United#Midfielder#6.0#
+Joe Willock#Newcastle United#Midfielder#4.7#
+Bruno Guimaraes#Newcastle United#Midfielder#5.5#
+Callum Wilson#Newcastle United#Forward#7.1#
+Alexander Isak#Newcastle United#Forward#7.0#
+Jacob Murphy#Newcastle United#Forward#4.2#
+Alisson#Liverpool#Goalkeeper#5.4#
+Virgil van Dijk#Liverpool#Defender#6.6#
+Ibrahima Konaté#Liverpool#Defender#4.8#
+Trent Alexander-Arnold#Liverpool#Defender#7.6#
+Andrew Robertson#Liverpool#Defender#6.8#
+Curtis Jones#Liverpool#Midfielder#4.9#
+Fabinho#Liverpool#Midfielder#5.2#
+Jordan Henderson#Liverpool#Midfielder#5.3#
+Roberto Firmino#Liverpool#Forward#8.0#
+Mohamed Salah#Liverpool#Forward#13.1#
+Diogo Jota#Liverpool#Forward#8.8#
+David de Gea#Manchester United#Goalkeeper#5.0#
+Aaron Wan-Bissaka#Manchester United#Defender#4.3#
+Victor Lindelöf#Manchester United#Defender#4.1#
+Luke Shaw#Manchester United#Defender#5.1#
+Diogo Dalot#Manchester United#Defender#4.8#
+Bruno Fernandes#Manchester United#Midfielder#9.4#
+Christian Eriksen#Manchester United#Midfielder#6.2#
+Casemiro#Manchester United#Midfielder#4.9#
+Anthony Martial#Manchester United#Forward#6.3#
+Marcus Rashford#Manchester United#Forward#7.3#
+Antony#Manchester United#Forward#7.3#
+Kepa Arrizabalaga#Chelsea#Goalkeeper#4.6#
+Trevoh Chalobah#Chelsea#Defender#4.4#
+Thiago Silva#Chelsea#Defender#5.4#
+Benoît Badiashile#Chelsea#Defender#5.0#
+Ben Chilwell#Chelsea#Defender#5.7#
+N'Golo Kanté#Chelsea#Midfielder#4.8#
+Enzo Fernández#Chelsea#Midfielder#5.0#
+Conor Gallagher#Chelsea#Midfielder#5.6#
+Noni Madueke#Chelsea#Forward#5.4#
+Raheem Sterling#Chelsea#Forward#9.7#
+Armando Broja#Chelsea#Forward#5.2#
