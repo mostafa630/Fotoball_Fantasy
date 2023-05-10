@@ -14,6 +14,11 @@ import java.io.IOException;
 
 public class LoginController {
     private static  String currenPlayer;
+
+    public static String getCurrenPlayer() {
+        return currenPlayer;
+    }
+
     @FXML
     // this function to open register form if we pressed SinUp button
     public void openRegisterFrom  (ActionEvent event)throws IOException
@@ -62,6 +67,7 @@ public class LoginController {
             {
 
                 try {
+                    currenPlayer=username.getText();
                     // open main page form
                     FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MainPage.fxml"));
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

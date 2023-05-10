@@ -44,29 +44,29 @@ public class HelloApplication extends Application {
                 if connection completed print done on console
                 if connection failed print failed on console
           */
+            Connection con = DatabaseConnection.getConnection();
+            if (con == null) {
+                System.out.println("falied");
+            } else
+                System.out.println("done");
+
+            launch();  // launch the stage
+
+        /*
 
         // just for test
-        for(Map.Entry<String , List<String>> team : Team.getTeams().entrySet()){
+        for(Map.Entry<String , ArrayList<String>> team : Team.getTeams().entrySet()){
             System.out.println(team.getKey() + " team with players: ");
             for(String footballerName : team.getValue()){
                 System.out.println(footballerName);
             }
             System.out.println("----------------------");
         }
-        // end of test
-            Connection con = DatabaseConnection.getConnection();
-            if (con == null) {
-                System.out.println("Failed");
-            } else
-                System.out.println("Done");
+        // Done
 
-            for (Map.Entry<String, Player> playerEntry : Player.getPlayers().entrySet())
-                System.out.println(playerEntry.getKey() + "--->" + playerEntry.getValue().toString());
-            launch();  // launch the stage
-
-
+        */
          /*
-           save data to player table in database :
+           save data to player tale in ata base :
             1-we remove all records from database
             2-we put all data in players has table
           */

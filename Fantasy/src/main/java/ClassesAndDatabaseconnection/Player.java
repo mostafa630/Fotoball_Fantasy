@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Player {
     private String id ,userName ,password ;
-    private float budget=100000;
+    private float budget=100;
     private int points =0 ;
 
     public List<Pair<String , Boolean>> myTeam = new ArrayList<>(); // contain the team of the user
@@ -65,16 +65,11 @@ public class Player {
         this.points = points;
     }
 
-    public void putFootballerInMyTeam(String footballerName, Boolean isPlaying){
+    public void putFootballerInMyTeam(int index ,String footballerName, Boolean isPlaying){
         Pair<String , Boolean> myPair = new Pair<>(footballerName , isPlaying);
-        for(int j=0; j<15 ;j++)
-        {
-            if(myTeam.get(j).getKey().equals("null")) {
-                myTeam.set(j, myPair);
-                break;
-            }
+            if(myTeam.get(index).getKey().equals("null")) {
+                myTeam.set(index, myPair);
         }
-
     }
 
     public static Hashtable<String, Player> getPlayers() {

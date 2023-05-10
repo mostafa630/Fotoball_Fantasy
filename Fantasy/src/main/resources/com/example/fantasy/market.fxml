@@ -13,8 +13,14 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label prefHeight="27.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
-            <Label layoutX="10.0" layoutY="56.0" prefHeight="26.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label fx:id="goolkeeper1" alignment="CENTER" prefHeight="27.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="goolkeeper2" alignment="CENTER" layoutX="10.0" layoutY="56.0" prefHeight="26.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
             <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="242.0" text="Defenders" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
@@ -47,14 +53,14 @@
       </VBox>
       <Pane prefHeight="573.0" prefWidth="867.0" style="-fx-background-color: #e0d1bf;">
          <children>
-            <Pane layoutX="442.0" layoutY="14.0" prefHeight="384.0" prefWidth="192.0" style="-fx-background-color: #ece3d8;">
+            <Pane layoutX="442.0" layoutY="14.0" prefHeight="357.0" prefWidth="192.0" style="-fx-background-color: #ece3d8;">
                <children>
                   <Label layoutX="43.0" layoutY="24.0" text="Midfilders">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Button layoutX="47.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
+                  <Button layoutX="47.0" layoutY="312.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
                   <ComboBox fx:id="midfildersCombobox" editable="true" layoutX="38.0" layoutY="82.0" prefHeight="25.0" prefWidth="141.0" />
                   <Button layoutX="14.0" layoutY="82.0" mnemonicParsing="false" onAction="#searchOfMidfilder" prefHeight="14.0" prefWidth="24.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
                   <Label fx:id="label_of_midfilder_club" layoutY="131.0" prefHeight="27.0" prefWidth="192.0">
@@ -72,16 +78,16 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="wrong_choice_of_midfilder" layoutX="4.0" layoutY="310.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
+                  <Label fx:id="wrong_choice_of_midfilder" layoutX="4.0" layoutY="283.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
                </children></Pane>
-            <Pane layoutX="242.0" layoutY="14.0" prefHeight="384.0" prefWidth="192.0" style="-fx-background-color: #ece3d8;">
+            <Pane layoutX="242.0" layoutY="14.0" prefHeight="357.0" prefWidth="192.0" style="-fx-background-color: #ece3d8;">
                <children>
                   <Label layoutX="42.0" layoutY="23.0" text="Defenders">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Button layoutX="42.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
+                  <Button layoutX="37.0" layoutY="311.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
                   <ComboBox fx:id="defendersCombobox" editable="true" layoutX="37.0" layoutY="84.0" prefHeight="25.0" prefWidth="141.0" />
                   <Button layoutX="14.0" layoutY="84.0" mnemonicParsing="false" onAction="#searchOfDefender" prefHeight="14.0" prefWidth="24.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
                   <Label fx:id="label_of_defender_club" layoutY="133.0" prefHeight="27.0" prefWidth="192.0">
@@ -99,16 +105,16 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="wrong_choice_of_defender" layoutX="4.0" layoutY="307.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
+                  <Label fx:id="wrong_choice_of_defender" layoutX="3.0" layoutY="281.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
                </children></Pane>
-            <Pane layoutX="647.0" layoutY="14.0" prefHeight="384.0" prefWidth="192.0" style="-fx-background-color: #ece3d8;">
+            <Pane layoutX="647.0" layoutY="14.0" prefHeight="357.0" prefWidth="192.0" style="-fx-background-color: #ece3d8;">
                <children>
                   <Label layoutX="43.0" layoutY="29.0" prefHeight="35.0" prefWidth="106.0" text="Forwards">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Button layoutX="43.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
+                  <Button layoutX="39.0" layoutY="311.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
                   <ComboBox fx:id="forwardsCombobox" editable="true" layoutX="38.0" layoutY="79.0" prefHeight="25.0" prefWidth="141.0" />
                   <Button fx:id="searchOfForward" layoutX="14.0" layoutY="79.0" mnemonicParsing="false" onAction="#searchOfForward" prefHeight="14.0" prefWidth="24.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
                   <Label fx:id="label_of_forward_club" layoutY="130.0" prefHeight="27.0" prefWidth="192.0">
@@ -126,16 +132,16 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="wrong_choice_of_forward" layoutX="4.0" layoutY="320.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
+                  <Label fx:id="wrong_choice_of_forward" layoutY="285.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
                </children></Pane>
-            <Pane layoutX="23.0" layoutY="14.0" prefHeight="384.0" prefWidth="205.0" style="-fx-background-color: #ece3d8;">
+            <Pane layoutX="23.0" layoutY="14.0" prefHeight="357.0" prefWidth="205.0" style="-fx-background-color: #ece3d8;">
                <children>
                   <Label layoutX="25.0" layoutY="22.0" text="Gool Keepers">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Button layoutX="50.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
+                  <Button layoutX="49.0" layoutY="313.0" mnemonicParsing="false" onAction="#buyGoolkeeper" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
                   <ComboBox fx:id="goolKeepersCombobox" editable="true" layoutX="26.0" layoutY="84.0" prefHeight="25.0" prefWidth="157.0" />
                   <Button layoutX="2.0" layoutY="84.0" mnemonicParsing="false" onAction="#searchOfGoolkeeper" prefHeight="25.0" prefWidth="21.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
                   <Label fx:id="label_of_goolkeeper_club" layoutX="-1.0" layoutY="136.0" prefHeight="27.0" prefWidth="205.0">
@@ -151,16 +157,48 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="wrong_choice_of_goolkeeper" layoutX="10.0" layoutY="302.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
+                  <Label fx:id="wrong_choice_of_goolkeeper" layoutX="10.0" layoutY="280.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
                </children></Pane>
-            <Pane layoutX="23.0" layoutY="412.0" prefHeight="153.0" prefWidth="410.0" style="-fx-background-color: #ece3d8;">
+            <Pane layoutX="23.0" layoutY="377.0" prefHeight="188.0" prefWidth="410.0" style="-fx-background-color: #ece3d8;">
                <children>
-                  <ComboBox fx:id="goolKeepersCombobox1" editable="true" layoutX="127.0" layoutY="10.0" prefHeight="25.0" prefWidth="157.0" />
-                  <Button layoutX="103.0" layoutY="10.0" mnemonicParsing="false" onAction="#searchOfGoolkeeper" prefHeight="25.0" prefWidth="21.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
-                  <Button layoutX="143.0" layoutY="114.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Sell" />
+                  <ComboBox fx:id="sellCombobox" editable="true" layoutX="127.0" layoutY="10.0" prefHeight="25.0" prefWidth="157.0" />
+                  <Button layoutX="103.0" layoutY="10.0" mnemonicParsing="false" onAction="#sell" prefHeight="25.0" prefWidth="21.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
+                  <Button layoutX="143.0" layoutY="149.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Sell" />
+                  <Label fx:id="label_of_sell_club" layoutX="127.0" layoutY="48.0" prefHeight="17.0" prefWidth="157.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_of_sell_cost" layoutX="127.0" layoutY="75.0" prefHeight="17.0" prefWidth="157.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_of_sell_total_points" layoutX="121.0" layoutY="102.0" prefHeight="17.0" prefWidth="168.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="wrong_choice_of_sell" layoutX="100.0" layoutY="119.0" prefHeight="20.0" prefWidth="192.0" textFill="#f40e0e">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
-            <Pane layoutX="534.0" layoutY="412.0" prefHeight="153.0" prefWidth="200.0" style="-fx-background-color: #ece3d8;" />
+            <Pane layoutX="443.0" layoutY="377.0" prefHeight="188.0" prefWidth="397.0" style="-fx-background-color: #ece3d8;">
+               <children>
+                  <Label fx:id="budget_label" layoutY="1.0" prefHeight="93.0" prefWidth="404.0">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="67.0" layoutY="103.0" mnemonicParsing="false" onAction="#goToMainPage" prefHeight="64.0" prefWidth="264.0" style="-fx-background-color: #e0d1bf;" text="Go TO Main Page">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children></Pane>
          </children>
       </Pane>
    </children>
