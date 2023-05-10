@@ -1,12 +1,12 @@
 package ClassesAndDatabaseconnection;
 
+import javafx.util.Pair;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
+import java.util.*;
 
 public class Footballer {
     private String name;
@@ -120,6 +120,7 @@ public class Footballer {
         String query = "SELECT * FROM footballer;";
         try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
             ResultSet resultSet =preparedStatement.executeQuery();
+
             while (resultSet.next())
             {
                 String name =resultSet.getString("name");

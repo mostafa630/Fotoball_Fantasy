@@ -29,6 +29,14 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
+
+
+        /*
+            load data of teams from database:
+            call function in the Team class that load data from fantasy_teams table in database to teams hashtable
+         */
+        Team.loadTeamsFromDatabase();
+
         /*
             load data of footballers from database:
             call function in the Footballer class that load data from database to footballers hashtable
@@ -46,17 +54,17 @@ public class HelloApplication extends Application {
           */
             Connection con = DatabaseConnection.getConnection();
             if (con == null) {
-                System.out.println("falied");
+                System.out.println("failed");
             } else
                 System.out.println("done");
 
             launch();  // launch the stage
 
-        /*
+
 
         // just for test
         for(Map.Entry<String , ArrayList<String>> team : Team.getTeams().entrySet()){
-            System.out.println(team.getKey() + " team with players: ");
+            System.out.println(team.getKey() + "team From " + Team.getTeamsLeagueHashtable().get(team.getKey())+ " with players: ");
             for(String footballerName : team.getValue()){
                 System.out.println(footballerName);
             }
@@ -64,7 +72,7 @@ public class HelloApplication extends Application {
         }
         // Done
 
-        */
+
          /*
            save data to player tale in ata base :
             1-we remove all records from database
@@ -93,5 +101,15 @@ public class HelloApplication extends Application {
             for (Map.Entry<String, Footballer> footballer : Footballer.getFootballers().entrySet()) {
                 footballer.getValue().saveToDatebase(footballer.getValue());
             }
+        /*
+            save data to fantasy_teams table in database :
+            1-we remove all records from fantasy_teams table
+            2-we put all data from teams HashTable in fantasy_teams table
+       */
+
+        for(Map.Entry<String , ArrayList<String>> team : Team.getTeams().entrySet()){
+            Team.saveTeamsToDatabase(team.getKey());
         }
+
     }
+}
