@@ -61,6 +61,7 @@ public class HelloApplication extends Application {
             launch();  // launch the stage
 
 
+    /*
 
         // just for test
         for(Map.Entry<String , ArrayList<String>> team : Team.getTeams().entrySet()){
@@ -71,6 +72,9 @@ public class HelloApplication extends Application {
             System.out.println("----------------------");
         }
         // Done
+
+    */
+
 
 
          /*
@@ -101,11 +105,22 @@ public class HelloApplication extends Application {
             for (Map.Entry<String, Footballer> footballer : Footballer.getFootballers().entrySet()) {
                 footballer.getValue().saveToDatebase(footballer.getValue());
             }
+
+
+
         /*
             save data to fantasy_teams table in database :
             1-we remove all records from fantasy_teams table
             2-we put all data from teams HashTable in fantasy_teams table
        */
+
+        //
+        query = "DELETE FROM fantasyteams";
+        con = DatabaseConnection.getConnection();
+        preparedStatement = con.prepareStatement(query);
+        preparedStatement.executeUpdate();
+
+        //
 
         for(Map.Entry<String , ArrayList<String>> team : Team.getTeams().entrySet()){
             Team.saveTeamsToDatabase(team.getKey());

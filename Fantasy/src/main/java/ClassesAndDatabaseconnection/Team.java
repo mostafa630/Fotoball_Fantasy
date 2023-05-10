@@ -81,8 +81,8 @@ public class Team {
 
         try (PreparedStatement preparedStatement = con.prepareStatement(query)){
 
-            preparedStatement.setString(0 , team);
-            preparedStatement.setString(1 , teamsLeagueHashtable.get(team));
+            preparedStatement.setString(1 , team);
+            preparedStatement.setString(2, teamsLeagueHashtable.get(team));
 
             // make this updates in the dataBase
             preparedStatement.executeUpdate();
