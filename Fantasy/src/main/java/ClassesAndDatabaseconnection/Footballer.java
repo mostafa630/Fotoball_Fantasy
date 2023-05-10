@@ -129,6 +129,12 @@ public class Footballer {
                 float totalPoints=resultSet.getFloat("totalPoints");
                 float pointsThisWeek=resultSet.getFloat("pointsThisWeek");
 
+                // Here I will load data of the teams
+
+                Team.putFootballerInTeams(club , name);
+
+                // Done
+
                 Footballer footballer =new Footballer(name,club,position,cost);
                 footballer.setPointsThisWeek(pointsThisWeek);
                 footballer.setTotalPoints(totalPoints);
