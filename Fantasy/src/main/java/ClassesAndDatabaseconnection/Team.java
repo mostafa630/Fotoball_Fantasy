@@ -14,17 +14,28 @@ import java.util.Set;
 public class Team {
     private String teamName;
     private String teamLeague;
-    // key --> Pair of team name and team League
-    // value --> list of players of this team
 
-    private static Hashtable<Pair<String , String> , ArrayList<String>> teams = new Hashtable<>();
+    // key --> String of team name
+    // value --> for each team the value is its league name
+
+    private static Hashtable<String , String> teamsLeagueHashtable = new Hashtable<>();
+
+
+    // key --> String of team name
+    // value --> for each team the value is list of its players
+    private static Hashtable<String , ArrayList<String>> teams = new Hashtable<>();
+
+
+    public static Hashtable<String, String> getTeamsLeagueHashtable() {
+        return teamsLeagueHashtable;
+    }
 
     public Team(String teamName, String teamLeague) {
         this.teamName = teamName;
         this.teamLeague = teamLeague;
     }
 
-    public static Hashtable<Pair<String , String> ,  ArrayList<String>> getTeams() {
+    public static Hashtable<String ,  ArrayList<String>> getTeams() {
         return teams;
     }
 
@@ -44,20 +55,22 @@ public class Team {
         this.teamLeague = teamLeague;
     }
 
-    public static void putTeamInTeams(Pair<String , String> team)
+    public static void putTeamsInTeamsLeagueHashtable(String teamName , String teamLeague){
+        teamsLeagueHashtable.put(teamName , teamLeague);
+    }
+
+    public static void putTeamInTeams(String team)
     {
         teams.put(team , new ArrayList<>());
-
     }
-    public static void putFootballerInTeams(Pair<String , String> team , String footballerName){
+    public static void putFootballerInTeams(String team , String footballerName){
         if(!teams.containsKey(team)){
             putTeamInTeams(team);
         }
             teams.get(team).add(footballerName);
-
     }
 
-    public static void saveTeamsToDatabase(Pair<String , String> team){
+    public static void saveTeamsToDatabase(String team){
         // connect to the Database
         Connection con = DatabaseConnection.getConnection();
 
@@ -68,8 +81,8 @@ public class Team {
 
         try (PreparedStatement preparedStatement = con.prepareStatement(query)){
 
-            preparedStatement.setString(0 , team.getKey());
-            preparedStatement.setString(1 , team.getValue());
+            preparedStatement.setString(0 , team);
+            preparedStatement.setString(1 , teamsLeagueHashtable.get(team));
 
             // make this updates in the dataBase
             preparedStatement.executeUpdate();
@@ -103,7 +116,8 @@ public class Team {
                 String teamLeague = resultSet.getString("league");
 
                 // put data in teams hash table
-                putTeamInTeams(new Pair<>(teamName , teamLeague));
+                putTeamInTeams(teamName);
+                putTeamsInTeamsLeagueHashtable(teamName , teamLeague);
 
             }
 

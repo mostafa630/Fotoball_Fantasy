@@ -132,18 +132,7 @@ public class Footballer {
 
                 // Here I will load data of the teams
 
-                String league = new String();
-                for(Map.Entry<Pair<String , String> , ArrayList<String>> team : Team.getTeams().entrySet())
-                {
-                    if(team.getKey().getKey().equals(club)){
-                        league = new String(team.getKey().getValue());
-                    }
-
-                }
-
-                Pair<String , String> team = new Pair<>(club , league);
-
-                Team.putFootballerInTeams(team , name);
+                Team.putFootballerInTeams(club , name);
 
                 // Done
 

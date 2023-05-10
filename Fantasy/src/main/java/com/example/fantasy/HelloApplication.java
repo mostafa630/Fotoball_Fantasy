@@ -63,8 +63,8 @@ public class HelloApplication extends Application {
 
 
         // just for test
-        for(Map.Entry<Pair<String , String> , ArrayList<String>> team : Team.getTeams().entrySet()){
-            System.out.println(team.getKey() + "team From " + team.getValue()+ " with players: ");
+        for(Map.Entry<String , ArrayList<String>> team : Team.getTeams().entrySet()){
+            System.out.println(team.getKey() + "team From " + Team.getTeamsLeagueHashtable().get(team.getKey())+ " with players: ");
             for(String footballerName : team.getValue()){
                 System.out.println(footballerName);
             }
@@ -107,7 +107,7 @@ public class HelloApplication extends Application {
             2-we put all data from teams HashTable in fantasy_teams table
        */
 
-        for(Map.Entry<Pair<String , String> , ArrayList<String>> team : Team.getTeams().entrySet()){
+        for(Map.Entry<String , ArrayList<String>> team : Team.getTeams().entrySet()){
             Team.saveTeamsToDatabase(team.getKey());
         }
 
