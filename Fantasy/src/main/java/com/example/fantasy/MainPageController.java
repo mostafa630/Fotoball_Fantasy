@@ -27,4 +27,22 @@ public class MainPageController {
             System.out.println("going to login form from logout failed");
         }
     }
+
+    public void goToMarket(ActionEvent event) throws IOException
+    {
+        try{
+            // open register form
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("market.fxml"));
+            Stage stage =(Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(), 1108, 563);
+            stage.setTitle("Fantasy");
+            stage.setScene(scene);
+            stage.resizableProperty().setValue(Boolean.FALSE);
+            stage.show();
+        }
+        catch (Exception ex)
+        {
+            System.out.println("going to market failed");
+        }
+    }
 }

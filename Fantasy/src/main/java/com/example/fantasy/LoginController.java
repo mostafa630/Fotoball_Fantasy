@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LoginController {
+    private static  String currenPlayer;
     @FXML
     // this function to open register form if we pressed SinUp button
     public void openRegisterFrom  (ActionEvent event)throws IOException

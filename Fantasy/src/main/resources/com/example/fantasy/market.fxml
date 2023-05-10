@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="563.0" prefWidth="1108.0" style="-fx-background-color: #e0d1bf;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fantasy.MarketController">
+   <children>
+      <VBox layoutX="867.0" layoutY="-1.0" prefHeight="567.0" prefWidth="242.0" style="-fx-background-color: #b3a798;">
+         <children>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="242.0" text="Gool Keepers" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label prefHeight="27.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label layoutX="10.0" layoutY="56.0" prefHeight="26.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="242.0" text="Defenders" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="86.0" prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label layoutX="10.0" layoutY="163.0" prefHeight="28.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label layoutX="10.0" layoutY="193.0" prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label layoutX="10.0" layoutY="214.0" prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label layoutX="10.0" layoutY="153.0" prefHeight="30.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label alignment="CENTER" layoutX="10.0" layoutY="104.0" prefHeight="40.0" prefWidth="242.0" text="Midfilders" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="153.0" prefHeight="28.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label layoutX="10.0" layoutY="176.0" prefHeight="30.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label layoutX="10.0" layoutY="199.0" prefHeight="28.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label layoutX="10.0" layoutY="221.0" prefHeight="27.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label layoutX="10.0" layoutY="243.0" prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label alignment="CENTER" layoutX="10.0" layoutY="291.0" prefHeight="37.0" prefWidth="242.0" text="Forwards" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="358.0" prefHeight="30.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label layoutX="10.0" layoutY="380.0" prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label layoutX="10.0" layoutY="402.0" prefHeight="23.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+         </children>
+      </VBox>
+      <Pane prefHeight="573.0" prefWidth="867.0" style="-fx-background-color: #e0d1bf;">
+         <children>
+            <Pane layoutX="442.0" layoutY="14.0" prefHeight="384.0" prefWidth="192.0" style="-fx-background-color: #ece3d8;">
+               <children>
+                  <Label layoutX="43.0" layoutY="24.0" text="Midfilders">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="47.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
+                  <ComboBox fx:id="midfildersCombobox" editable="true" layoutX="38.0" layoutY="82.0" prefHeight="25.0" prefWidth="141.0" />
+                  <Button layoutX="14.0" layoutY="82.0" mnemonicParsing="false" onAction="#searchOfMidfilder" prefHeight="14.0" prefWidth="24.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
+                  <Label fx:id="label_of_midfilder_club" layoutY="131.0" prefHeight="27.0" prefWidth="192.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_of_midfilder_cost" layoutY="192.0" prefHeight="27.0" prefWidth="192.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_of_midfilder_total_points" layoutY="245.0" prefHeight="27.0" prefWidth="192.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="wrong_choice_of_midfilder" layoutX="4.0" layoutY="310.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
+               </children></Pane>
+            <Pane layoutX="242.0" layoutY="14.0" prefHeight="384.0" prefWidth="192.0" style="-fx-background-color: #ece3d8;">
+               <children>
+                  <Label layoutX="42.0" layoutY="23.0" text="Defenders">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="42.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
+                  <ComboBox fx:id="defendersCombobox" editable="true" layoutX="37.0" layoutY="84.0" prefHeight="25.0" prefWidth="141.0" />
+                  <Button layoutX="14.0" layoutY="84.0" mnemonicParsing="false" onAction="#searchOfDefender" prefHeight="14.0" prefWidth="24.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
+                  <Label fx:id="label_of_defender_club" layoutY="133.0" prefHeight="27.0" prefWidth="192.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_of_defender_cost" layoutY="192.0" prefHeight="27.0" prefWidth="192.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_of_defender_total_points" layoutY="247.0" prefHeight="27.0" prefWidth="192.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="wrong_choice_of_defender" layoutX="4.0" layoutY="307.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
+               </children></Pane>
+            <Pane layoutX="647.0" layoutY="14.0" prefHeight="384.0" prefWidth="192.0" style="-fx-background-color: #ece3d8;">
+               <children>
+                  <Label layoutX="43.0" layoutY="29.0" prefHeight="35.0" prefWidth="106.0" text="Forwards">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="43.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
+                  <ComboBox fx:id="forwardsCombobox" editable="true" layoutX="38.0" layoutY="79.0" prefHeight="25.0" prefWidth="141.0" />
+                  <Button fx:id="searchOfForward" layoutX="14.0" layoutY="79.0" mnemonicParsing="false" onAction="#searchOfForward" prefHeight="14.0" prefWidth="24.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
+                  <Label fx:id="label_of_forward_club" layoutY="130.0" prefHeight="27.0" prefWidth="192.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_of_forward_cost" layoutY="192.0" prefHeight="27.0" prefWidth="192.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_of_forward_total_points" layoutY="242.0" prefHeight="27.0" prefWidth="192.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="wrong_choice_of_forward" layoutX="4.0" layoutY="320.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
+               </children></Pane>
+            <Pane layoutX="23.0" layoutY="14.0" prefHeight="384.0" prefWidth="205.0" style="-fx-background-color: #ece3d8;">
+               <children>
+                  <Label layoutX="25.0" layoutY="22.0" text="Gool Keepers">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="50.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
+                  <ComboBox fx:id="goolKeepersCombobox" editable="true" layoutX="26.0" layoutY="84.0" prefHeight="25.0" prefWidth="157.0" />
+                  <Button layoutX="2.0" layoutY="84.0" mnemonicParsing="false" onAction="#searchOfGoolkeeper" prefHeight="25.0" prefWidth="21.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
+                  <Label fx:id="label_of_goolkeeper_club" layoutX="-1.0" layoutY="136.0" prefHeight="27.0" prefWidth="205.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="label_of_goolkeeper_cost" layoutX="6.0" layoutY="192.0" prefHeight="27.0" prefWidth="192.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="label_of_goolkeeper_total_points" layoutX="6.0" layoutY="244.0" prefHeight="27.0" prefWidth="192.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="wrong_choice_of_goolkeeper" layoutX="10.0" layoutY="302.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
+               </children></Pane>
+            <Pane layoutX="23.0" layoutY="412.0" prefHeight="153.0" prefWidth="410.0" style="-fx-background-color: #ece3d8;">
+               <children>
+                  <ComboBox fx:id="goolKeepersCombobox1" editable="true" layoutX="127.0" layoutY="10.0" prefHeight="25.0" prefWidth="157.0" />
+                  <Button layoutX="103.0" layoutY="10.0" mnemonicParsing="false" onAction="#searchOfGoolkeeper" prefHeight="25.0" prefWidth="21.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
+                  <Button layoutX="143.0" layoutY="114.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Sell" />
+               </children>
+            </Pane>
+            <Pane layoutX="534.0" layoutY="412.0" prefHeight="153.0" prefWidth="200.0" style="-fx-background-color: #ece3d8;" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -23,7 +23,6 @@ public class AdminPageController implements Initializable {
      public void initialize (URL url , ResourceBundle resourceBundle)
      {
          ObservableList<String>list=FXCollections.observableArrayList("Defender","Midfielder","Goalkeeper","Forward");
-         list.add("hoda");
          position_combobox.setItems(list);
      }
     @FXML

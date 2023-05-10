@@ -25,7 +25,7 @@
       </Pane>
       <Pane layoutY="294.0" prefHeight="284.0" prefWidth="365.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/Market_photo.jpg');">
          <children>
-            <Button layoutY="1.0" mnemonicParsing="false" prefHeight="284.0" prefWidth="344.0" style="-fx-background-color: light blue;" text="Market" textFill="#ff3232">
+            <Button layoutY="1.0" mnemonicParsing="false" onAction="#goToMarket" prefHeight="284.0" prefWidth="344.0" style="-fx-background-color: light blue;" text="Market" textFill="#ff3232">
                <font>
                   <Font size="36.0" />
                </font>

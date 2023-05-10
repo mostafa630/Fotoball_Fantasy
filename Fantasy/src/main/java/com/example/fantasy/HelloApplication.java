@@ -47,37 +47,6 @@ public class HelloApplication extends Application {
                 if connection completed print done on console
                 if connection failed print failed on console
           */
-        //
-        /*String filePath = "C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/Database.files/FootballersNames.txt";
-        BufferedReader br = null;
-
-        try {
-            br = new BufferedReader(new FileReader(filePath));
-            Footballer footballer;
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] params = line.split("#");
-                // Process the individual parameters here
-                // 0 -> name // 1 -> club // 2 -> position // 3 -> cost
-                float cost = Float.parseFloat(params[3]);
-                footballer = new Footballer(params[0],params[1], params[2], cost );
-                Footballer.putFotballerToFootballers(footballer.getName() , footballer);
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (br != null) {
-                    br.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-*/          //
-            System.out.println(Footballer.footballers.size());
-        System.out.println(Player.getPlayersNationalIDs().size());
             Connection con = DatabaseConnection.getConnection();
             if (con == null) {
                 System.out.println("falied");

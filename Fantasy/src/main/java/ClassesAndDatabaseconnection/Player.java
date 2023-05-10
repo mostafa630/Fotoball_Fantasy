@@ -99,8 +99,14 @@ public class Player {
             myTeam.add(pair);
         }
     }
+    /*
+        save the data of the player int the database :
+         first we save core data of the player (id ,username ,password ,budget ,points) in the player table
+         second we save the team of the user in the teams table
+     */
     public void saveToDatebase(Player player)
     {
+        // save the core data of the player in the layer team
         Connection con = DatabaseConnection.getConnection(); // connect with database
         // SQl command to inser in data base
         String query ="INSERT INTO player (id ,userName ,password ,budget,points) VALUES(?,?,?,?,?);";
@@ -152,7 +158,11 @@ public class Player {
         }
     }
 
-    // function to load data of players from database
+    /*
+       load data of players from the database :
+        first we load the core info of the player (id ,username , password ,budget ,points) from the player table
+        second we load the user team from the teams table
+        */
     public static void loadPlayersFromDatabase() {
         // load main data of player from player table to player haas table
         Connection con = DatabaseConnection.getConnection();
@@ -184,7 +194,7 @@ public class Player {
             }
         }
 
-        // load teams from table of teams to list of users' teames
+        // load the user's team from teams table
          con = DatabaseConnection.getConnection();
          query = "SELECT * FROM teams;";
         try (PreparedStatement preparedStatement = con.prepareStatement(query)) {

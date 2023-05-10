@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
 
 public class Footballer {
     private String name;
@@ -14,6 +16,11 @@ public class Footballer {
     private float totalPoints = 0;
     private float pointsThisWeek = 0;
     public static Hashtable<String,Footballer> footballers=new Hashtable<>();
+    public static List<String>goolKeepers=new ArrayList<>();
+    public static List<String>defenders=new ArrayList<>();
+    public static List<String>midfielders=new ArrayList<>();
+    public static List<String>forwardes=new ArrayList<>();
+
     public Footballer(String name,String club,String position,float cost) {
         this.name = name;
         this.club = club;
@@ -69,7 +76,10 @@ public class Footballer {
     public static Hashtable<String, Footballer> getFootballers() {
         return footballers;
     }
-
+    /*
+     we save data of footballee in the database :
+     we put the core data of footballers in the table of footballers i the database
+     */
     public void saveToDatebase(Footballer footballer)
     {
         Connection con = DatabaseConnection.getConnection(); // connect with database
@@ -96,7 +106,15 @@ public class Footballer {
             }
         }
     }
-    // function to load data of footballers from database
+    /*
+    load datafrom data of fooltballer from database :
+       firsrt we put all footballers in hash table of footballers
+       second if the footballer is :
+            goolkeeper we put him in the list of goolkeepers
+            defender we put it in the list of defenders
+            midfilder we put him in the list of midfilders
+            forward we put him in the list of the forwards
+     */
     public static void loadFootballerFromDatabase() {
         Connection con = DatabaseConnection.getConnection();
         String query = "SELECT * FROM footballer;";
@@ -115,6 +133,14 @@ public class Footballer {
                 footballer.setPointsThisWeek(pointsThisWeek);
                 footballer.setTotalPoints(totalPoints);
                 footballers.put(name,footballer);
+                if(position.equals("Goalkeeper"))
+                    goolKeepers.add(name);
+                else  if(position.equals("Defender"))
+                    defenders.add(name);
+                else if (position.equals("Midfielder"))
+                    midfielders.add(name);
+                else
+                    forwardes.add(name);
             }
 
         } catch (SQLException ex) {
