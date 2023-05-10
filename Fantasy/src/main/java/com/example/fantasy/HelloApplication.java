@@ -1,8 +1,5 @@
 package com.example.fantasy;
-import ClassesAndDatabaseconnection.DatabaseConnection;
-import ClassesAndDatabaseconnection.Footballer;
-import ClassesAndDatabaseconnection.Player;
-import ClassesAndDatabaseconnection.Validation;
+import ClassesAndDatabaseconnection.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -47,11 +44,21 @@ public class HelloApplication extends Application {
                 if connection completed print done on console
                 if connection failed print failed on console
           */
+
+        // just for test
+        for(Map.Entry<String , List<String>> team : Team.getTeams().entrySet()){
+            System.out.println(team.getKey() + " team with players: ");
+            for(String footballerName : team.getValue()){
+                System.out.println(footballerName);
+            }
+            System.out.println("----------------------");
+        }
+        // end of test
             Connection con = DatabaseConnection.getConnection();
             if (con == null) {
-                System.out.println("falied");
+                System.out.println("Failed");
             } else
-                System.out.println("done");
+                System.out.println("Done");
 
             for (Map.Entry<String, Player> playerEntry : Player.getPlayers().entrySet())
                 System.out.println(playerEntry.getKey() + "--->" + playerEntry.getValue().toString());
@@ -59,7 +66,7 @@ public class HelloApplication extends Application {
 
 
          /*
-           save data to player tale in ata base :
+           save data to player table in database :
             1-we remove all records from database
             2-we put all data in players has table
           */

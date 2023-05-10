@@ -120,7 +120,7 @@ public class Player {
         }
         catch (SQLException ex)
         {
-            System.out.println("insertion at playre  table failed");
+            System.out.println("insertion at player  table failed");
         }
         finally {
             try {
