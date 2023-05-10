@@ -26,29 +26,68 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="86.0" prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
-            <Label layoutX="10.0" layoutY="163.0" prefHeight="28.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
-            <Label layoutX="10.0" layoutY="193.0" prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
-            <Label layoutX="10.0" layoutY="214.0" prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
-            <Label layoutX="10.0" layoutY="153.0" prefHeight="30.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label fx:id="defender1" alignment="CENTER" layoutX="10.0" layoutY="86.0" prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="defender2" alignment="CENTER" layoutX="10.0" layoutY="163.0" prefHeight="28.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="defender3" alignment="CENTER" layoutX="10.0" layoutY="193.0" prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="defender4" alignment="CENTER" layoutX="10.0" layoutY="214.0" prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="defender5" alignment="CENTER" layoutX="10.0" layoutY="153.0" prefHeight="30.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
             <Label alignment="CENTER" layoutX="10.0" layoutY="104.0" prefHeight="40.0" prefWidth="242.0" text="Midfilders" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="153.0" prefHeight="28.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
-            <Label layoutX="10.0" layoutY="176.0" prefHeight="30.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
-            <Label layoutX="10.0" layoutY="199.0" prefHeight="28.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
-            <Label layoutX="10.0" layoutY="221.0" prefHeight="27.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
-            <Label layoutX="10.0" layoutY="243.0" prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label fx:id="midfilder1" alignment="CENTER" layoutX="10.0" layoutY="153.0" prefHeight="28.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="midfilder2" alignment="CENTER" layoutX="10.0" layoutY="176.0" prefHeight="30.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="midfilder3" alignment="CENTER" layoutX="10.0" layoutY="199.0" prefHeight="28.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="midfilder4" alignment="CENTER" layoutX="10.0" layoutY="221.0" prefHeight="27.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="midfilder5" alignment="CENTER" layoutX="10.0" layoutY="243.0" prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
             <Label alignment="CENTER" layoutX="10.0" layoutY="291.0" prefHeight="37.0" prefWidth="242.0" text="Forwards" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="358.0" prefHeight="30.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
-            <Label layoutX="10.0" layoutY="380.0" prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
-            <Label layoutX="10.0" layoutY="402.0" prefHeight="23.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;" />
+            <Label fx:id="forward1" alignment="CENTER" layoutX="10.0" layoutY="358.0" prefHeight="30.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="forward2" alignment="CENTER" layoutX="10.0" layoutY="380.0" prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="forward3" alignment="CENTER" layoutX="10.0" layoutY="402.0" prefHeight="23.0" prefWidth="242.0" style="-fx-background-color: #ece3d8; -fx-border-color: #b3a798;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
          </children>
       </VBox>
       <Pane prefHeight="573.0" prefWidth="867.0" style="-fx-background-color: #e0d1bf;">
@@ -60,7 +99,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Button layoutX="47.0" layoutY="312.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
+                  <Button layoutX="47.0" layoutY="312.0" mnemonicParsing="false" onAction="#buyMidfilder" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
                   <ComboBox fx:id="midfildersCombobox" editable="true" layoutX="38.0" layoutY="82.0" prefHeight="25.0" prefWidth="141.0" />
                   <Button layoutX="14.0" layoutY="82.0" mnemonicParsing="false" onAction="#searchOfMidfilder" prefHeight="14.0" prefWidth="24.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
                   <Label fx:id="label_of_midfilder_club" layoutY="131.0" prefHeight="27.0" prefWidth="192.0">
@@ -78,7 +117,10 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="wrong_choice_of_midfilder" layoutX="4.0" layoutY="283.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
+                  <Label fx:id="wrong_choice_of_midfilder" layoutX="4.0" layoutY="283.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                </children></Pane>
             <Pane layoutX="242.0" layoutY="14.0" prefHeight="357.0" prefWidth="192.0" style="-fx-background-color: #ece3d8;">
                <children>
@@ -87,7 +129,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Button layoutX="37.0" layoutY="311.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
+                  <Button layoutX="37.0" layoutY="311.0" mnemonicParsing="false" onAction="#buyDefender" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
                   <ComboBox fx:id="defendersCombobox" editable="true" layoutX="37.0" layoutY="84.0" prefHeight="25.0" prefWidth="141.0" />
                   <Button layoutX="14.0" layoutY="84.0" mnemonicParsing="false" onAction="#searchOfDefender" prefHeight="14.0" prefWidth="24.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
                   <Label fx:id="label_of_defender_club" layoutY="133.0" prefHeight="27.0" prefWidth="192.0">
@@ -105,7 +147,10 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="wrong_choice_of_defender" layoutX="3.0" layoutY="281.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
+                  <Label fx:id="wrong_choice_of_defender" layoutX="3.0" layoutY="281.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                </children></Pane>
             <Pane layoutX="647.0" layoutY="14.0" prefHeight="357.0" prefWidth="192.0" style="-fx-background-color: #ece3d8;">
                <children>
@@ -114,7 +159,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Button layoutX="39.0" layoutY="311.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
+                  <Button layoutX="39.0" layoutY="311.0" mnemonicParsing="false" onAction="#buyForward" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
                   <ComboBox fx:id="forwardsCombobox" editable="true" layoutX="38.0" layoutY="79.0" prefHeight="25.0" prefWidth="141.0" />
                   <Button fx:id="searchOfForward" layoutX="14.0" layoutY="79.0" mnemonicParsing="false" onAction="#searchOfForward" prefHeight="14.0" prefWidth="24.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
                   <Label fx:id="label_of_forward_club" layoutY="130.0" prefHeight="27.0" prefWidth="192.0">
@@ -132,7 +177,10 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="wrong_choice_of_forward" layoutY="285.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
+                  <Label fx:id="wrong_choice_of_forward" layoutY="285.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                </children></Pane>
             <Pane layoutX="23.0" layoutY="14.0" prefHeight="357.0" prefWidth="205.0" style="-fx-background-color: #ece3d8;">
                <children>
@@ -157,14 +205,17 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="wrong_choice_of_goolkeeper" layoutX="10.0" layoutY="280.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515" />
+                  <Label fx:id="wrong_choice_of_goolkeeper" layoutX="10.0" layoutY="280.0" prefHeight="17.0" prefWidth="184.0" textFill="#ec1515">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                </children></Pane>
             <Pane layoutX="23.0" layoutY="377.0" prefHeight="188.0" prefWidth="410.0" style="-fx-background-color: #ece3d8;">
                <children>
                   <ComboBox fx:id="sellCombobox" editable="true" layoutX="127.0" layoutY="10.0" prefHeight="25.0" prefWidth="157.0" />
                   <Button layoutX="103.0" layoutY="10.0" mnemonicParsing="false" onAction="#sell" prefHeight="25.0" prefWidth="21.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
-                  <Button layoutX="143.0" layoutY="149.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Sell" />
-                  <Label fx:id="label_of_sell_club" layoutX="127.0" layoutY="48.0" prefHeight="17.0" prefWidth="157.0">
+                  <Button layoutX="143.0" layoutY="149.0" mnemonicParsing="false" onAction="#sellPlayer" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Sell" />
+                  <Label fx:id="label_of_sell_club" layoutX="127.0" layoutY="48.0" prefHeight="27.0" prefWidth="225.0">
                      <font>
                         <Font size="18.0" />
                      </font>

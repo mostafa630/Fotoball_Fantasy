@@ -67,9 +67,11 @@ public class Player {
 
     public void putFootballerInMyTeam(int index ,String footballerName, Boolean isPlaying){
         Pair<String , Boolean> myPair = new Pair<>(footballerName , isPlaying);
-            if(myTeam.get(index).getKey().equals("null")) {
+            if(myTeam.get(index).getKey().equals("null"))
                 myTeam.set(index, myPair);
-        }
+            else if(footballerName.equals("null"))
+                myTeam.set(index, myPair);
+
     }
 
     public static Hashtable<String, Player> getPlayers() {

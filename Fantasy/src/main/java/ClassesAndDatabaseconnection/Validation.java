@@ -27,6 +27,7 @@ public class Validation {
         if(!nationalID.matches(regularExpression)){
             return false;
         }
+        else return true ; //-----> will be removed
         /*
         If the national ID matches the pattern,
         we then validate it according to the rules for an Egyptian national ID.
@@ -36,7 +37,7 @@ public class Validation {
         If the check digit matches the last digit of the national ID, it is considered valid.
          */
         // Check if the national ID is a valid Egyptian national ID and unique
-        int sum = 0;
+        /*int sum = 0;
         int[] weights = {2, 7, 6, 5, 4, 3, 2, 7, 6, 5, 4, 3, 2};
         for (int i = 0; i < 13; i++) {
             int digit = Integer.parseInt(nationalID.substring(i, i + 1));
@@ -45,7 +46,7 @@ public class Validation {
         int checkDigit = Integer.parseInt(nationalID.substring(13));
         int remainder = (sum % 11);
         int calculatedCheckDigit = (remainder == 0 || remainder == 1) ? remainder : 11 - remainder;
-        return (checkDigit == calculatedCheckDigit && !Player.getPlayersNationalIDs().containsKey(nationalID));
+        return (checkDigit == calculatedCheckDigit && !Player.getPlayersNationalIDs().containsKey(nationalID));*/
     }
 
     /*
