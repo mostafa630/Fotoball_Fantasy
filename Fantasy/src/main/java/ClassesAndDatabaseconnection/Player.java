@@ -5,14 +5,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
+import java.util.*;
 
 public class Player {
     private String id ,userName ,password ;
     private float budget=100;
-    private int points =0 ;
+    private int points = 0;
 
     public List<Pair<String , Boolean>> myTeam = new ArrayList<>(); // contain the team of the user
     private static Hashtable<String,Player> players = new Hashtable<>(); // contains all user of program
@@ -74,6 +72,35 @@ public class Player {
 
     public static Hashtable<String, Player> getPlayers() {
         return players;
+    }
+
+    public void updatePoints_Players()
+    {
+
+        Set<String> setOfKeys = players.keySet();//get all keys to set to iterate on it
+        Iterator<String> iterator_Players = setOfKeys.iterator();
+
+        while (iterator_Players.hasNext())
+        {
+
+            String keyForCurrentPlayer = iterator_Players.next();
+
+            Player currentPlayer = players.get(keyForCurrentPlayer);
+
+            ListIterator<Pair<String, Boolean>> iterator_Team = currentPlayer.myTeam.listIterator();//to iterate on all footballers that player have
+
+            while (iterator_Team.hasNext())
+            {
+
+                Pair<String, Boolean> currentData = iterator_Team.next();
+                if(currentData.getValue())
+                {
+                    points += Footballer.footballers.get(currentData.getKey()).getPointsThisWeek();
+                }
+
+            }
+        }
+
     }
 
     public static Hashtable<String, Boolean> getPlayersNationalIDs() {
