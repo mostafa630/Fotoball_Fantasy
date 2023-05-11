@@ -83,24 +83,6 @@ public class AddNewTeamController implements Initializable {
     }
 
 
-    @FXML
-    // this function to open Delete Footballer Page if we pressed Delete Footballer button
-    public void openDeleteFootballerPage(ActionEvent event) throws IOException {
-        try {
-            // open Admin page form
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("deleteFootballerPage.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(fxmlLoader.load(), 1108, 563);
-            stage.setTitle("Fantasy");
-            stage.setScene(scene);
-            stage.resizableProperty().setValue(Boolean.FALSE);
-            stage.show();
-        }
-        catch (Exception ex) {
-            System.out.println("going to delete footballer page failed");
-        }
-
-    }
 
 
     @FXML
@@ -118,6 +100,24 @@ public class AddNewTeamController implements Initializable {
 
         } catch (Exception ex) {
             System.out.println("going to login form failed");
+        }
+
+    }
+
+    @FXML
+    // this function to open Add New Footballer Page if we pressed Add New Footballer button
+    public void openAddNewFootballerPage(ActionEvent event) throws IOException {
+        try{
+            // open Add New Team page
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AddNewFootballer.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(),1108,563);
+            stage.setTitle("Fantasy");
+            stage.setScene(scene);
+            stage.resizableProperty().setValue(Boolean.FALSE);
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Going to Add New Footballer page failed");
         }
 
     }

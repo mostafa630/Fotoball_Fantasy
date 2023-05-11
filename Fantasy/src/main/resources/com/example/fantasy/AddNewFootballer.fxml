@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fantasy.AddNewFootballerController">
+    <children>
+        <VBox layoutX="942.0" prefHeight="566.0" prefWidth="170.0" style="-fx-background-color: #b0e0e6;">
+            <children>
+                <Pane prefHeight="177.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;">
+                    <children>
+                        <Pane layoutX="29.0" layoutY="20.0" prefHeight="132.0" prefWidth="112.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/admin4.png');" />
+                    </children></Pane>
+                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#openAdminPage" prefHeight="70.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;" text="Hello MR. Ahmed" textFill="#a63131">
+                    <font>
+                        <Font size="18.0" />
+                    </font></Button>
+                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #abbb95;" text="Add Footballer" />
+                <Button layoutX="10.0" layoutY="59.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Delete Footballer" />
+                <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #abbb95;" text="Update Footballer" />
+                <Button layoutX="10.0" layoutY="146.0" mnemonicParsing="false" onAction="#openAddNewTeamPage" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Add New Team" />
+                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="176.0" style="-fx-background-color: #abbb95;" text="Add points of the week" />
+                <Button layoutX="10.0" layoutY="436.0" mnemonicParsing="false" onAction="#openLoginForm" prefHeight="65.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;" text="Logout" />
+            </children></VBox>
+        <Pane layoutX="-3.0" prefHeight="566.0" prefWidth="948.0" style="-fx-background-color: #d5ddca;">
+            <children>
+                <Pane layoutX="245.0" layoutY="96.0" prefHeight="389.0" prefWidth="472.0" style="-fx-background-color: #bbc8aa;">
+                    <children>
+                        <TextField fx:id="footballerName" layoutX="177.0" layoutY="71.0" prefHeight="25.0" prefWidth="150.0" />
+                        <TextField fx:id="footballerCost" layoutX="178.0" layoutY="262.0" promptText="Like 0.0" />
+                        <Label layoutX="103.0" layoutY="71.0" prefHeight="25.0" prefWidth="45.0" text="Name">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font></Label>
+                        <Label layoutX="103.0" layoutY="129.0" prefHeight="25.0" prefWidth="45.0" text="Team">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font></Label>
+                        <Label layoutX="96.0" layoutY="195.0" prefHeight="25.0" prefWidth="59.0" text="Position">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font></Label>
+                        <Label layoutX="108.0" layoutY="262.0" prefHeight="25.0" prefWidth="36.0" text="Price">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font></Label>
+                        <Button layoutX="193.0" layoutY="309.0" mnemonicParsing="false" onAction="#addNewFootballer" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #d5ddca;" text="ADD" />
+                        <ComboBox fx:id="positionComboBox" editable="true" layoutX="176.0" layoutY="195.0" prefWidth="150.0" promptText="Choose Position" />
+                  <Label layoutX="167.0" layoutY="23.0" prefHeight="32.0" prefWidth="170.0" text="Enter Footballer Details">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font></Label>
+                  <ComboBox fx:id="teamComboBox" editable="true" layoutX="177.0" layoutY="129.0" prefHeight="25.0" prefWidth="150.0" promptText="Choose Team" />
+                  <Label fx:id="messageLabel" alignment="CENTER" layoutX="74.0" layoutY="343.0" prefHeight="32.0" prefWidth="325.0">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font></Label>
+                    </children>
+                </Pane>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

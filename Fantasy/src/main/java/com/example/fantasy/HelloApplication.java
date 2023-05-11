@@ -62,7 +62,7 @@ public class HelloApplication extends Application {
 
 
 
-        /*
+
         // just for test that Teams functions runs successfully
         for(Map.Entry<String , ArrayList<String>> team : Team.getTeams().entrySet()){
             System.out.println(team.getKey() + " team From " + Team.getTeamsLeagueHashtable().get(team.getKey())+ " with players: ");
@@ -72,7 +72,7 @@ public class HelloApplication extends Application {
             System.out.println("----------------------");
         }
         // Done
-        */
+
 
         /*
         // test the team name validation

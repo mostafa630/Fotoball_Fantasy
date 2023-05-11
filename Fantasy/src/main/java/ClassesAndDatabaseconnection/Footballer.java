@@ -76,6 +76,28 @@ public class Footballer {
     public static Hashtable<String, Footballer> getFootballers() {
         return footballers;
     }
+
+
+    public static void addNewFootballer(String name, String club, String position, float cost) {
+
+        Footballer footballer = new Footballer(name,club,position,cost);
+        putFotballerToFootballers(name,footballer);
+
+    }
+    
+    public static void addNewFootballersToPositionList(String position , String name){
+        if(position.equals("Goalkeeper")){
+            goolKeepers.add(name);
+        } else if (position.equals("Defender")) {
+            defenders.add(name);
+        }else if(position.equals("Midfielder")){
+            midfielders.add(name);
+        }else{
+            // Forward
+            forwardes.add(name);
+        }
+    }
+
     /*
      we save data of footballee in the database :
      we put the core data of footballers in the table of footballers i the database
