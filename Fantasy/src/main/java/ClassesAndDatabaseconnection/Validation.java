@@ -1,5 +1,8 @@
 package ClassesAndDatabaseconnection;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Validation {
     /*
     - The username length must range between 8 and 20 characters otherwise, it will consider as an invalid username.
@@ -70,5 +73,32 @@ public class Validation {
     }
 
 
+
+    /*
+    - This Function will be used to check if Team Name is valid or Not
+    - the following conditions should be applied:
+        1- It must be Alphabetic characters only.
+        2- It must be Pascal Case -> (the first letter is capital ).
+        3- It must be new team name -> (doesn't exist before) --> I will check it at AddNewTeamController just for message
+     */
+
+    public static boolean teamNameValidation(String teamName){
+
+
+        // Define regular expression to match capital words
+        String regularExpression = "\\b[A-Z][a-z]*\\b(\\s+\\b[A-Z][a-z]*\\b)*";
+        /*
+            The regular expression used here is "\\b[A-Z][a-z]*\\b(\\s+\\b[A-Z][a-z]*\\b)*",
+             which matches any sequence of one or more words where each word starts with an uppercase letter and
+              the remainder of the word consists of lowercase letters.
+
+            The \\b characters match word boundaries, ensuring that the pattern only matches complete words
+             rather than just uppercase letters within larger words.
+              The (\\s+\\b[A-Z][a-z]*\\b)* portion of the regular expression matches additional words separated by whitespace.
+               The * at the end makes sure that the entire pattern can repeat zero or more times.
+         */
+
+        return (teamName.matches(regularExpression));
+    }
 
 }

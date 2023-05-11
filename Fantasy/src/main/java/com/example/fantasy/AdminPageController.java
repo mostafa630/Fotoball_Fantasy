@@ -26,7 +26,7 @@ public class AdminPageController implements Initializable {
          position_combobox.setItems(list);
      }
     @FXML
-    // this function to open login form if we pressed Sign IN button
+    // this function to open login form if we pressed Log Out button
     public void openLoginForm(ActionEvent event) throws IOException {
         try {
             // open login form
@@ -45,7 +45,7 @@ public class AdminPageController implements Initializable {
     }
 
     @FXML
-    // this function to open delteFootballerPage if we pressed Sign IN button
+    // this function to open deleteFootballerPage if we pressed Delete Footballer button
     public void openDeleteFootballerPage(ActionEvent event) throws IOException {
         try {
             // open Admin page form
@@ -62,4 +62,25 @@ public class AdminPageController implements Initializable {
         }
 
     }
+
+    @FXML
+    // this function to open addNewTeam page if we pressed Add New Team button
+    public void openAddNewTeamPage(ActionEvent event) throws IOException{
+
+         try{
+             // open Add New Team page
+             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AddNewTeam.fxml"));
+             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+             Scene scene = new Scene(fxmlLoader.load(),1108,563);
+             stage.setTitle("Fantasy");
+             stage.setScene(scene);
+             stage.resizableProperty().setValue(Boolean.FALSE);
+             stage.show();
+         }catch (Exception ex){
+             System.out.println("Going to Add New Team page failed");
+         }
+    }
+
+
+
 }

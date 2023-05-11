@@ -16,7 +16,7 @@
          </children></Pane>
       <Pane layoutX="370.0" layoutY="-2.0" prefHeight="291.0" prefWidth="402.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/My_Team_photo.jpg');">
          <children>
-            <Button layoutX="4.0" mnemonicParsing="false" prefHeight="264.0" prefWidth="395.0" style="-fx-background-color: light blue;" text="My_Team" textFill="#ff2b2b">
+            <Button layoutX="4.0" mnemonicParsing="false" onAction="#openMyTeam" prefHeight="264.0" prefWidth="395.0" style="-fx-background-color: light blue;" text="My_Team" textFill="#ff2b2b">
                <font>
                   <Font size="36.0" />
                </font>

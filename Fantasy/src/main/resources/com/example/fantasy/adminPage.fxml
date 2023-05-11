@@ -16,11 +16,12 @@
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="193.0" style="-fx-background-color: #abbb95;" text="Add Footballer" />
-            <Button layoutX="10.0" layoutY="59.0" mnemonicParsing="false" onAction="#openDeleteFootballerPage" prefHeight="71.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Delete Footballer" />
-            <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="192.0" style="-fx-background-color: #abbb95;" text="Update Footballer" />
-            <Button layoutX="10.0" layoutY="146.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Add points of the week" />
-            <Button layoutX="10.0" layoutY="436.0" mnemonicParsing="false" onAction="#openLoginForm" prefHeight="68.0" prefWidth="170.0" style="-fx-background-color: #abbb95;" text="Logout" />
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #abbb95;" text="Add Footballer" />
+            <Button layoutX="10.0" layoutY="59.0" mnemonicParsing="false" onAction="#openDeleteFootballerPage" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Delete Footballer" />
+            <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #abbb95;" text="Update Footballer" />
+            <Button layoutX="10.0" layoutY="146.0" mnemonicParsing="false" onAction="#openAddNewTeamPage" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Add New Team" />
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="176.0" style="-fx-background-color: #abbb95;" text="Add points of the week" />
+            <Button layoutX="10.0" layoutY="436.0" mnemonicParsing="false" onAction="#openLoginForm" prefHeight="65.0" prefWidth="170.0" style="-fx-background-color: #abbb95;" text="Logout" />
          </children></VBox>
       <Pane layoutX="-3.0" prefHeight="566.0" prefWidth="948.0" style="-fx-background-color: #d5ddca;">
          <children>

@@ -61,20 +61,51 @@ public class HelloApplication extends Application {
             launch();  // launch the stage
 
 
-    /*
 
-        // just for test
+        /*
+        // just for test that Teams functions runs successfully
         for(Map.Entry<String , ArrayList<String>> team : Team.getTeams().entrySet()){
-            System.out.println(team.getKey() + "team From " + Team.getTeamsLeagueHashtable().get(team.getKey())+ " with players: ");
+            System.out.println(team.getKey() + " team From " + Team.getTeamsLeagueHashtable().get(team.getKey())+ " with players: ");
             for(String footballerName : team.getValue()){
                 System.out.println(footballerName);
             }
             System.out.println("----------------------");
         }
         // Done
+        */
 
-    */
+        /*
+        // test the team name validation
 
+        System.out.print("Manchester United ");
+        if(Validation.teamNameValidation("Manchester United")){
+            System.out.println("is valid team name");
+        }else {
+            System.out.println("is not valid team name");
+        }
+
+        System.out.print("liverpool ");
+        if(Validation.teamNameValidation("liverpool")){
+            System.out.println("is valid team name");
+        }else {
+            System.out.println("is not valid team name");
+        }
+
+        System.out.print("Paris san Germain ");
+        if(Validation.teamNameValidation("Paris san Germain")){
+            System.out.println("is valid team name");
+        }else {
+            System.out.println("is not valid team name");
+        }
+        System.out.print("Paris San Germain ");
+        if(Validation.teamNameValidation("Paris San Germain")){
+            System.out.println("is valid team name");
+        }else {
+            System.out.println("is not valid team name");
+        }
+
+        // Done
+         */
 
 
          /*
@@ -94,7 +125,7 @@ public class HelloApplication extends Application {
             }
 
           /*
-           save data to Footballer tale in ata base :
+           save data to Footballer table in ata base :
             1-we remove all records from database
             2-we put all data in footballers has table
           */
