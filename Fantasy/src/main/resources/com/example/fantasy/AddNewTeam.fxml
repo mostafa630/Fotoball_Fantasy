@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fantasy.AddNewTeamController">
+
+    <children>
+        <VBox layoutX="942.0" prefHeight="566.0" prefWidth="170.0" style="-fx-background-color: #b0e0e6;">
+            <children>
+                <Pane prefHeight="177.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;">
+                    <children>
+                        <Pane layoutX="29.0" layoutY="20.0" prefHeight="132.0" prefWidth="112.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/admin4.png');" />
+                    </children></Pane>
+                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;" text="Hello MR. Ahmed" textFill="#a63131">
+                    <font>
+                        <Font size="18.0" />
+                    </font></Button>
+                <Button mnemonicParsing="false" onAction="#openAdminPage" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #abbb95;" text="Add Footballer" />
+                <Button layoutX="10.0" layoutY="59.0" mnemonicParsing="false" onAction="#openDeleteFootballerPage" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Delete Footballer" />
+                <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #abbb95;" text="Update Footballer" />
+                <Button layoutX="10.0" layoutY="146.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Add New Team" />
+                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="176.0" style="-fx-background-color: #abbb95;" text="Add points of the week" />
+                <Button layoutX="10.0" layoutY="436.0" mnemonicParsing="false" onAction="#openLoginForm" prefHeight="65.0" prefWidth="170.0" style="-fx-background-color: #abbb95;" text="Logout" />
+            </children></VBox>
+        <Pane layoutX="-3.0" prefHeight="566.0" prefWidth="948.0" style="-fx-background-color: #d5ddca;">
+         <children>
+            <Pane layoutX="300.0" layoutY="126.0" prefHeight="315.0" prefWidth="349.0" style="-fx-background-color: #bbc8aa;">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="119.0" layoutY="24.0" prefHeight="38.0" prefWidth="123.0" text="   Team Details" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="leagueComboBox" layoutX="161.0" layoutY="157.0" prefHeight="29.0" prefWidth="162.0" />
+                  <TextField fx:id="teamName" layoutX="161.0" layoutY="86.0" prefHeight="29.0" prefWidth="162.0" />
+                  <Label layoutX="79.0" layoutY="86.0" prefHeight="29.0" prefWidth="80.0" text="Name">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="79.0" layoutY="157.0" prefHeight="29.0" prefWidth="61.0" text="League">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="154.0" layoutY="211.0" mnemonicParsing="false" onAction="#addNewTeam" text="ADD" />
+                  <Label fx:id="messageLabel" alignment="CENTER" layoutX="70.0" layoutY="257.0" prefHeight="29.0" prefWidth="210.0">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font></Label>
+               </children>
+            </Pane>
+         </children></Pane>
+    </children>
+
+</AnchorPane>

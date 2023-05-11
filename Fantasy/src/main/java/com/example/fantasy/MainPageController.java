@@ -45,4 +45,23 @@ public class MainPageController {
             System.out.println("going to market failed");
         }
     }
+    @FXML
+    // this function to open my team
+    public void openMyTeam(ActionEvent event) throws IOException {
+        try {
+            // open login form
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("myTeam.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(), 1108, 563);
+            stage.setTitle("Fantasy");
+            stage.setScene(scene);
+            stage.resizableProperty().setValue(Boolean.FALSE);
+            stage.show();
+
+        } catch (Exception ex) {
+            System.out.println("going to login form failed");
+        }
+
+    }
+
 }

@@ -47,7 +47,7 @@ public class LoginController {
     @FXML
     TextField password;
     @FXML
-    // this function to open main page if the login process sucesseded
+    // this function to open main page if the login process succeeded
     public void openMainPageFrom  (ActionEvent event)throws IOException {
         if (username.getText().equals("Ahmed123")  && password.getText().equals("admin123") ) {
             try {
