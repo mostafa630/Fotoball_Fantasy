@@ -62,7 +62,7 @@ public class HelloApplication extends Application {
 
 
 
-
+        /*
         // just for test that Teams functions runs successfully
         for(Map.Entry<String , ArrayList<String>> team : Team.getTeams().entrySet()){
             System.out.println(team.getKey() + " team From " + Team.getTeamsLeagueHashtable().get(team.getKey())+ " with players: ");
@@ -72,41 +72,40 @@ public class HelloApplication extends Application {
             System.out.println("----------------------");
         }
         // Done
-
+        */
 
         /*
-        // test the team name validation
+        // test the team name validation and footballer Name Validation
 
-        System.out.print("Manchester United ");
-        if(Validation.teamNameValidation("Manchester United")){
+        System.out.print("Manchester  United ");
+        if(Validation.teamNameValidation("Manchester  United")){
             System.out.println("is valid team name");
         }else {
             System.out.println("is not valid team name");
         }
 
-        System.out.print("liverpool ");
-        if(Validation.teamNameValidation("liverpool")){
-            System.out.println("is valid team name");
+        System.out.print("Farouk");
+        if(Validation.footballerNameValidation("Faro+uk")){
+            System.out.println("is valid footballer name");
         }else {
-            System.out.println("is not valid team name");
+            System.out.println("is not valid footballer name");
         }
 
         System.out.print("Paris san Germain ");
-        if(Validation.teamNameValidation("Paris san Germain")){
+        if(Validation.teamNameValidation("Paris Sa1n Germain")){
             System.out.println("is valid team name");
         }else {
             System.out.println("is not valid team name");
         }
         System.out.print("Paris San Germain ");
-        if(Validation.teamNameValidation("Paris San Germain")){
+        if(Validation.footballerNameValidation("ParisSan Germain")){
             System.out.println("is valid team name");
         }else {
             System.out.println("is not valid team name");
         }
 
         // Done
-         */
-
+        */
 
          /*
            save data to player tale in ata base :

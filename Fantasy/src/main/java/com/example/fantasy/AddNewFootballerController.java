@@ -45,7 +45,7 @@ public class AddNewFootballerController implements Initializable{
     // function to fill ComboBox with data
     public void initialize (URL url , ResourceBundle resourceBundle)
     {
-
+        // fill position comboBox
         ObservableList<String> positionsList = FXCollections.observableArrayList("Defender","Midfielder","Goalkeeper","Forward");
         positionComboBox.setItems(positionsList);
 
@@ -65,9 +65,30 @@ public class AddNewFootballerController implements Initializable{
 
     public void addNewFootballer(){
         String newFootballerName = footballerName.getText();
-        String newFootballerTeam = teamComboBox.getSelectionModel().getSelectedItem();
-        String newFootballerPosition = positionComboBox.getSelectionModel().getSelectedItem();
+        /*
+         to handle the choice of the ComboBox selection, we have two cases:
+         1- if the admin does not touch the ComboBox at all:
+            This will cause runtime exception as we create new String without any value
+         2- if the admin click on the ComboBox but does not choose anything
+
+         */
+        String newFootballerTeam;
+
+        try{
+            newFootballerTeam = new String(teamComboBox.getSelectionModel().getSelectedItem());
+        }catch (Exception exception){
+            newFootballerTeam = "";
+        }
+
+        String newFootballerPosition;
+        try{
+            newFootballerPosition = new String(positionComboBox.getSelectionModel().getSelectedItem());
+        }catch (Exception exception){
+            newFootballerPosition = "";
+        }
+
         String newFootballerCost = footballerCost.getText();
+
 
         // I will assume that footballer name is valid firstly
         // if valid I will check footballer cost
@@ -79,37 +100,48 @@ public class AddNewFootballerController implements Initializable{
                checkFootballerName = false;
             }
         }else{
+            checkFootballerName = false;
             messageLabel.setText("Invalid Name!!");
         }
 
         // now I will check footballer cost if footballer name is valid
         if(checkFootballerName){
 
-            if(Validation.footballerPriceValidation(newFootballerCost)){
-                float price = Float.parseFloat(newFootballerCost);
+            if(newFootballerTeam.equals("")){
+                messageLabel.setText("Choose Team First!!");
+            }else if(newFootballerPosition.equals("")){
+                messageLabel.setText("Choose Position First!!");
+            }else {
+                if (Validation.footballerPriceValidation(newFootballerCost)) {
+                    float price = Float.parseFloat(newFootballerCost);
 
-                /*
-                Rules for footballers prices:
-                Goalkeeper: £4.0k to £6.0k
-                Defender: £4.5k to £7.5k
-                Midfielder: £5.0k to £12.0k
-                Forward: £6.0k to £14.0k
-                 */
-                Pair<String , Boolean> pair = Validation.footballerPricePositionValidation(newFootballerPosition , price);
-                if(pair.getValue()){
-                    // add footballer in main hashtable
-                    Footballer.addNewFootballer(newFootballerName , newFootballerTeam , newFootballerPosition , price);
-                    // add footballer to its position's list
-                    Footballer.addNewFootballersToPositionList(newFootballerPosition , newFootballerName);
-                    messageLabel.setText("Done");
-                }else{
-                    messageLabel.setText(pair.getKey());
+                    /*
+                    Rules for footballers prices:
+                    Goalkeeper: £4.0k to £6.0k
+                    Defender: £4.5k to £7.5k
+                    Midfielder: £5.0k to £12.0k
+                    Forward: £6.0k to £14.0k
+                     */
+                    Pair<String, Boolean> pair = Validation.footballerPricePositionValidation(newFootballerPosition, price);
+                    if (pair.getValue()) {
+
+                        // add footballer in main Footballer hashtable
+                        Footballer.addNewFootballer(newFootballerName, newFootballerTeam, newFootballerPosition, price);
+
+                        // add footballer to its team list
+                        Team.putFootballerInTeams(newFootballerTeam , newFootballerName);
+
+                        // add footballer to its position's list
+                        Footballer.addNewFootballersToPositionList(newFootballerPosition, newFootballerName);
+                        messageLabel.setText("Done");
+                    } else {
+                        messageLabel.setText(pair.getKey());
+                    }
+
+                } else {
+                    messageLabel.setText("Invalid Price!!");
                 }
-
-            }else{
-                messageLabel.setText("Invalid Price!!");
             }
-
         }
     }
 
