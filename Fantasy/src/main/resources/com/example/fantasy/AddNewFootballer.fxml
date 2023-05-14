@@ -18,7 +18,7 @@
                     </font></Button>
                 <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #abbb95;" text="Add Footballer" />
                 <Button layoutX="10.0" layoutY="59.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Delete Footballer" />
-                <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #abbb95;" text="Update Footballer" />
+                <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" onAction="#openUpdateFootballerDataPage" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #abbb95;" text="Update Footballer Data" />
                 <Button layoutX="10.0" layoutY="146.0" mnemonicParsing="false" onAction="#openAddNewTeamPage" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Add New Team" />
                 <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="176.0" style="-fx-background-color: #abbb95;" text="Add points of the week" />
                 <Button layoutX="10.0" layoutY="436.0" mnemonicParsing="false" onAction="#openLoginForm" prefHeight="65.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;" text="Logout" />

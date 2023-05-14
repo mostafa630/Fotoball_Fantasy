@@ -190,4 +190,10 @@ public class Validation {
         return pair;
     }
 
+
+    public static boolean footballerPointsValidation(String footballerPoints){
+        String regularExpression = "^[1-9][0-9]*";
+
+        return footballerPoints.matches(regularExpression);
+    }
 }

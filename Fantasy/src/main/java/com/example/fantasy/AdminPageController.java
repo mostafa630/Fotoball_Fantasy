@@ -75,22 +75,19 @@ public class AdminPageController{
     }
 
     @FXML
-    // this function to open Admin Page if we pressed Admin Photo
-    public void openAdminPage(ActionEvent event) throws IOException {
-        try {
-            // open login form
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("adminPage.fxml"));
+    // this function to open Update Footballer Data Page if we pressed Update Footballer Data button
+    public void openUpdateFootballerDataPage(ActionEvent event) throws IOException {
+        try{
+            // open Add New Team page
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("updateFootballerData.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(fxmlLoader.load(), 1108, 563);
+            Scene scene = new Scene(fxmlLoader.load(),1108,563);
             stage.setTitle("Fantasy");
             stage.setScene(scene);
             stage.resizableProperty().setValue(Boolean.FALSE);
             stage.show();
-
-        } catch (Exception ex) {
-            System.out.println("going to Admin Page failed");
+        }catch (Exception ex){
+            System.out.println("Going to Update Footballer page failed");
         }
-
     }
-
 }
