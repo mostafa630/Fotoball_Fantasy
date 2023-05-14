@@ -122,7 +122,6 @@ public class HelloApplication extends Application {
             for (Map.Entry<String, Player> player : Player.getPlayers().entrySet()) {
                 player.getValue().saveToDatebase(player.getValue());
             }
-
           /*
            save data to Footballer table in ata base :
             1-we remove all records from database
@@ -135,9 +134,6 @@ public class HelloApplication extends Application {
             for (Map.Entry<String, Footballer> footballer : Footballer.getFootballers().entrySet()) {
                 footballer.getValue().saveToDatebase(footballer.getValue());
             }
-
-
-
         /*
             save data to fantasy_teams table in database :
             1-we remove all records from fantasy_teams table
@@ -151,10 +147,8 @@ public class HelloApplication extends Application {
         preparedStatement.executeUpdate();
 
         //
-
         for(Map.Entry<String , ArrayList<String>> team : Team.getTeams().entrySet()){
             Team.saveTeamsToDatabase(team.getKey());
         }
-
     }
 }

@@ -100,7 +100,7 @@
                      </font>
                   </Label>
                   <Button layoutX="47.0" layoutY="312.0" mnemonicParsing="false" onAction="#buyMidfilder" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
-                  <ComboBox fx:id="midfildersCombobox" editable="true" layoutX="38.0" layoutY="82.0" prefHeight="25.0" prefWidth="141.0" />
+                  <ComboBox fx:id="midfildersCombobox" layoutX="38.0" layoutY="82.0" prefHeight="25.0" prefWidth="141.0" promptText="Select Midfilder" />
                   <Button layoutX="14.0" layoutY="82.0" mnemonicParsing="false" onAction="#searchOfMidfilder" prefHeight="14.0" prefWidth="24.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
                   <Label fx:id="label_of_midfilder_club" layoutY="131.0" prefHeight="27.0" prefWidth="192.0">
                      <font>
@@ -130,7 +130,7 @@
                      </font>
                   </Label>
                   <Button layoutX="37.0" layoutY="311.0" mnemonicParsing="false" onAction="#buyDefender" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
-                  <ComboBox fx:id="defendersCombobox" editable="true" layoutX="37.0" layoutY="84.0" prefHeight="25.0" prefWidth="141.0" />
+                  <ComboBox fx:id="defendersCombobox" layoutX="37.0" layoutY="84.0" prefHeight="25.0" prefWidth="141.0" promptText="Select Defender" />
                   <Button layoutX="14.0" layoutY="84.0" mnemonicParsing="false" onAction="#searchOfDefender" prefHeight="14.0" prefWidth="24.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
                   <Label fx:id="label_of_defender_club" layoutY="133.0" prefHeight="27.0" prefWidth="192.0">
                      <font>
@@ -160,7 +160,7 @@
                      </font>
                   </Label>
                   <Button layoutX="39.0" layoutY="311.0" mnemonicParsing="false" onAction="#buyForward" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
-                  <ComboBox fx:id="forwardsCombobox" editable="true" layoutX="38.0" layoutY="79.0" prefHeight="25.0" prefWidth="141.0" />
+                  <ComboBox fx:id="forwardsCombobox" layoutX="38.0" layoutY="79.0" prefHeight="25.0" prefWidth="141.0" promptText="Select Forward" />
                   <Button fx:id="searchOfForward" layoutX="14.0" layoutY="79.0" mnemonicParsing="false" onAction="#searchOfForward" prefHeight="14.0" prefWidth="24.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
                   <Label fx:id="label_of_forward_club" layoutY="130.0" prefHeight="27.0" prefWidth="192.0">
                      <font>
@@ -190,7 +190,7 @@
                      </font>
                   </Label>
                   <Button layoutX="49.0" layoutY="313.0" mnemonicParsing="false" onAction="#buyGoolkeeper" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Buy" />
-                  <ComboBox fx:id="goolKeepersCombobox" editable="true" layoutX="26.0" layoutY="84.0" prefHeight="25.0" prefWidth="157.0" />
+                  <ComboBox fx:id="goolKeepersCombobox" layoutX="26.0" layoutY="84.0" prefHeight="25.0" prefWidth="157.0" promptText="Select Goalkeeper" />
                   <Button layoutX="2.0" layoutY="84.0" mnemonicParsing="false" onAction="#searchOfGoolkeeper" prefHeight="25.0" prefWidth="21.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
                   <Label fx:id="label_of_goolkeeper_club" layoutX="-1.0" layoutY="136.0" prefHeight="27.0" prefWidth="205.0">
                      <font>
@@ -212,7 +212,7 @@
                </children></Pane>
             <Pane layoutX="23.0" layoutY="377.0" prefHeight="188.0" prefWidth="410.0" style="-fx-background-color: #ece3d8;">
                <children>
-                  <ComboBox fx:id="sellCombobox" editable="true" layoutX="127.0" layoutY="10.0" prefHeight="25.0" prefWidth="157.0" />
+                  <ComboBox fx:id="sellCombobox" layoutX="127.0" layoutY="10.0" prefHeight="25.0" prefWidth="157.0" promptText="Select Footballer" />
                   <Button layoutX="103.0" layoutY="10.0" mnemonicParsing="false" onAction="#sell" prefHeight="25.0" prefWidth="21.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
                   <Button layoutX="143.0" layoutY="149.0" mnemonicParsing="false" onAction="#sellPlayer" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #e0d1bf;" text="Sell" />
                   <Label fx:id="label_of_sell_club" layoutX="127.0" layoutY="48.0" prefHeight="27.0" prefWidth="225.0">

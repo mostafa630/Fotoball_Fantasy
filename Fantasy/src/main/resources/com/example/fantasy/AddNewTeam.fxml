@@ -13,11 +13,11 @@
                     <children>
                         <Pane layoutX="29.0" layoutY="20.0" prefHeight="132.0" prefWidth="112.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/admin4.png');" />
                     </children></Pane>
-                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#openAdminPage" prefHeight="70.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;" text="Home Page" textFill="#a63131">
+                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#openAdminPage" prefHeight="70.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;" text="Hello MR. Ahmed" textFill="#a63131">
                     <font>
                         <Font size="18.0" />
                     </font></Button>
-                <Button mnemonicParsing="false" onAction="#openAddNewFootballerPage" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #abbb95;" text="Add New Footballer" />
+                <Button mnemonicParsing="false" onAction="#openAddNewFootballerPage" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #abbb95;" text="Add Footballer" />
                 <Button layoutX="10.0" layoutY="59.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Delete Footballer" />
                 <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #abbb95;" text="Update Footballer" />
                 <Button layoutX="10.0" layoutY="146.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Add New Team" />
@@ -33,7 +33,7 @@
                         <Font name="Arial Rounded MT Bold" size="15.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="leagueComboBox" layoutX="161.0" layoutY="157.0" prefHeight="29.0" prefWidth="162.0" promptText="Choose League" />
+                  <ComboBox fx:id="leagueComboBox" editable="true" layoutX="161.0" layoutY="157.0" prefHeight="29.0" prefWidth="162.0" promptText="Choose League" />
                   <TextField fx:id="teamName" layoutX="161.0" layoutY="86.0" prefHeight="29.0" prefWidth="162.0" />
                   <Label layoutX="79.0" layoutY="86.0" prefHeight="29.0" prefWidth="80.0" text="Name">
                      <font>
@@ -45,8 +45,8 @@
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Button layoutX="192.0" layoutY="211.0" mnemonicParsing="false" onAction="#addNewTeam" text="ADD" />
-                  <Label fx:id="messageLabel" alignment="CENTER" layoutX="107.0" layoutY="257.0" prefHeight="29.0" prefWidth="210.0">
+                  <Button layoutX="154.0" layoutY="211.0" mnemonicParsing="false" onAction="#addNewTeam" text="ADD" />
+                  <Label fx:id="messageLabel" alignment="CENTER" layoutX="70.0" layoutY="257.0" prefHeight="29.0" prefWidth="210.0">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font></Label>

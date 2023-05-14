@@ -309,7 +309,6 @@ public class MarketController implements Initializable {
         }
     }
 
-
     @FXML
     Label label_of_sell_club;
     @FXML
@@ -342,7 +341,6 @@ public class MarketController implements Initializable {
             wrong_choice_of_sell.setText("please choose from combobox");
         }
     }
-
     public void buyGoolkeeper()
     {
         String goolkeeper = goolKeepersCombobox.getSelectionModel().getSelectedItem();
@@ -387,8 +385,6 @@ public class MarketController implements Initializable {
             }
         }
     }
-
-
 
     public void buyDefender()
     {

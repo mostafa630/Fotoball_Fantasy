@@ -71,6 +71,8 @@ public class Player {
                 myTeam.set(index, myPair);
             else if(footballerName.equals("null"))
                 myTeam.set(index, myPair);
+            else if(myTeam.get(index).getKey().equals(footballerName))
+                myTeam.set(index, myPair);
 
     }
 
