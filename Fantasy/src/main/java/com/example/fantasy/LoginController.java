@@ -49,7 +49,7 @@ public class LoginController {
     @FXML
     // this function to open main page if the login process succeeded
     public void openMainPageFrom  (ActionEvent event)throws IOException {
-        if (username.getText().equals("Ahmed123")  && password.getText().equals("admin123") ) {
+        if (username.getText().equals("a")  && password.getText().equals("a") ) {
             try {
                 // open Admin page form
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("adminPage.fxml"));

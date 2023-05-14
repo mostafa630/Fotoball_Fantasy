@@ -1,6 +1,5 @@
 package ClassesAndDatabaseconnection;
 
-
 import javafx.util.Pair;
 
 public class Validation {
@@ -73,7 +72,6 @@ public class Validation {
     }
 
 
-
     /*
     - This Function will be used to check if Team Name is valid or Not
     - the following conditions should be applied:
@@ -86,15 +84,16 @@ public class Validation {
 
 
         // Define regular expression to match capital words
-        String regularExpression = "\\b[A-Z][a-z]*\\b(\\s+\\b[A-Z][a-z]*\\b)*";
+        String regularExpression = "\\b[A-Z][a-z]+(?: [A-Z][a-z]+)*\\b";
         /*
-            The regular expression used here is "\\b[A-Z][a-z]*\\b(\\s+\\b[A-Z][a-z]*\\b)*",
-             which matches any sequence of one or more words where each word starts with an uppercase letter and
-              the remainder of the word consists of lowercase letters.
-
+            This regular expression uses the \b anchor to match word boundaries,
+             [A-Z] to match an uppercase letter,
+              [a-z]+ to match one or more lowercase letters,
+               (?: [A-Z][a-z]+)* to match only whitespace character followed by an uppercase letter
+                and one or more lowercase letters,
+                 and \b again to match the end of a word.
             The \\b characters match word boundaries, ensuring that the pattern only matches complete words
              rather than just uppercase letters within larger words.
-              The (\\s+\\b[A-Z][a-z]*\\b)* portion of the regular expression matches additional words separated by whitespace.
                The * at the end makes sure that the entire pattern can repeat zero or more times.
          */
 
@@ -112,15 +111,16 @@ public class Validation {
 
 
         // Define regular expression to match capital words
-        String regularExpression = "\\b[A-Z][a-z]*\\b(\\s+\\b[A-Z][a-z]*\\b)*";
+        String regularExpression = "\\b[A-Z][a-z]+(?: [A-Z][a-z]+)*\\b";
         /*
-            The regular expression used here is "\\b[A-Z][a-z]*\\b(\\s+\\b[A-Z][a-z]*\\b)*",
-             which matches any sequence of one or more words where each word starts with an uppercase letter and
-              the remainder of the word consists of lowercase letters.
-
+            This regular expression uses the \b anchor to match word boundaries,
+             [A-Z] to match an uppercase letter,
+              [a-z]+ to match one or more lowercase letters,
+               (?: [A-Z][a-z]+)* to match only whitespace character followed by an uppercase letter
+                and one or more lowercase letters,
+                 and \b again to match the end of a word.
             The \\b characters match word boundaries, ensuring that the pattern only matches complete words
              rather than just uppercase letters within larger words.
-              The (\\s+\\b[A-Z][a-z]*\\b)* portion of the regular expression matches additional words separated by whitespace.
                The * at the end makes sure that the entire pattern can repeat zero or more times.
          */
         return (footballerName.matches(regularExpression));
@@ -128,7 +128,7 @@ public class Validation {
 
     /*
 
-    we will validate the footballer cost, but the cost is taken as a string,
+    we will validate the footballer price, but the price is taken as a string,
     so we will firstly check if it is valid or not, then convert it to float
 
      */
@@ -145,7 +145,7 @@ public class Validation {
         So this regular expression matches any string that starts with a single digit (0-9),
          followed by a dot, and then ends with another single digit (0-9).
                  */
-        String regularExpression = "^[1-9]{1,2}\\.[0-9]$";
+        String regularExpression = "^[1-9][0-9]*\\.[0-9]$";
 
         return (footballerPrice.matches(regularExpression));
     }

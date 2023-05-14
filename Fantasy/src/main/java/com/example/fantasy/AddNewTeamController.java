@@ -44,15 +44,33 @@ public class AddNewTeamController implements Initializable {
     Label messageLabel;
 
     public void addNewTeam(){
-        String newTeamName = teamName.getText();
-        String newTeamLeague = leagueComboBox.getSelectionModel().getSelectedItem();
+        String newTeamName = new String(teamName.getText());
+
+        /*
+         to handle the choice of the league's selection, we have two cases:
+         1- if the admin does not touch the ComboBox at all:
+            This will cause runtime exception as we create new String without any value
+         2- if the admin click on the ComboBox but does not choose any league
+
+         */
+
+        String newTeamLeague;
+        try {
+            newTeamLeague= new String(leagueComboBox.getSelectionModel().getSelectedItem());
+        }catch (Exception exception){
+            newTeamLeague = "";
+        }
 
         if(Validation.teamNameValidation(newTeamName)){
             // check if this team is existed before or not
             if(!Team.getTeams().containsKey(newTeamName)){
-                Team.putTeamInTeams(newTeamName);
-                Team.putTeamsInTeamsLeagueHashtable(newTeamName , newTeamLeague);
-                messageLabel.setText("Done!!");
+                if(newTeamLeague.equals("")){
+                    messageLabel.setText("Choose Team League First");
+                }else {
+                    Team.putTeamInTeams(newTeamName);
+                    Team.putTeamsInTeamsLeagueHashtable(newTeamName, newTeamLeague);
+                    messageLabel.setText("Done!!");
+                }
             }else{
                 messageLabel.setText("This Team is already exist");
             }
