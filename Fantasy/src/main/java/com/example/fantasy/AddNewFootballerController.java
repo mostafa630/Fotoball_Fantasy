@@ -49,6 +49,7 @@ public class AddNewFootballerController implements Initializable{
         ObservableList<String> positionsList = FXCollections.observableArrayList("Defender","Midfielder","Goalkeeper","Forward");
         positionComboBox.setItems(positionsList);
 
+
         ObservableList<String> teamsList = FXCollections.observableArrayList();
         // now we will fill the teams list with teams' name from:
         // 1- teams HashTable. or
@@ -203,5 +204,21 @@ public class AddNewFootballerController implements Initializable{
     }
 
 
+    @FXML
+    // this function to open Update Footballer Data Page if we pressed Update Footballer Data button
+    public void openUpdateFootballerDataPage(ActionEvent event) throws IOException {
+        try{
+            // open Add New Team page
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("updateFootballerData.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(),1108,563);
+            stage.setTitle("Fantasy");
+            stage.setScene(scene);
+            stage.resizableProperty().setValue(Boolean.FALSE);
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Going to Update Footballer page failed");
+        }
+    }
 
     }
