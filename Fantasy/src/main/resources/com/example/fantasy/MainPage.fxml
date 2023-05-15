@@ -8,7 +8,7 @@
    <children>
       <Pane layoutX="-5.0" layoutY="-2.0" prefHeight="291.0" prefWidth="371.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/Dash_Board_Photo.jpg');">
          <children>
-            <Button layoutX="-13.0" mnemonicParsing="false" prefHeight="291.0" prefWidth="385.0" style="-fx-background-color: light blue;" text="Dash-Board" textFill="#e10b0b">
+            <Button layoutX="-13.0" mnemonicParsing="false" onAction="#goToDashBoard" prefHeight="291.0" prefWidth="385.0" style="-fx-background-color: light blue;" text="Dash-Board" textFill="#e10b0b">
                <font>
                   <Font size="36.0" />
                </font>
@@ -34,7 +34,7 @@
       </Pane>
       <Pane layoutX="372.0" layoutY="294.0" prefHeight="284.0" prefWidth="402.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/Matches_photo.jpg');">
          <children>
-            <Button layoutX="3.0" mnemonicParsing="false" prefHeight="284.0" prefWidth="395.0" style="-fx-background-color: light blue;" text="Matches" textFill="#ff2b2b">
+            <Button layoutX="3.0" mnemonicParsing="false" onAction="#goToRules" prefHeight="284.0" prefWidth="395.0" style="-fx-background-color: light blue;" text="Rules" textFill="#ff2b2b">
                <font>
                   <Font size="36.0" />
                </font>
@@ -43,7 +43,7 @@
       </Pane>
       <Pane layoutX="778.0" layoutY="-2.0" prefHeight="291.0" prefWidth="333.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/setting_photo.jpg');">
          <children>
-            <Button layoutX="32.0" layoutY="2.0" mnemonicParsing="false" prefHeight="264.0" prefWidth="293.0" style="-fx-background-color: ligth blue;" text="Settings" textFill="#ff3e3e">
+            <Button layoutX="32.0" layoutY="2.0" mnemonicParsing="false" onAction="#goToMyProfile" prefHeight="264.0" prefWidth="293.0" style="-fx-background-color: ligth blue;" text="My_Profile" textFill="#ff3e3e">
                <font>
                   <Font size="36.0" />
                </font>

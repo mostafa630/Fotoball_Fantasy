@@ -60,8 +60,6 @@ public class HelloApplication extends Application {
 
             launch();  // launch the stage
 
-
-
         /*
         // just for test that Teams functions runs successfully
         for(Map.Entry<String , ArrayList<String>> team : Team.getTeams().entrySet()){

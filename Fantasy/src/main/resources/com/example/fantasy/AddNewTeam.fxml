@@ -29,7 +29,7 @@
             </children></VBox>
         <Pane layoutX="-3.0" prefHeight="566.0" prefWidth="948.0" style="-fx-background-color: #d5ddca;">
          <children>
-            <Pane layoutX="300.0" layoutY="126.0" prefHeight="315.0" prefWidth="405.0" style="-fx-background-color: #bbc8aa;">
+            <Pane layoutX="295.0" layoutY="122.0" prefHeight="315.0" prefWidth="410.0" style="-fx-background-color: #bbc8aa;">
                <children>
                   <Label contentDisplay="CENTER" layoutX="122.0" layoutY="24.0" prefHeight="38.0" prefWidth="162.0" text="   Enter Team Details" textAlignment="CENTER">
                      <font>

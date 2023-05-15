@@ -47,16 +47,12 @@
                         <Font name="Arial Rounded MT Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Button layoutX="199.0" layoutY="122.0" mnemonicParsing="false" onAction="#chooseFootballer" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="18.0" />
-                     </font>
-                  </Button>
                   <Label fx:id="chooseMessageLabel" alignment="CENTER" layoutX="119.0" layoutY="173.0" prefHeight="22.0" prefWidth="235.0">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>
                   </Label>
+                  <Button layoutX="212.0" layoutY="132.0" mnemonicParsing="false" onAction="#chooseFootballer" prefHeight="25.0" prefWidth="28.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
                </children></Pane>
             <Pane fx:id="updateFootballerPane" layoutX="234.0" layoutY="83.0" prefHeight="400.0" prefWidth="480.0" style="-fx-background-color: #bbc8aa;" visible="false">
                <children>

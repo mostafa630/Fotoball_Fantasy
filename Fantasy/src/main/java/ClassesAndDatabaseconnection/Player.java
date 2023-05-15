@@ -15,7 +15,7 @@ public class Player {
     private int points =0;
 
     public List<Pair<String , Boolean>> myTeam = new ArrayList<>(); // contain the team of the user
-    private static Hashtable<String,Player> players = new Hashtable<>(); // contains all user of program
+    public static Hashtable<String,Player> players = new Hashtable<>(); // contains all user of program
 
     private static Hashtable<String , Boolean> playersNationalIDs = new Hashtable<>(); // contains all users' id
 
