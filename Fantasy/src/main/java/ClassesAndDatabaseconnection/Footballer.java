@@ -163,6 +163,76 @@ public class Footballer {
 
     }
 
+    public static int addPointsToFootballers(String name, String position,
+                                             int goals, int assists,
+                                             boolean yellowCard, boolean redCard,
+                                             boolean playedMoreThan60Min,
+                                             int penaltyMiss, int ownGoal,
+                                             boolean cleanSheet, // for Def, Mid and GK only.
+                                             int penaltySave)    // for Gk only.
+    {
+
+        int localPoints= 0;
+
+        // +3 points for each assist
+        localPoints += assists*3;
+
+        // -2 points for each penaltyMiss
+        localPoints -= penaltyMiss * 2;
+
+        // -2 points for each ownGoal
+        localPoints -= ownGoal * 2;
+
+
+        // for GoalKeeper and Defender +6 points for each goal
+        if(position.equals("GoalKeeper") || position.equals("Defender")) {
+            localPoints += goals * 6;
+        }
+        // for Midfielder +5 points for each goal
+        else if(position.equals("Midfielder")){
+            localPoints += goals * 5;
+        }
+        // for Forward +4 points for each goal
+        else {
+            localPoints += goals * 4;
+        }
+
+        // -1 point for yellow card
+        if(yellowCard) {
+            localPoints --;
+        }
+
+        // -3 points for red card
+        if(redCard){
+            localPoints -= 3;
+        }
+        // +1 point if footballer played More Than 60 Min
+        if(playedMoreThan60Min){
+            localPoints ++;
+        }
+
+        // For Gk and Def
+        // +4 points for clean sheet
+        if(cleanSheet && (position.equals("GoalKeeper") || position.equals("Defender"))) {
+            localPoints += 4;
+        }
+        // For Mid
+        // +4 points for clean sheet
+        else if(cleanSheet && position.equals("Midfielder")) {
+            localPoints += 1;
+        }
+
+        // For Gk
+        // +5 points for each penalty save.
+        if(position.equals("GoalKeeper")) {
+            localPoints += penaltySave * 5;
+        }
+
+
+        return localPoints;
+    }
+
+
     /*
      we save data of footballer in the database :
      we put the core data of footballers in the table of footballers i the database
