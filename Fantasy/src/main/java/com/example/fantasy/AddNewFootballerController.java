@@ -133,7 +133,7 @@ public class AddNewFootballerController implements Initializable{
                         Team.putFootballerInTeams(newFootballerTeam , newFootballerName);
 
                         // add footballer to its position's list
-                        Footballer.addNewFootballersToPositionList(newFootballerPosition, newFootballerName);
+                        Footballer.addNewFootballerToPositionList(newFootballerPosition, newFootballerName);
                         messageLabel.setText("Done");
                     } else {
                         messageLabel.setText(pair.getKey());
@@ -221,4 +221,21 @@ public class AddNewFootballerController implements Initializable{
         }
     }
 
+
+    @FXML
+    // this function to open Delete Footballer Page if we pressed Delete Footballer button
+    public void openDeleteFootballerPage(ActionEvent event) throws IOException {
+        try{
+            // open Add New Team page
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("DeleteFootballer.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(),1108,563);
+            stage.setTitle("Fantasy");
+            stage.setScene(scene);
+            stage.resizableProperty().setValue(Boolean.FALSE);
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Going to Delete Footballer page failed");
+        }
+    }
     }
