@@ -85,7 +85,7 @@ public class Footballer {
 
     }
     
-    public static void addNewFootballersToPositionList(String position , String name){
+    public static void addNewFootballerToPositionList(String position , String name){
         if(position.equals("Goalkeeper")){
             goolKeepers.add(name);
         } else if (position.equals("Defender")) {
@@ -98,8 +98,73 @@ public class Footballer {
         }
     }
 
+    public static void deleteFootballerFromPositionList(String currentPosition , String name){
+        if(currentPosition.equals("Forward")) {
+            forwardes.remove(name);
+        }else if(currentPosition.equals("Midfielder")) {
+            midfielders.remove(name);
+        }else if(currentPosition.equals("GoalKeeper")) {
+            goolKeepers.remove(name);
+        }else {
+            // currentPosition = Defender
+            defenders.remove(name);
+        }
+    }
+
+    public static void deleteFootballer(String name, String club) {
+
+        // delete footballer from Teams hash table
+        Team.getTeams().get(club).remove(name);
+
+        // remove footballer from positions hash table
+        String currentPosition = footballers.get(name).position;
+        deleteFootballerFromPositionList(currentPosition , name);
+
+        // delete footballers from footballers hash table
+        footballers.remove(name);
+
+        // delete footballer from all players that have this footballer.
+        for(Map.Entry<String, Player> playerEntry : Player.getPlayers().entrySet()){
+            int index=0 ;
+
+            for(Pair<String ,Boolean> playerTeam : playerEntry.getValue().myTeam)
+            {
+                if(playerTeam.getKey().equals(name))
+                {
+                    playerEntry.getValue().putFootballerInMyTeam(index,"null", false);
+                    break ;
+                }else{
+                    index++;
+                }
+            }
+        }
+
+    }
+    public static void updateFootballer(String name, String club, float cost) {
+
+        // get the footballer current club
+        String currentClub = footballers.get(name).club;
+        // get the footballer current position
+        String currentPosition = footballers.get(name).position;
+
+        // check if the footballer's club change or not
+        if(!currentClub.equals(club)) {
+
+            // remove the footballer from this club
+            Team.getTeams().get(currentClub).remove(name);
+
+            // add it to the new club
+            Team.getTeams().get(club).add(name);
+
+        }
+
+        // change footballer's cost
+        footballers.get(name).cost = cost;
+
+    }
+
     /*
-     we save data of footballee in the database :
+     we save data of footballer in the database :
      we put the core data of footballers in the table of footballers i the database
      */
     public void saveToDatebase(Footballer footballer)

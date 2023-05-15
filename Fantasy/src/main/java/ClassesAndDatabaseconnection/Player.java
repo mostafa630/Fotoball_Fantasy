@@ -12,7 +12,7 @@ import java.util.List;
 public class Player {
     private String id ,userName ,password ;
     private float budget=100;
-    private int points =0 ;
+    private int points =0;
 
     public List<Pair<String , Boolean>> myTeam = new ArrayList<>(); // contain the team of the user
     private static Hashtable<String,Player> players = new Hashtable<>(); // contains all user of program

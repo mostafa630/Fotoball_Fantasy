@@ -23,8 +23,7 @@ import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class UpdateFootballerDataController implements Initializable {
-
+public class DeleteFootballerController implements Initializable {
     // For Choose Footballer Pane
     @FXML
     Pane chooseFootballerPane;
@@ -39,18 +38,23 @@ public class UpdateFootballerDataController implements Initializable {
 
     // For Update Footballer Pane
     @FXML
-    Pane updateFootballerPane;
+    Pane deleteFootballerPane;
     @FXML
     Label chosenFootballerLabel;
 
     @FXML
+    Label teamLabel;
+    @FXML
+    Label leagueLabel;
+    @FXML
     Label positionLabel;
     @FXML
-    ComboBox<String> updateFootballerTeamComboBox;
+    Label priceLabel;
     @FXML
-    TextField updateFootballerPrice;
-   @FXML
-    Label updateMessageLabel;
+    Label pointsLabel;
+
+    @FXML
+    Label deleteMessageLabel;
     //
 
     //
@@ -98,55 +102,54 @@ public class UpdateFootballerDataController implements Initializable {
             }
         });
         //
-
-        // ComboBox For Update Pane.
-
-        // Add teams to the updateFootballerTeamComboBox
-        ObservableList<String> updateTeamsList = FXCollections.observableArrayList();
-        // now we will fill the teams list with teams' name from:
-        // 1- teams HashTable. or
-        // 2- teamsLeagueHashtable.
-        // I will loop in teamsLeagueHashtable as it is faster
-
-        for(Map.Entry<String , String> teamLeague : Team.getTeamsLeagueHashtable().entrySet()){
-            updateTeamsList.add(teamLeague.getKey());
-        }
-        updateFootballerTeamComboBox.setItems(updateTeamsList);
-
-        //
-
     }
 
 
     public void chooseFootballer() {
 
         selectedFootballer = chooseFootballerComboBox.getSelectionModel().getSelectedItem();
-        if(selectedFootballer != null){
-            //  Set Visible of The chooseFootballerPane to false
-            chooseFootballerPane.setVisible(false);
-            //  Set Visible of The updateFootballerPane to true
-            updateFootballerPane.setVisible(true);
+        try{
+            if(selectedFootballer != null){
 
-            // set the chosenFootballerLabel to the footballer name
-            chosenFootballerLabel.setText(selectedFootballer);
+                // set the chosenFootballerLabel to the footballer name
+                chosenFootballerLabel.setText(selectedFootballer);
 
-            //  set the current choice of this comboBox the footballer Team.
-            updateFootballerTeamComboBox.getSelectionModel().select(selectedTeam);
+                //  set the team label to  the footballer Team.
+                teamLabel.setText(selectedTeam);
 
-            //  set the current position Label to the footballer position.
-            positionLabel.setText(Footballer.getFootballers().get(selectedFootballer).getPosition());
+                //  set the league label to  the Team league.
+                leagueLabel.setText(Team.getTeamsLeagueHashtable().get(selectedTeam));
 
-            // set the updateFootballerPrice to the footballer's price
-            updateFootballerPrice.setText(Float.toString(Footballer.getFootballers().get(selectedFootballer).getCost()));
+                //  set the position label to  the footballer position.
+                positionLabel.setText(Footballer.getFootballers().get(selectedFootballer).getPosition());
 
-        }else{
-            chooseMessageLabel.setText("Choose Footballer First!!");
+
+                //  set the price label to  the footballer price.
+                float price = Footballer.getFootballers().get(selectedFootballer).getCost();
+                priceLabel.setText(Float.toString(price));
+
+                //  set the points label to  the footballer total points.
+                float points = Footballer.getFootballers().get(selectedFootballer).getTotalPoints();
+                pointsLabel.setText(Float.toString(points));
+                deleteMessageLabel.setText("");
+
+                //  Set Visible of The chooseFootballerPane to false
+                chooseFootballerPane.setVisible(false);
+                //  Set Visible of The updateFootballerPane to true
+                deleteFootballerPane.setVisible(true);
+
+
+            }else{
+                chooseMessageLabel.setText("Choose Footballer First!!");
+            }
+        }catch (Exception exception){
+            chooseMessageLabel.setText("This Player is already Deleted");
         }
     }
 
-    public void cancelUpdateProcess() {
+    public void cancelDeleteProcess() {
         //  Set Visible of The updateFootballerPane to false
-        updateFootballerPane.setVisible(false);
+        deleteFootballerPane.setVisible(false);
         //  Set Visible of The chooseFootballerPane to true
         chooseFootballerPane.setVisible(true);
 
@@ -154,45 +157,14 @@ public class UpdateFootballerDataController implements Initializable {
 
     }
 
-    public void updateFootballerData(){
+    public void deleteFootballer(){
 
-        // the team does not make problems
-        String updatedFootballerTeam = updateFootballerTeamComboBox.getSelectionModel().getSelectedItem();
-
-
-        String footballerPosition = Footballer.getFootballers().get(selectedFootballer).getPosition();
-
-        // the price and points should be validated first
-
-
-        String updatedFootballerPrice = updateFootballerPrice.getText();
-
-        //
-
-        if (Validation.footballerPriceValidation(updatedFootballerPrice)) {
-            float price = Float.parseFloat(updatedFootballerPrice);
-            /*
-            Rules for footballers prices:
-            Goalkeeper: £4.0k to £6.0k
-            Defender: £4.5k to £7.5k
-            Midfielder: £5.0k to £12.0k
-            Forward: £6.0k to £14.0k
-             */
-            Pair<String, Boolean> pair = Validation.footballerPricePositionValidation(footballerPosition, price);
-            // if footballer price is valid
-            if (pair.getValue()) {
-                Footballer.updateFootballer(selectedFootballer,updatedFootballerTeam,price);
-
-                updateMessageLabel.setText("Done!!");
-
-            } else {
-                updateMessageLabel.setText(pair.getKey());
-            }
-
-        } else {
-            updateMessageLabel.setText("Invalid Price!!");
+        try{
+            Footballer.deleteFootballer(selectedFootballer , selectedTeam);
+            deleteMessageLabel.setText("Done");
+        }catch (Exception exception){
+            deleteMessageLabel.setText("This Player is already Deleted");
         }
-
     }
 
     @FXML
@@ -213,7 +185,6 @@ public class UpdateFootballerDataController implements Initializable {
         }
 
     }
-
 
     @FXML
     // this function to open addNewTeam page if we pressed Add New Team button
@@ -269,13 +240,12 @@ public class UpdateFootballerDataController implements Initializable {
         }
 
     }
-
     @FXML
-    // this function to open Delete Footballer Page if we pressed Delete Footballer button
-    public void openDeleteFootballerPage(ActionEvent event) throws IOException {
+    // this function to open Update Footballer Data Page if we pressed Update Footballer Data button
+    public void openUpdateFootballerDataPage(ActionEvent event) throws IOException {
         try{
             // open Add New Team page
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("DeleteFootballer.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("updateFootballerData.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(fxmlLoader.load(),1108,563);
             stage.setTitle("Fantasy");
@@ -283,7 +253,7 @@ public class UpdateFootballerDataController implements Initializable {
             stage.resizableProperty().setValue(Boolean.FALSE);
             stage.show();
         }catch (Exception ex){
-            System.out.println("Going to Delete Footballer page failed");
+            System.out.println("Going to Update Footballer page failed");
         }
     }
 }

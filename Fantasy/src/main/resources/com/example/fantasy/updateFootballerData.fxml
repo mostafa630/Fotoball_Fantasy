@@ -12,13 +12,16 @@
                     <children>
                         <Pane layoutX="29.0" layoutY="20.0" prefHeight="132.0" prefWidth="112.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/admin4.png');" />
                     </children></Pane>
-                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#openAdminPage" prefHeight="70.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;" text="Home Page" textFill="#a63131">
+                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#openAdminPage" prefHeight="70.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;" text="Home Page">
                     <font>
                         <Font size="18.0" />
                     </font></Button>
                 <Button mnemonicParsing="false" onAction="#openAddNewFootballerPage" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #abbb95;" text="Add New Footballer" />
-                <Button layoutX="10.0" layoutY="59.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Delete Footballer" />
-                <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #abbb95;" text="Update Footballer Data" />
+                <Button layoutX="10.0" layoutY="59.0" mnemonicParsing="false" onAction="#openDeleteFootballerPage" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Delete Footballer" />
+                <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #abbb95;" text="Update Footballer Data" textFill="#ce0e0e">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
                 <Button layoutX="10.0" layoutY="146.0" mnemonicParsing="false" onAction="#openAddNewTeamPage" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Add New Team" />
                 <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="176.0" style="-fx-background-color: #abbb95;" text="Add points of the week" />
                 <Button layoutX="10.0" layoutY="436.0" mnemonicParsing="false" onAction="#openLoginForm" prefHeight="65.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;" text="Logout" />
@@ -57,7 +60,7 @@
                </children></Pane>
             <Pane fx:id="updateFootballerPane" layoutX="234.0" layoutY="83.0" prefHeight="400.0" prefWidth="480.0" style="-fx-background-color: #bbc8aa;" visible="false">
                <children>
-                  <Label fx:id="chosenFootballerLabel" alignment="CENTER" layoutX="127.0" layoutY="44.0" prefHeight="34.0" prefWidth="256.0" text="Footballer Name">
+                  <Label fx:id="chosenFootballerLabel" alignment="CENTER" layoutX="128.0" layoutY="33.0" prefHeight="34.0" prefWidth="256.0" text="Footballer Name">
                      <font>
                         <Font name="Fira Code Medium" size="24.0" />
                      </font>
@@ -67,48 +70,37 @@
                         <Font name="Fira Code Medium" size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="83.0" layoutY="166.0" prefHeight="34.0" prefWidth="89.0" text="Position">
+                  <Label alignment="CENTER" layoutX="89.0" layoutY="178.0" prefHeight="34.0" prefWidth="78.0" text="Price">
                      <font>
                         <Font name="Fira Code Medium" size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="88.0" layoutY="207.0" prefHeight="34.0" prefWidth="78.0" text="Price">
-                     <font>
-                        <Font name="Fira Code Medium" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="17.0" layoutY="246.0" prefHeight="34.0" prefWidth="222.0" text="Points of The Week">
-                     <font>
-                        <Font name="Fira Code Medium" size="18.0" />
-                     </font>
-                  </Label>
-                  <Button alignment="CENTER" layoutX="255.0" layoutY="303.0" mnemonicParsing="false" onAction="#updateFootballerData" style="-fx-background-color: #10ce30;" text="Update" textFill="#2b0202">
+                  <Button alignment="CENTER" layoutX="255.0" layoutY="249.0" mnemonicParsing="false" onAction="#updateFootballerData" style="-fx-background-color: #10ce30;" text="Update" textFill="#2b0202">
                      <font>
                         <Font name="Fira Code Medium" size="14.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" layoutX="334.0" layoutY="303.0" mnemonicParsing="false" onAction="#cancelUpdateProcess" style="-fx-background-color: #d91d1d;" text="Cancel" textFill="#1f0303">
+                  <Button alignment="CENTER" layoutX="331.0" layoutY="249.0" mnemonicParsing="false" onAction="#cancelUpdateProcess" style="-fx-background-color: #d91d1d;" text="Cancel" textFill="#1f0303">
                      <font>
                         <Font name="Fira Code Medium" size="14.0" />
                      </font>
                   </Button>
-                  <Label fx:id="updateMessageLabel" alignment="CENTER" layoutX="111.0" layoutY="352.0" prefHeight="34.0" prefWidth="256.0">
+                  <Label fx:id="updateMessageLabel" alignment="CENTER" layoutX="202.0" layoutY="304.0" prefHeight="34.0" prefWidth="256.0">
                      <font>
                         <Font name="Fira Code Medium" size="18.0" />
                      </font>
                   </Label>
                   <ComboBox fx:id="updateFootballerTeamComboBox" layoutX="255.0" layoutY="129.0" prefWidth="150.0" />
-                  <ComboBox fx:id="updateFootballerPositionComboBox" layoutX="255.0" layoutY="171.0" prefWidth="150.0" />
-                  <TextField fx:id="updateFootballerPrice" layoutX="256.0" layoutY="212.0" prefHeight="29.0" prefWidth="149.0">
+                  <TextField fx:id="updateFootballerPrice" layoutX="256.0" layoutY="185.0" prefHeight="29.0" prefWidth="149.0">
                      <font>
                         <Font name="Fira Code Medium" size="14.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="updateFootballerPoints" layoutX="256.0" layoutY="251.0" prefHeight="29.0" prefWidth="149.0">
+                  <Label fx:id="positionLabel" alignment="CENTER" layoutX="127.0" layoutY="73.0" prefHeight="34.0" prefWidth="256.0" text="Position">
                      <font>
-                        <Font name="Fira Code Medium" size="14.0" />
+                        <Font name="Fira Code Medium" size="24.0" />
                      </font>
-                  </TextField>
+                  </Label>
                </children></Pane>
          </children></Pane>
     </children>
