@@ -2,7 +2,6 @@ package com.example.fantasy;
 
 import ClassesAndDatabaseconnection.Footballer;
 import ClassesAndDatabaseconnection.Team;
-import ClassesAndDatabaseconnection.Validation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,19 +10,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.util.Pair;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class DeleteFootballerController implements Initializable {
+public class AddPointsOfTheWeekController implements Initializable {
+
     // For Choose Footballer Pane
     @FXML
     Pane chooseFootballerPane;
@@ -34,14 +33,11 @@ public class DeleteFootballerController implements Initializable {
     @FXML
     Label chooseMessageLabel;
 
-    //
-
-    // For Update Footballer Pane
+    // For Add Points Plane
     @FXML
-    Pane deleteFootballerPane;
+    Pane addPointsPane;
     @FXML
-    Label chosenFootballerLabel;
-
+    Label nameLabel;
     @FXML
     Label teamLabel;
     @FXML
@@ -49,18 +45,40 @@ public class DeleteFootballerController implements Initializable {
     @FXML
     Label positionLabel;
     @FXML
-    Label priceLabel;
+    ComboBox<Integer> goalsComboBox;
     @FXML
-    Label pointsLabel;
+    ComboBox<Integer> assistsComboBox;
+    @FXML
+    CheckBox yellowCardCheckBox;
+    @FXML
+    CheckBox redCardCheckBox;
+    @FXML
+    ComboBox<Integer> penaltyMissesComboBox;
+    @FXML
+    ComboBox<Integer> ownGoalsComboBox;
+    @FXML
+    CheckBox moreThan60MinCheckBox;
 
     @FXML
-    Label deleteMessageLabel;
+    CheckBox cleanSheetCheckBox;
+
+    @FXML
+    ComboBox<Integer> penaltySavesComboBox;
+
+    //
+
+    // message
+    @FXML
+    Pane messagePane;
+    @FXML
+    Label checkMessageLabel;
     //
 
     //
     String selectedTeam;
     String selectedFootballer;
     //
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -101,70 +119,126 @@ public class DeleteFootballerController implements Initializable {
                 chooseFootballerComboBox.setItems(footballersList);
             }
         });
+
         //
+
+        yellowCardCheckBox.setOnAction(actionEvent -> {
+            if(redCardCheckBox.isSelected()){
+                redCardCheckBox.setSelected(false);
+            }
+        });
+
+        redCardCheckBox.setOnAction(actionEvent -> {
+            if(yellowCardCheckBox.isSelected()){
+                yellowCardCheckBox.setSelected(false);
+            }
+        });
+
+        //
+
+        // comboBox for add points pane
+        ObservableList<Integer> list =FXCollections.observableArrayList(0 , 1 , 2 , 3 , 4 , 5);
+
+        goalsComboBox.setItems(list);
+        assistsComboBox.setItems(list);
+        penaltyMissesComboBox.setItems(list);
+        ownGoalsComboBox.setItems(list);
+        penaltySavesComboBox.setItems(list);
+
+
     }
+
+
 
 
     public void chooseFootballer() {
 
         selectedFootballer = chooseFootballerComboBox.getSelectionModel().getSelectedItem();
-        try{
-            if(selectedFootballer != null){
+        if(selectedFootballer != null){
 
-                // set the chosenFootballerLabel to the footballer name
-                chosenFootballerLabel.setText(selectedFootballer);
+            // set Player Information
+            nameLabel.setText(selectedFootballer);
+            teamLabel.setText(selectedTeam);
+            leagueLabel.setText(Team.getTeamsLeagueHashtable().get(selectedTeam));
+            positionLabel.setText(Footballer.getFootballers().get(selectedFootballer).getPosition());
 
-                //  set the team label to  the footballer Team.
-                teamLabel.setText(selectedTeam);
-
-                //  set the league label to  the Team league.
-                leagueLabel.setText(Team.getTeamsLeagueHashtable().get(selectedTeam));
-
-                //  set the position label to  the footballer position.
-                positionLabel.setText(Footballer.getFootballers().get(selectedFootballer).getPosition());
-
-
-                //  set the price label to  the footballer price.
-                float price = Footballer.getFootballers().get(selectedFootballer).getCost();
-                priceLabel.setText(Float.toString(price));
-
-                //  set the points label to  the footballer total points.
-                float points = Footballer.getFootballers().get(selectedFootballer).getTotalPoints();
-                pointsLabel.setText(Float.toString(points));
-                deleteMessageLabel.setText("");
-
-                //  Set Visible of The chooseFootballerPane to false
-                chooseFootballerPane.setVisible(false);
-                //  Set Visible of The updateFootballerPane to true
-                deleteFootballerPane.setVisible(true);
+            // Set initial value of comboBoxes
+            goalsComboBox.getSelectionModel().select(0);
+            assistsComboBox.getSelectionModel().select(0);
+            penaltyMissesComboBox.getSelectionModel().select(0);
+            ownGoalsComboBox.getSelectionModel().select(0);
+            penaltySavesComboBox.getSelectionModel().select(0);
 
 
-            }else{
-                chooseMessageLabel.setText("Choose Footballer First!!");
-            }
-        }catch (Exception exception){
-            chooseMessageLabel.setText("This Player is already Deleted");
+            //
+            redCardCheckBox.setSelected(false);
+            yellowCardCheckBox.setSelected(false);
+            moreThan60MinCheckBox.setSelected(false);
+            cleanSheetCheckBox.setSelected(false);
+
+            //
+
+            //  Set Visible of The chooseFootballerPane to false
+            chooseFootballerPane.setVisible(false);
+            //  Set Visible of The addPointsPane to false
+            addPointsPane.setVisible(true);
+            //  Set Visible of The messagePane to false
+            messagePane.setVisible(false);
+
+        }else{
+            chooseMessageLabel.setText("Choose Footballer First!!");
         }
     }
+    //
+    int points;
+    public void calculatePoints(){
 
-    public void cancelDeleteProcess() {
-        //  Set Visible of The updateFootballerPane to false
-        deleteFootballerPane.setVisible(false);
-        //  Set Visible of The chooseFootballerPane to true
+        int goals = goalsComboBox.getSelectionModel().getSelectedItem();
+        int assists = assistsComboBox.getSelectionModel().getSelectedItem();
+        boolean yellowCard = yellowCardCheckBox.isSelected();
+        boolean redCard = redCardCheckBox.isSelected();
+        int penaltyMisses = penaltyMissesComboBox.getSelectionModel().getSelectedItem();
+        int ownGoals = ownGoalsComboBox.getSelectionModel().getSelectedItem();
+        boolean playedMoreThan60Min = moreThan60MinCheckBox.isSelected();
+        boolean cleanSheet = cleanSheetCheckBox.isSelected();
+        int penaltySaves = penaltySavesComboBox.getSelectionModel().getSelectedItem();
+        String position = positionLabel.getText();
+        points = Footballer.addPointsToFootballers(selectedFootballer ,position,
+                                                    goals, assists,
+                                                    yellowCard,redCard,
+                                                    playedMoreThan60Min,
+                                                    penaltyMisses,ownGoals,
+                                                    cleanSheet,
+                                                    penaltySaves);
+
+        String message = "The total points for " + selectedFootballer +  " for This week is " + points;
+        checkMessageLabel.setText(message);
+        messagePane.setVisible(true);
+
+    }
+
+    public void addPoints(){
+
+        Footballer.getFootballers().get(selectedFootballer).setPointsThisWeek(points);
+
+        //  Set Visible of The addPointsPane to false
+        addPointsPane.setVisible(false);
+
+        //  Set Visible of The messagePane to false
+        messagePane.setVisible(false);
+        //  Set Visible of The chooseFootballerPane to false
         chooseFootballerPane.setVisible(true);
-
-        chooseMessageLabel.setText("");
-
     }
 
-    public void deleteFootballer(){
+    public void cancelAdd(){
 
-        try{
-            Footballer.deleteFootballer(selectedFootballer , selectedTeam);
-            deleteMessageLabel.setText("Done");
-        }catch (Exception exception){
-            deleteMessageLabel.setText("This Player is already Deleted");
-        }
+        //  Set Visible of The addPointsPane to false
+        addPointsPane.setVisible(false);
+
+        //  Set Visible of The messagePane to false
+        messagePane.setVisible(false);
+        //  Set Visible of The chooseFootballerPane to false
+        chooseFootballerPane.setVisible(true);
     }
 
 
@@ -259,11 +333,11 @@ public class DeleteFootballerController implements Initializable {
     }
 
     @FXML
-    // this function to open Add Points Of The Week Page if we pressed Add Points Of The Week button
-    public void openAddPointsOfTheWeekPage(ActionEvent event) throws IOException {
+    // this function to open Delete Footballer Page if we pressed Delete Footballer button
+    public void openDeleteFootballerPage(ActionEvent event) throws IOException {
         try{
             // open Add New Team page
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AddPointsOfTheWeek.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("DeleteFootballer.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(fxmlLoader.load(),1108,563);
             stage.setTitle("Fantasy");
@@ -271,9 +345,7 @@ public class DeleteFootballerController implements Initializable {
             stage.resizableProperty().setValue(Boolean.FALSE);
             stage.show();
         }catch (Exception ex){
-            System.out.println("Going to Add Points Of The Week page failed");
+            System.out.println("Going to Delete Footballer page failed");
         }
     }
-
 }
-

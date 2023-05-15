@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fantasy.AddPointsOfTheWeekController">
+    <children>
+        <VBox layoutX="942.0" prefHeight="566.0" prefWidth="170.0" style="-fx-background-color: #b0e0e6;">
+            <children>
+                <Pane prefHeight="177.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;">
+                    <children>
+                        <Pane layoutX="29.0" layoutY="20.0" prefHeight="132.0" prefWidth="112.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/admin4.png');" />
+                    </children></Pane>
+                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#openAdminPage" prefHeight="70.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;" text="Home Page">
+                    <font>
+                        <Font size="18.0" />
+                    </font></Button>
+                <Button mnemonicParsing="false" onAction="#openAddNewFootballerPage" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #abbb95;" text="Add New Footballer" />
+                <Button layoutX="10.0" layoutY="59.0" mnemonicParsing="false" onAction="#openDeleteFootballerPage" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Delete Footballer" />
+                <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" onAction="#openUpdateFootballerDataPage" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #abbb95;" text="Update Footballer Data" />
+                <Button layoutX="10.0" layoutY="146.0" mnemonicParsing="false" onAction="#openAddNewTeamPage" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Add New Team" />
+                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="176.0" style="-fx-background-color: #abbb95;" text="Add points of the week" textFill="#ce0e0e">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+                <Button layoutX="10.0" layoutY="436.0" mnemonicParsing="false" onAction="#openLoginForm" prefHeight="65.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;" text="Logout" />
+            </children></VBox>
+        <Pane layoutX="-3.0" prefHeight="566.0" prefWidth="948.0" style="-fx-background-color: #d5ddca;">
+            <children>
+                <Pane fx:id="chooseFootballerPane" layoutX="255.0" layoutY="154.0" prefHeight="219.0" prefWidth="438.0" style="-fx-background-color: #bbc8aa;">
+                    <children>
+                        <Label alignment="CENTER" layoutX="146.0" layoutY="27.0" prefHeight="22.0" prefWidth="180.0" text="Choose Footballer" textFill="#6e3535">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="chooseTeamComboBox" layoutX="14.0" layoutY="97.0" prefWidth="150.0" promptText="Choose Team" />
+                        <ComboBox fx:id="chooseFootballerComboBox" layoutX="274.0" layoutY="97.0" prefWidth="150.0" promptText="Choose Footballer" />
+                        <Label layoutX="65.0" layoutY="71.0" text="Team" textFill="#724040">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="310.0" layoutY="71.0" text="Fotballer" textFill="#724040">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Button layoutX="199.0" layoutY="122.0" mnemonicParsing="false" onAction="#chooseFootballer" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                            </font>
+                        </Button>
+                        <Label fx:id="chooseMessageLabel" alignment="CENTER" layoutX="119.0" layoutY="173.0" prefHeight="22.0" prefWidth="235.0">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                            </font>
+                        </Label>
+                    </children></Pane>
+            <Pane fx:id="addPointsPane" layoutX="162.0" layoutY="20.0" prefHeight="526.0" prefWidth="624.0" style="-fx-background-color: #abbb95;" visible="false">
+               <children>
+                  <Label fx:id="nameLabel" alignment="CENTER" layoutX="191.0" layoutY="14.0" prefHeight="25.0" prefWidth="207.0" text="Footballer Name">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="teamLabel" alignment="CENTER" layoutX="14.0" layoutY="58.0" prefHeight="25.0" prefWidth="207.0" text="Team">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="leagueLabel" alignment="CENTER" layoutX="201.0" layoutY="58.0" prefHeight="25.0" prefWidth="187.0" text="League">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="positionLabel" alignment="CENTER" layoutX="403.0" layoutY="58.0" prefHeight="25.0" prefWidth="207.0" text="position">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Line endX="323.0" layoutX="295.0" layoutY="110.0" startX="-287.0" />
+                  <Label alignment="CENTER" layoutX="87.0" layoutY="120.0" prefHeight="25.0" prefWidth="452.0" text="Enter the Following Information">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="41.0" layoutY="158.0" prefHeight="25.0" prefWidth="235.0" text="Num of Goals scored">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="319.0" layoutY="158.0" prefHeight="25.0" prefWidth="220.0" text="Num of Assists made">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="goalsComboBox" layoutX="134.0" layoutY="183.0" prefHeight="25.0" prefWidth="24.0" />
+                  <ComboBox fx:id="assistsComboBox" layoutX="390.0" layoutY="183.0" prefHeight="25.0" prefWidth="50.0" />
+                  <CheckBox fx:id="yellowCardCheckBox" alignment="CENTER" layoutX="120.0" layoutY="233.0" mnemonicParsing="false" text="Yellow Card?" textFill="#fbff00">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="redCardCheckBox" alignment="CENTER" layoutX="378.0" layoutY="233.0" mnemonicParsing="false" text="Red Card?" textFill="RED">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <Line endX="272.0" layoutX="276.0" layoutY="216.0" startX="-216.0" />
+                  <Label alignment="CENTER" layoutX="41.0" layoutY="272.0" prefHeight="25.0" prefWidth="235.0" text="Num of Penalty Misses">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="319.0" layoutY="272.0" prefHeight="25.0" prefWidth="220.0" text="Num of Own Goals Scored">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="penaltyMissesComboBox" layoutX="134.0" layoutY="297.0" prefHeight="25.0" prefWidth="50.0" />
+                  <ComboBox fx:id="ownGoalsComboBox" layoutX="390.0" layoutY="297.0" prefHeight="25.0" prefWidth="50.0" />
+                  <CheckBox fx:id="moreThan60MinCheckBox" alignment="CENTER" layoutX="112.0" layoutY="342.0" mnemonicParsing="false" text="Did the footballer play more than 60 minutes?">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="cleanSheetCheckBox" alignment="CENTER" layoutX="125.0" layoutY="380.0" mnemonicParsing="false" text="Did the footballer keep a clean sheet?">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <Label alignment="CENTER" layoutX="159.0" layoutY="421.0" prefHeight="25.0" prefWidth="235.0" text="Num of penalty saves">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="penaltySavesComboBox" layoutX="251.0" layoutY="446.0" prefHeight="25.0" prefWidth="50.0" />
+                  <Line endX="272.0" layoutX="276.0" layoutY="263.0" startX="-216.0" />
+                  <Line endX="272.0" layoutX="273.0" layoutY="329.0" startX="-216.0" />
+                  <Line endX="272.0" layoutX="276.0" layoutY="371.0" startX="-216.0" />
+                  <Line endX="272.0" layoutX="276.0" layoutY="411.0" startX="-216.0" />
+                  <Line endX="272.0" layoutX="266.0" layoutY="478.0" startX="-216.0" />
+                  <Button alignment="CENTER" layoutX="143.0" layoutY="487.0" mnemonicParsing="false" onAction="#calculatePoints" style="-fx-background-color: #089611;" text="Calculate Points">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" layoutX="368.0" layoutY="487.0" mnemonicParsing="false" onAction="#cancelAdd" style="-fx-background-color: #d40e0e;" text="Cancel">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="messagePane" layoutX="169.0" layoutY="250.0" prefHeight="151.0" prefWidth="611.0" style="-fx-background-color: #ffffff;" visible="false">
+               <children>
+                  <Button alignment="CENTER" layoutX="319.0" layoutY="97.0" mnemonicParsing="false" onAction="#cancelAdd" style="-fx-background-color: #d40e0e;" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" layoutX="227.0" layoutY="97.0" mnemonicParsing="false" onAction="#addPoints" style="-fx-background-color: #089611;" text="Add" textFill="WHITE">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="checkMessageLabel" alignment="CENTER" layoutY="32.0" prefHeight="43.0" prefWidth="611.0" text="Message Label">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            </children></Pane>
+    </children>
+
+</AnchorPane>

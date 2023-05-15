@@ -107,4 +107,21 @@ public class AdminPageController{
             System.out.println("Going to Delete Footballer page failed");
         }
     }
+
+    @FXML
+    // this function to open Add Points Of The Week Page if we pressed Add Points Of The Week button
+    public void openAddPointsOfTheWeekPage(ActionEvent event) throws IOException {
+        try{
+            // open Add New Team page
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AddPointsOfTheWeek.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(),1108,563);
+            stage.setTitle("Fantasy");
+            stage.setScene(scene);
+            stage.resizableProperty().setValue(Boolean.FALSE);
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Going to Add Points Of The Week page failed");
+        }
+    }
 }
