@@ -158,6 +158,30 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <Pane fx:id="seasonPane" layoutX="372.0" layoutY="199.0" prefHeight="200.0" prefWidth="320.0" style="-fx-background-color: #ffffff;" visible="false">
+               <children>
+                  <Label alignment="CENTER" layoutX="4.0" layoutY="39.0" prefHeight="25.0" prefWidth="311.0" text="Sorry,You can't change your">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="4.0" layoutY="75.0" prefHeight="25.0" prefWidth="311.0" text="plan untill the current">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutY="107.0" prefHeight="25.0" prefWidth="311.0" text=" round end.">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button alignment="CENTER" layoutX="115.0" layoutY="140.0" mnemonicParsing="false" onAction="#okMessage" prefHeight="38.0" prefWidth="81.0" style="-fx-background-color: #1eff00;" text="OK">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
          </children>
       </Pane>
    </children>

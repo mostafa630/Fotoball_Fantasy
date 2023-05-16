@@ -6,27 +6,42 @@
 
 <AnchorPane prefHeight="624.0" prefWidth="1116.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/register_photo.jpg');" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fantasy.RegisterController">
    <children>
-      <Label layoutX="420.0" layoutY="206.0" text="ID" />
-      <Label layoutX="400.0" layoutY="277.0" text="username" />
-      <Label layoutX="400.0" layoutY="346.0" text="password" />
-      <Label layoutX="436.0" layoutY="69.0" text="Fantasy" textFill="#4e1b25">
+      <Label layoutX="334.0" layoutY="203.0" prefHeight="23.0" prefWidth="124.0" text="National ID">
          <font>
-            <Font size="64.0" />
+            <Font name="Monospaced Bold" size="18.0" />
          </font></Label>
-      <Label layoutX="357.0" layoutY="418.0" text="confirm password" />
+      <Label layoutX="366.0" layoutY="274.0" text="username">
+         <font>
+            <Font name="Monospaced Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="366.0" layoutY="343.0" text="password">
+         <font>
+            <Font name="Monospaced Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="408.0" layoutY="69.0" text="Fantasy" textFill="#4e1b25">
+         <font>
+            <Font name="Monospaced Bold" size="64.0" />
+         </font></Label>
+      <Label layoutX="284.0" layoutY="415.0" text="confirm password">
+         <font>
+            <Font name="Monospaced Bold" size="18.0" />
+         </font></Label>
       <PasswordField fx:id="password_text" layoutX="468.0" layoutY="342.0" />
       <PasswordField fx:id="confirm_password_text" layoutX="468.0" layoutY="414.0" />
       <TextField fx:id="ID_text" layoutX="468.0" layoutY="202.0" />
       <TextField fx:id="username_text" layoutX="468.0" layoutY="273.0" />
       <Button layoutX="963.0" layoutY="7.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" style="-fx-background-color: light blue;" text="SignUP" textFill="#e1dbdb">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font></Button>
       <Button layoutX="1021.0" layoutY="7.0" mnemonicParsing="false" onAction="#openLoginForm" prefHeight="26.0" prefWidth="94.0" style="-fx-background-color: light blue;" text="Sign In" textFill="#eae3e3">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Button layoutX="500.0" layoutY="488.0" mnemonicParsing="false" onAction="#checkData" prefHeight="26.0" prefWidth="83.0" text="Submit" />
+      <Button layoutX="491.0" layoutY="479.0" mnemonicParsing="false" onAction="#checkData" prefHeight="40.0" prefWidth="103.0" text="Submit">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
       <Label fx:id="register_failed_label" layoutX="458.0" layoutY="459.0" prefHeight="20.0" prefWidth="266.0" textFill="#ff6262">
          <font>
             <Font size="14.0" />

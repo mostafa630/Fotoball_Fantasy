@@ -79,6 +79,7 @@ public final class Season {
                 setCurrentRound(currentRound);
                 setCanModify(canModify);
                 setNumOfUpdatedFootballer(numOfUpdatedFootballers);
+                System.out.println(getNumOfUpdatedFootballer());
             }
 
         } catch (SQLException ex) {

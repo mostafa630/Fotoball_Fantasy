@@ -29,6 +29,35 @@
             </children></VBox>
         <Pane layoutX="-3.0" prefHeight="566.0" prefWidth="948.0" style="-fx-background-color: #d5ddca;">
             <children>
+                <Pane fx:id="seasonPane" layoutX="194.0" layoutY="125.0" prefHeight="188.0" prefWidth="560.0" style="-fx-background-color: #ffffff;" visible="false">
+                    <children>
+                        <Label fx:id="seasonLabel" alignment="CENTER" layoutX="4.0" layoutY="48.0" prefHeight="25.0" prefWidth="553.0" text="Here The Message">
+                            <font>
+                                <Font name="Fira Code Medium" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="176.0" layoutY="23.0" prefHeight="25.0" prefWidth="208.0" text="Dear Admin">
+                            <font>
+                                <Font name="Fira Code Medium" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="195.0" layoutY="98.0" prefHeight="17.0" prefWidth="170.0" text="Thank you">
+                            <font>
+                                <Font name="Fira Code Medium" size="18.0" />
+                            </font>
+                        </Label>
+                        <Button layoutX="230.0" layoutY="129.0" mnemonicParsing="false" onAction="#okMessage" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #7bff00;" text="OK">
+                            <font>
+                                <Font name="Fira Code Medium" size="18.0" />
+                            </font>
+                        </Button>
+                        <Label alignment="CENTER" layoutX="40.0" layoutY="73.0" prefHeight="25.0" prefWidth="480.0" text=" while the current round is still running.">
+                            <font>
+                                <Font name="Fira Code Medium" size="18.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
                 <Pane fx:id="chooseFootballerPane" layoutX="255.0" layoutY="154.0" prefHeight="219.0" prefWidth="438.0" style="-fx-background-color: #bbc8aa;">
                     <children>
                         <Label alignment="CENTER" layoutX="146.0" layoutY="27.0" prefHeight="22.0" prefWidth="180.0" text="Choose Footballer" textFill="#6e3535">
@@ -55,7 +84,7 @@
                         </Label>
                   <Button layoutX="195.0" layoutY="136.0" mnemonicParsing="false" onAction="#chooseFootballer" prefHeight="25.0" prefWidth="27.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
                     </children></Pane>
-            <Pane fx:id="addPointsPane" layoutX="162.0" layoutY="20.0" prefHeight="526.0" prefWidth="624.0" style="-fx-background-color: #abbb95;" visible="false">
+            <Pane fx:id="addPointsPane" layoutX="162.0" layoutY="2.0" prefHeight="566.0" prefWidth="624.0" style="-fx-background-color: #abbb95;" visible="false">
                <children>
                   <Label fx:id="nameLabel" alignment="CENTER" layoutX="191.0" layoutY="14.0" prefHeight="25.0" prefWidth="207.0" text="Footballer Name">
                      <font>
@@ -139,7 +168,7 @@
                   <Line endX="272.0" layoutX="276.0" layoutY="371.0" startX="-216.0" />
                   <Line endX="272.0" layoutX="276.0" layoutY="411.0" startX="-216.0" />
                   <Line endX="272.0" layoutX="266.0" layoutY="478.0" startX="-216.0" />
-                  <Button alignment="CENTER" layoutX="143.0" layoutY="487.0" mnemonicParsing="false" onAction="#calculatePoints" style="-fx-background-color: #089611;" text="Calculate Points">
+                  <Button alignment="CENTER" layoutX="142.0" layoutY="487.0" mnemonicParsing="false" onAction="#calculatePoints" style="-fx-background-color: #089611;" text="Calculate Points">
                      <font>
                         <Font name="Fira Code Medium" size="14.0" />
                      </font>
@@ -149,6 +178,11 @@
                         <Font name="Fira Code Medium" size="14.0" />
                      </font>
                   </Button>
+                  <Label fx:id="checkUpdatedLabel" alignment="CENTER" layoutX="8.0" layoutY="527.0" prefHeight="25.0" prefWidth="611.0" textFill="RED">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
             <Pane fx:id="messagePane" layoutX="169.0" layoutY="250.0" prefHeight="151.0" prefWidth="611.0" style="-fx-background-color: #ffffff;" visible="false">

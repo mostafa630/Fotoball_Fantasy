@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 
@@ -25,6 +26,7 @@ import java.util.ResourceBundle;
 
 // VERY IMPORTANT NOTE --> To initialize the comboBox you must implement Initializable interface.
 public class AddNewFootballerController implements Initializable{
+
 
     @FXML
     TextField footballerName;

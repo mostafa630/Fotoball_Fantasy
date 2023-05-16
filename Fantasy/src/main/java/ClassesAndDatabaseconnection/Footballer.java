@@ -65,6 +65,10 @@ public class Footballer {
         this.totalPoints = totalPoints;
     }
 
+    public void updateCost(float plusCost){
+        this.cost+=plusCost;
+}
+
     public float getTotalPoints() {
         return totalPoints;
     }

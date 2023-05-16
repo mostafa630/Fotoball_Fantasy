@@ -53,6 +53,7 @@ public class HelloApplication extends Application {
          */
         Season.loadSeasonFromDatabase();
 
+
          /*
               connect with the database :
                 if connection completed print done on console
@@ -73,6 +74,7 @@ public class HelloApplication extends Application {
             System.out.println(team.getKey() + " team From " + Team.getTeamsLeagueHashtable().get(team.getKey())+ " with players: ");
             for(String footballerName : team.getValue()){
                 System.out.println(footballerName);
+
             }
             System.out.println("----------------------");
         }

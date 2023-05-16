@@ -23,6 +23,67 @@
             <Button mnemonicParsing="false" onAction="#openAddPointsOfTheWeekPage" prefHeight="50.0" prefWidth="176.0" style="-fx-background-color: #abbb95;" text="Add points of the week" />
             <Button layoutX="10.0" layoutY="436.0" mnemonicParsing="false" onAction="#openLoginForm" prefHeight="65.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;" text="Logout" />
          </children></VBox>
-      <Pane layoutX="-3.0" prefHeight="566.0" prefWidth="948.0" style="-fx-background-color: #d5ddca;" />
+      <Pane layoutX="-3.0" prefHeight="566.0" prefWidth="948.0" style="-fx-background-color: #d5ddca;">
+         <children>
+            <Pane fx:id="seasonPane" layoutX="194.0" layoutY="125.0" prefHeight="188.0" prefWidth="560.0" style="-fx-background-color: #ffffff;" visible="false">
+               <children>
+                  <Label fx:id="seasonLabel" alignment="CENTER" layoutX="4.0" layoutY="48.0" prefHeight="25.0" prefWidth="553.0" text="Here The Message">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="176.0" layoutY="23.0" prefHeight="25.0" prefWidth="208.0" text="Dear Admin">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="195.0" layoutY="98.0" prefHeight="17.0" prefWidth="170.0" text="Thank you">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="230.0" layoutY="129.0" mnemonicParsing="false" onAction="#okMessage" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #7bff00;" text="OK">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Button>
+                  <Label alignment="CENTER" layoutX="40.0" layoutY="73.0" prefHeight="25.0" prefWidth="480.0" text=" while the current round is still running.">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="adminPane" layoutX="126.0" layoutY="114.0" prefHeight="338.0" prefWidth="696.0" style="-fx-background-color: #abbb95;">
+               <children>
+                  <Label alignment="CENTER" layoutX="219.0" layoutY="33.0" prefHeight="17.0" prefWidth="200.0" text="Dear Admin">
+                     <font>
+                        <Font name="Fira Code Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="roundLabel" alignment="CENTER" layoutX="43.0" layoutY="85.0" prefHeight="33.0" prefWidth="553.0" text="Current round">
+                     <font>
+                        <Font name="Fira Code Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="startButton" alignment="CENTER" layoutX="213.0" layoutY="150.0" mnemonicParsing="false" onAction="#startRound" prefHeight="38.0" prefWidth="212.0" style="-fx-background-color: #93ff10;" text="Start New Round" visible="false">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="endButton" alignment="CENTER" layoutX="213.0" layoutY="150.0" mnemonicParsing="false" onAction="#endRound" style="-fx-background-color: #ff0000;" text="End Current Round" visible="false">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="messageLabel" alignment="CENTER" layoutX="8.0" layoutY="254.0" prefHeight="33.0" prefWidth="681.0">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

@@ -64,6 +64,10 @@ public class Player {
     public void setPoints(int points) {
         this.points = points;
     }
+    public void updatePoints(int footballerWeekPoints)
+    {
+        this.points+=footballerWeekPoints;
+}
 
     public void putFootballerInMyTeam(int index ,String footballerName, Boolean isPlaying){
         Pair<String , Boolean> myPair = new Pair<>(footballerName , isPlaying);

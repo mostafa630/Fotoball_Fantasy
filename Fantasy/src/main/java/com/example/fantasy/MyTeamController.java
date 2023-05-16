@@ -1,6 +1,7 @@
 package com.example.fantasy;
 
 import ClassesAndDatabaseconnection.Player;
+import ClassesAndDatabaseconnection.Season;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 
@@ -50,6 +52,8 @@ public class MyTeamController implements Initializable  {
     @FXML
     Label planDone_label;
 
+    @FXML
+    Pane seasonPane;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         int i=0;
@@ -317,6 +321,11 @@ public class MyTeamController implements Initializable  {
             i++;
         }
     }
+
+
+    public void okMessage(){
+        seasonPane.setVisible(false);
+    }
     public boolean checkPlan()
     {
         int noPlayerCounter=0 ,numOfGoalkeepers=0,numOfDefenders=0,numOfMidfilders=0 ,numOfForwards=0 ,playerCounter=0;
@@ -489,196 +498,203 @@ public class MyTeamController implements Initializable  {
     }
 
     public  void setPlan() {
-        if (checkPlan()) {
-            String currentPlayer = LoginController.getCurrenPlayer();
-            if (!checkBox_goalKeeper1.getText().equals("no player")) {
-                String footballerName = checkBox_goalKeeper1.getText();
-                if (checkBox_goalKeeper1.isSelected() == true) {
+        if(!Season.isCanModify()){
+            seasonPane.setVisible(true);
+        }else{
 
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(0, footballerName, true);
-                } else {
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(0, footballerName, false);
+            if (checkPlan()) {
+                String currentPlayer = LoginController.getCurrenPlayer();
+                if (!checkBox_goalKeeper1.getText().equals("no player")) {
+                    String footballerName = checkBox_goalKeeper1.getText();
+                    if (checkBox_goalKeeper1.isSelected() == true) {
+
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(0, footballerName, true);
+                    } else {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(0, footballerName, false);
+                    }
+
                 }
 
-            }
+                //
+                if (!checkBox_goalKeeper2.getText().equals("no player")) {
+                    String footballerName = checkBox_goalKeeper2.getText();
+                    if (checkBox_goalKeeper2.isSelected() == true) {
 
-            //
-            if (!checkBox_goalKeeper2.getText().equals("no player")) {
-                String footballerName = checkBox_goalKeeper2.getText();
-                if (checkBox_goalKeeper2.isSelected() == true) {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(1, footballerName, true);
+                    } else {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(1, footballerName, false);
+                    }
 
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(1, footballerName, true);
-                } else {
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(1, footballerName, false);
                 }
 
-            }
+                if (!checkBox_defender1.getText().equals("no player")) {
+                    String footballerName = checkBox_defender1.getText();
+                    if (checkBox_defender1.isSelected() == true) {
 
-            if (!checkBox_defender1.getText().equals("no player")) {
-                String footballerName = checkBox_defender1.getText();
-                if (checkBox_defender1.isSelected() == true) {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(2, footballerName, true);
+                    } else {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(2, footballerName, false);
+                    }
 
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(2, footballerName, true);
-                } else {
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(2, footballerName, false);
                 }
 
-            }
+                if (!checkBox_defender2.getText().equals("no player")) {
+                    String footballerName = checkBox_defender2.getText();
+                    if (checkBox_defender2.isSelected() == true) {
 
-            if (!checkBox_defender2.getText().equals("no player")) {
-                String footballerName = checkBox_defender2.getText();
-                if (checkBox_defender2.isSelected() == true) {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(3, footballerName, true);
+                    } else {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(3, footballerName, false);
+                    }
 
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(3, footballerName, true);
-                } else {
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(3, footballerName, false);
                 }
 
-            }
+                if (!checkBox_defender3.getText().equals("no player")) {
+                    String footballerName = checkBox_defender3.getText();
+                    if (checkBox_defender3.isSelected() == true) {
 
-            if (!checkBox_defender3.getText().equals("no player")) {
-                String footballerName = checkBox_defender3.getText();
-                if (checkBox_defender3.isSelected() == true) {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(4, footballerName, true);
+                    } else {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(4, footballerName, false);
+                    }
 
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(4, footballerName, true);
-                } else {
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(4, footballerName, false);
                 }
 
-            }
+                if (!checkBox_defender4.getText().equals("no player")) {
+                    String footballerName = checkBox_defender4.getText();
+                    if (checkBox_defender4.isSelected() == true) {
 
-            if (!checkBox_defender4.getText().equals("no player")) {
-                String footballerName = checkBox_defender4.getText();
-                if (checkBox_defender4.isSelected() == true) {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(5, footballerName, true);
+                    } else {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(5, footballerName, false);
+                    }
 
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(5, footballerName, true);
-                } else {
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(5, footballerName, false);
                 }
 
-            }
+                if (!checkBox_defender5.getText().equals("no player")) {
+                    String footballerName = checkBox_defender5.getText();
+                    if (checkBox_defender5.isSelected() == true) {
 
-            if (!checkBox_defender5.getText().equals("no player")) {
-                String footballerName = checkBox_defender5.getText();
-                if (checkBox_defender5.isSelected() == true) {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(6, footballerName, true);
+                    } else {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(6, footballerName, false);
+                    }
 
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(6, footballerName, true);
-                } else {
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(6, footballerName, false);
                 }
 
-            }
+                //////
+                if (!checkBox_midfilder1.getText().equals("no player")) {
+                    String footballerName = checkBox_midfilder1.getText();
+                    if (checkBox_midfilder1.isSelected() == true) {
 
-            //////
-            if (!checkBox_midfilder1.getText().equals("no player")) {
-                String footballerName = checkBox_midfilder1.getText();
-                if (checkBox_midfilder1.isSelected() == true) {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(7, footballerName, true);
+                    } else {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(7, footballerName, false);
+                    }
 
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(7, footballerName, true);
-                } else {
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(7, footballerName, false);
                 }
 
-            }
+                if (!checkBox_midfilder2.getText().equals("no player")) {
+                    String footballerName = checkBox_midfilder2.getText();
+                    if (checkBox_midfilder2.isSelected() == true) {
 
-            if (!checkBox_midfilder2.getText().equals("no player")) {
-                String footballerName = checkBox_midfilder2.getText();
-                if (checkBox_midfilder2.isSelected() == true) {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(8, footballerName, true);
+                    } else {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(8, footballerName, false);
+                    }
 
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(8, footballerName, true);
-                } else {
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(8, footballerName, false);
                 }
 
-            }
+                if (!checkBox_midfilder3.getText().equals("no player")) {
+                    String footballerName = checkBox_midfilder3.getText();
+                    if (checkBox_midfilder3.isSelected() == true) {
 
-            if (!checkBox_midfilder3.getText().equals("no player")) {
-                String footballerName = checkBox_midfilder3.getText();
-                if (checkBox_midfilder3.isSelected() == true) {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(9, footballerName, true);
+                    } else {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(9, footballerName, false);
+                    }
 
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(9, footballerName, true);
-                } else {
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(9, footballerName, false);
                 }
 
-            }
+                if (!checkBox_midfilder4.getText().equals("no player")) {
+                    String footballerName = checkBox_midfilder4.getText();
+                    if (checkBox_midfilder4.isSelected() == true) {
 
-            if (!checkBox_midfilder4.getText().equals("no player")) {
-                String footballerName = checkBox_midfilder4.getText();
-                if (checkBox_midfilder4.isSelected() == true) {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(10, footballerName, true);
+                    } else {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(10, footballerName, false);
+                    }
 
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(10, footballerName, true);
-                } else {
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(10, footballerName, false);
                 }
 
-            }
+                if (!checkBox_midfilder5.getText().equals("no player")) {
+                    String footballerName = checkBox_midfilder5.getText();
+                    if (checkBox_midfilder5.isSelected() == true) {
 
-            if (!checkBox_midfilder5.getText().equals("no player")) {
-                String footballerName = checkBox_midfilder5.getText();
-                if (checkBox_midfilder5.isSelected() == true) {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(11, footballerName, true);
+                    } else {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(11, footballerName, false);
+                    }
 
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(11, footballerName, true);
-                } else {
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(11, footballerName, false);
                 }
 
-            }
+                if (!checkBox_forward1.getText().equals("no player")) {
+                    String footballerName = checkBox_forward1.getText();
+                    if (checkBox_forward1.isSelected() == true) {
 
-            if (!checkBox_forward1.getText().equals("no player")) {
-                String footballerName = checkBox_forward1.getText();
-                if (checkBox_forward1.isSelected() == true) {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(12, footballerName, true);
+                    } else {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(12, footballerName, false);
+                    }
 
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(12, footballerName, true);
-                } else {
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(12, footballerName, false);
                 }
 
-            }
+                if (!checkBox_forward2.getText().equals("no player")) {
+                    String footballerName = checkBox_forward2.getText();
+                    if (checkBox_forward2.isSelected() == true) {
 
-            if (!checkBox_forward2.getText().equals("no player")) {
-                String footballerName = checkBox_forward2.getText();
-                if (checkBox_forward2.isSelected() == true) {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(13, footballerName, true);
+                    } else {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(13, footballerName, false);
+                    }
 
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(13, footballerName, true);
-                } else {
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(13, footballerName, false);
                 }
 
-            }
+                if (!checkBox_forward3.getText().equals("no player")) {
+                    String footballerName = checkBox_forward3.getText();
+                    if (checkBox_forward3.isSelected() == true) {
 
-            if (!checkBox_forward3.getText().equals("no player")) {
-                String footballerName = checkBox_forward3.getText();
-                if (checkBox_forward3.isSelected() == true) {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(14, footballerName, true);
+                    } else {
+                        Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(14, footballerName, false);
+                    }
 
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(14, footballerName, true);
-                } else {
-                    Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(14, footballerName, false);
                 }
+                planDone_label.setText("Plan updated successfully");
+            }
+            else
+            {
+
+                try {
+
+                    // open register form
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ruleOfPlan.fxml"));
+                    Stage stage = new Stage();
+                    Scene scene = new Scene(fxmlLoader.load(), 427, 282);
+                    stage.setTitle("Fantasy");
+                    stage.setScene(scene);
+                    stage.resizableProperty().setValue(Boolean.FALSE);
+                    stage.show();
+                } catch (Exception ex) {
+                    System.out.println("open rule of plan failed");
+                }
+                planDone_label.setText("");
 
             }
-               planDone_label.setText("Plan updated sucssefuly");
         }
-        else
-        {
 
-            try {
+    }
 
-                // open register form
-                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ruleOfPlan.fxml"));
-                Stage stage = new Stage();
-                Scene scene = new Scene(fxmlLoader.load(), 427, 282);
-                stage.setTitle("Fantasy");
-                stage.setScene(scene);
-                stage.resizableProperty().setValue(Boolean.FALSE);
-                stage.show();
-            } catch (Exception ex) {
-                System.out.println("open rule of plan failed");
-            }
-            planDone_label.setText("");
-
-        }
-        }
         public void goToMainPage (ActionEvent event)throws IOException
         {
             try {

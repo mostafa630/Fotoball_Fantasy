@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,6 +22,8 @@ import java.util.ResourceBundle;
 
 // VERY IMPORTANT NOTE --> To initialize the comboBox you must implement Initializable interface.
 public class AddNewTeamController implements Initializable {
+
+
 
 
     // Get the Team Name

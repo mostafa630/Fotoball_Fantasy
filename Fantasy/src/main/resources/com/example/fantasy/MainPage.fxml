@@ -8,7 +8,7 @@
    <children>
       <Pane layoutX="-5.0" layoutY="-2.0" prefHeight="291.0" prefWidth="371.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/Dash_Board_Photo.jpg');">
          <children>
-            <Button layoutX="-13.0" mnemonicParsing="false" onAction="#openDashBoard" prefHeight="291.0" prefWidth="385.0" style="-fx-background-color: light blue;" text="Leader-Board" textFill="#e10b0b">
+            <Button layoutX="-13.0" mnemonicParsing="false" onAction="#openDashBoard" prefHeight="291.0" prefWidth="385.0" style="-fx-background-color: light blue;" text="Leader Board" textFill="#e10b0b">
                <font>
                   <Font name="Monospaced Bold" size="36.0" />
                </font>
@@ -16,7 +16,7 @@
          </children></Pane>
       <Pane layoutX="370.0" layoutY="-2.0" prefHeight="291.0" prefWidth="402.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/My_Team_photo.jpg');">
          <children>
-            <Button layoutX="4.0" mnemonicParsing="false" onAction="#openMyTeam" prefHeight="291.0" prefWidth="395.0" style="-fx-background-color: light blue;" text="My_Team" textFill="#ff2b2b">
+            <Button layoutX="4.0" mnemonicParsing="false" onAction="#openMyTeam" prefHeight="291.0" prefWidth="395.0" style="-fx-background-color: light blue;" text="My Team" textFill="#ff2b2b">
                <font>
                   <Font name="Monospaced Bold" size="36.0" />
                </font>
@@ -25,11 +25,35 @@
       </Pane>
       <Pane layoutY="294.0" prefHeight="284.0" prefWidth="365.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/Market_photo.jpg');">
          <children>
-            <Button layoutY="1.0" mnemonicParsing="false" onAction="#goToMarket" prefHeight="284.0" prefWidth="344.0" style="-fx-background-color: light blue;" text="Market" textFill="#ff3232">
+            <Button layoutY="1.0" mnemonicParsing="false" onAction="#goToMarket" prefHeight="284.0" prefWidth="344.0" style="-fx-background-color: light blue;" text="Market" textFill="#ec0303">
                <font>
                   <Font name="Monospaced Bold" size="36.0" />
                </font>
             </Button>
+            <Pane fx:id="seasonPane" layoutX="23.0" layoutY="43.0" prefHeight="200.0" prefWidth="320.0" style="-fx-background-color: #ffffff;" visible="false">
+               <children>
+                  <Label alignment="CENTER" layoutX="4.0" layoutY="39.0" prefHeight="25.0" prefWidth="311.0" text="Sorry,You can't enter">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="4.0" layoutY="75.0" prefHeight="25.0" prefWidth="311.0" text="market untill the current">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutY="107.0" prefHeight="25.0" prefWidth="311.0" text=" round end.">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button alignment="CENTER" layoutX="115.0" layoutY="140.0" mnemonicParsing="false" onAction="#okMessage" prefHeight="38.0" prefWidth="81.0" style="-fx-background-color: #1eff00;" text="OK">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
          </children>
       </Pane>
       <Pane layoutX="372.0" layoutY="294.0" prefHeight="284.0" prefWidth="402.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/Matches_photo.jpg');">
@@ -43,7 +67,7 @@
       </Pane>
       <Pane layoutX="778.0" layoutY="-2.0" prefHeight="291.0" prefWidth="333.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/setting_photo.jpg');">
          <children>
-            <Button layoutX="32.0" layoutY="2.0" mnemonicParsing="false" onAction="#openMyProfile" prefHeight="264.0" prefWidth="293.0" style="-fx-background-color: ligth blue;" text="My_Profile" textFill="#ff3e3e">
+            <Button layoutX="32.0" layoutY="2.0" mnemonicParsing="false" onAction="#openMyProfile" prefHeight="264.0" prefWidth="293.0" style="-fx-background-color: ligth blue;" text="My Profile" textFill="#ff3e3e">
                <font>
                   <Font name="Monospaced Bold" size="36.0" />
                </font>

@@ -18,6 +18,7 @@ import javafx.util.Pair;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class MarketController implements Initializable {
@@ -197,7 +198,7 @@ public class MarketController implements Initializable {
                 float totalPoints = footballer.getTotalPoints();
                 label_of_goolkeeper_club.setText("Club : " + club);
                 label_of_goolkeeper_cost.setText("Cost : " + cost + "k");
-                label_of_goolkeeper_total_points.setText("Total Points : " + totalPoints);
+                label_of_goolkeeper_total_points.setText("Total Points : " + (int)totalPoints);
                 wrong_choice_of_goolkeeper.setText("");
             }
         } catch (Exception ex) {
@@ -231,7 +232,7 @@ public class MarketController implements Initializable {
                 float totalPoints = footballer.getTotalPoints();
                 label_of_defender_club.setText("Club : " + club);
                 label_of_defender_cost.setText("Cost : " + cost + "k");
-                label_of_defender_total_points.setText("Total Points : " + totalPoints);
+                label_of_defender_total_points.setText("Total Points : " + (int)totalPoints);
                 wrong_choice_of_defender.setText("");
             }
         } catch (Exception ex) {
@@ -266,7 +267,7 @@ public class MarketController implements Initializable {
                 float totalPoints = footballer.getTotalPoints();
                 label_of_midfilder_club.setText("Club : " + club);
                 label_of_midfilder_cost.setText("Cost : " + cost + "k");
-                label_of_midfilder_total_points.setText("Total Points : " + totalPoints);
+                label_of_midfilder_total_points.setText("Total Points : " + (int)totalPoints);
                 wrong_choice_of_midfilder.setText("");
             }
         } catch (Exception ex) {
@@ -301,7 +302,7 @@ public class MarketController implements Initializable {
                 float totalPoints = footballer.getTotalPoints();
                 label_of_forward_club.setText("Club : " + club);
                 label_of_forward_cost.setText("Cost : " + cost + "k");
-                label_of_forward_total_points.setText("Total Points : " + totalPoints);
+                label_of_forward_total_points.setText("Total Points : " + (int)totalPoints);
                 wrong_choice_of_forward.setText("");
             }
         } catch (Exception ex) {
@@ -318,6 +319,14 @@ public class MarketController implements Initializable {
     @FXML
     Label wrong_choice_of_sell;
 
+
+    public float convert(float num)
+    {
+        DecimalFormat df = new DecimalFormat("#.0");
+        String formatted = df.format(num);
+        num=Float.parseFloat(formatted);
+        return num ;
+    }
 
     public void buyGoolkeeper()
     {
@@ -344,7 +353,7 @@ public class MarketController implements Initializable {
                         goolkeeper1.setText(goolkeeper);
                         Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(0, goolkeeper, false);
                         Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() - cost);
-                        budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                        budget_label.setText("Budget = " + convert(Player.getPlayers().get(currentPlayer).getBudget() )+ "k");
                     }
                 }
                 else if (goolkeeper2.getText().equals("")) {
@@ -356,7 +365,7 @@ public class MarketController implements Initializable {
                         goolkeeper2.setText(goolkeeper);
                         Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(1, goolkeeper, false);
                         Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() - cost);
-                        budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                        budget_label.setText("Budget = " + convert(Player.getPlayers().get(currentPlayer).getBudget() )+ "k");
                     }
                 }
                 else
@@ -392,7 +401,7 @@ public class MarketController implements Initializable {
                             defender1.setText(defender);
                             Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(2, defender, false);
                             Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() - cost);
-                            budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                            budget_label.setText("Budget = " + convert(Player.getPlayers().get(currentPlayer).getBudget() ) + "k");
                         }
                     } else if (defender2.getText().equals("")) {
                         if (Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(defender, true)) || Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(defender, false)))
@@ -403,7 +412,7 @@ public class MarketController implements Initializable {
                             defender2.setText(defender);
                             Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(3, defender, false);
                             Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() - cost);
-                            budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                            budget_label.setText("Budget = " + convert(Player.getPlayers().get(currentPlayer).getBudget() ) + "k");
                         }
                     } else if (defender3.getText().equals("")) {
                         if (Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(defender, true)) || Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(defender, false)))
@@ -414,7 +423,7 @@ public class MarketController implements Initializable {
                             defender3.setText(defender);
                             Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(4, defender, false);
                             Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() - cost);
-                            budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                            budget_label.setText("Budget = " + convert(Player.getPlayers().get(currentPlayer).getBudget() ) + "k");
                         }
                     } else if (defender4.getText().equals("")) {
                         if (Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(defender, true)) || Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(defender, false)))
@@ -425,7 +434,7 @@ public class MarketController implements Initializable {
                             defender4.setText(defender);
                             Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(5, defender, false);
                             Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() - cost);
-                            budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                            budget_label.setText("Budget = " + convert(Player.getPlayers().get(currentPlayer).getBudget() ) + "k");
                         }
                     } else if (defender5.getText().equals("")) {
                         if (Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(defender, true)) || Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(defender, false)))
@@ -436,7 +445,7 @@ public class MarketController implements Initializable {
                             defender5.setText(defender);
                             Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(6, defender, false);
                             Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() - cost);
-                            budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                            budget_label.setText("Budget = " + convert(Player.getPlayers().get(currentPlayer).getBudget() )+ "k");
                         }
                     } else
                         wrong_choice_of_defender.setText("sell a defender first");
@@ -473,7 +482,7 @@ public class MarketController implements Initializable {
                             midfilder1.setText(midfilder);
                             Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(7, midfilder, false);
                             Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() - cost);
-                            budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                            budget_label.setText("Budget = " + convert(Player.getPlayers().get(currentPlayer).getBudget() ) + "k");
                         }
                     } else if (midfilder2.getText().equals("")) {
                         if (Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(midfilder, true)) || Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(midfilder, false)))
@@ -484,7 +493,7 @@ public class MarketController implements Initializable {
                             midfilder2.setText(midfilder);
                             Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(8, midfilder, false);
                             Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() - cost);
-                            budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                            budget_label.setText("Budget = " +convert(Player.getPlayers().get(currentPlayer).getBudget() ) + "k");
                         }
                     } else if (midfilder3.getText().equals("")) {
                         if (Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(midfilder, true)) || Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(midfilder, false)))
@@ -495,7 +504,7 @@ public class MarketController implements Initializable {
                             midfilder3.setText(midfilder);
                             Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(9, midfilder, false);
                             Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() - cost);
-                            budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                            budget_label.setText("Budget = " + convert(Player.getPlayers().get(currentPlayer).getBudget() ) + "k");
                         }
                     } else if (midfilder4.getText().equals("")) {
                         if (Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(midfilder, true)) || Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(midfilder, false)))
@@ -506,7 +515,7 @@ public class MarketController implements Initializable {
                             midfilder4.setText(midfilder);
                             Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(10, midfilder, false);
                             Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() - cost);
-                            budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                            budget_label.setText("Budget = " + convert(Player.getPlayers().get(currentPlayer).getBudget() )+ "k");
                         }
                     } else if (midfilder5.getText().equals("")) {
                         if (Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(midfilder, true)) || Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(midfilder, false)))
@@ -517,7 +526,7 @@ public class MarketController implements Initializable {
                             midfilder5.setText(midfilder);
                             Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(11, midfilder, false);
                             Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() - cost);
-                            budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                            budget_label.setText("Budget = " + convert(Player.getPlayers().get(currentPlayer).getBudget() ) + "k");
                         }
                     } else
                         wrong_choice_of_midfilder.setText("sell a defender first");
@@ -554,7 +563,7 @@ public class MarketController implements Initializable {
                             forward1.setText(forward);
                             Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(12, forward, false);
                             Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() - cost);
-                            budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                            budget_label.setText("Budget = " + convert(Player.getPlayers().get(currentPlayer).getBudget() ) + "k");
                         }
                     } else if (forward2.getText().equals("")) {
                         if (Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(forward, true)) || Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(forward, false)))
@@ -565,7 +574,7 @@ public class MarketController implements Initializable {
                             forward2.setText(forward);
                             Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(13, forward, false);
                             Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() - cost);
-                            budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                            budget_label.setText("Budget = " + convert(Player.getPlayers().get(currentPlayer).getBudget() )+ "k");
                         }
                     } else if (forward3.getText().equals("")) {
                         if (Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(forward, true)) || Player.getPlayers().get(currentPlayer).myTeam.contains(new Pair<>(forward, false)))
@@ -576,7 +585,7 @@ public class MarketController implements Initializable {
                             forward3.setText(forward);
                             Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(14, forward, false);
                             Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() - cost);
-                            budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                            budget_label.setText("Budget = " + convert(Player.getPlayers().get(currentPlayer).getBudget() ) + "k");
                         }
                     } else
                         wrong_choice_of_forward.setText("sell a forward first");
@@ -603,7 +612,7 @@ public class MarketController implements Initializable {
                 float totalPoints = footballer.getTotalPoints();
                 label_of_sell_club.setText("Club : " + club);
                 label_of_sell_cost.setText("Cost : " + cost + "k");
-                label_of_sell_total_points.setText("Total Points : " + totalPoints);
+                label_of_sell_total_points.setText("Total Points : " + (int)totalPoints);
                 wrong_choice_of_sell.setText("");
             }
         } catch (Exception ex) {
@@ -631,7 +640,7 @@ public class MarketController implements Initializable {
                 Player.getPlayers().get(currentPlayer).putFootballerInMyTeam(index, "null", false);
                 float cost = Footballer.getFootballers().get(soldFootballer).getCost();
                 Player.getPlayers().get(currentPlayer).setBudget(Player.getPlayers().get(currentPlayer).getBudget() + cost);
-                budget_label.setText("Budget = " + Player.getPlayers().get(currentPlayer).getBudget() + "k");
+                budget_label.setText("Budget = " + convert(Player.getPlayers().get(currentPlayer).getBudget() ) + "k");
                 sellCombobox.getItems().remove(soldFootballer);
                 if (index == 0)
                     goolkeeper1.setText("");

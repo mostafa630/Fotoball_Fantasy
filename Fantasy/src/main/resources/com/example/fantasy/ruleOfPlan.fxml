@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="281.0" prefWidth="426.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fantasy.RuleOfPlanController">
    <children>
-      <Label layoutX="61.0" layoutY="21.0" text="Rule to set your plan" textFill="#ff2b2b">
+      <Label layoutX="56.0" layoutY="21.0" prefHeight="54.0" prefWidth="349.0" text="Rules to set your plan" textFill="#ff2b2b">
          <font>
             <Font size="36.0" />
          </font>
@@ -16,27 +16,27 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="89.0" layoutY="103.0" prefHeight="18.0" prefWidth="326.0" text="2-choose only one goal keeper">
+      <Label layoutX="89.0" layoutY="103.0" prefHeight="18.0" prefWidth="326.0" text="2-Choose only one goalkeeper">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="89.0" layoutY="129.0" prefHeight="18.0" prefWidth="326.0" text="3-choose from 3  to 4 defenders">
+      <Label layoutX="89.0" layoutY="129.0" prefHeight="18.0" prefWidth="326.0" text="3-Choose from 3  to 4 defenders">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="89.0" layoutY="160.0" prefHeight="18.0" prefWidth="326.0" text="4-choose from 3  to 4 midfilders">
+      <Label layoutX="89.0" layoutY="160.0" prefHeight="18.0" prefWidth="326.0" text="4-Choose from 3  to 4 midfielders">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="89.0" layoutY="191.0" prefHeight="18.0" prefWidth="326.0" text="5-choose from 2  to 3 forwards">
+      <Label layoutX="89.0" layoutY="191.0" prefHeight="18.0" prefWidth="326.0" text="5-Choose from 2  to 3 forwards">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="132.0" layoutY="238.0" prefHeight="20.0" prefWidth="162.0" text="please follow these rules" textFill="RED">
+      <Label layoutX="132.0" layoutY="238.0" prefHeight="20.0" prefWidth="162.0" text="Please follow these rules" textFill="RED">
          <font>
             <Font size="14.0" />
          </font>

@@ -1,6 +1,7 @@
 package com.example.fantasy;
 
 import ClassesAndDatabaseconnection.Footballer;
+import ClassesAndDatabaseconnection.Season;
 import ClassesAndDatabaseconnection.Team;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,6 +23,11 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 public class AddPointsOfTheWeekController implements Initializable {
+
+    @FXML
+    Pane seasonPane;
+    @FXML
+    Label seasonLabel;
 
     // For Choose Footballer Pane
     @FXML
@@ -64,6 +70,12 @@ public class AddPointsOfTheWeekController implements Initializable {
 
     @FXML
     ComboBox<Integer> penaltySavesComboBox;
+
+
+    //
+    @FXML
+    Label checkUpdatedLabel;
+    //
 
     //
 
@@ -185,6 +197,12 @@ public class AddPointsOfTheWeekController implements Initializable {
             //  Set Visible of The messagePane to false
             messagePane.setVisible(false);
 
+            //
+            if(Footballer.getFootballers().get(selectedFootballer).isUpdated()){
+                checkUpdatedLabel.setText(selectedFootballer + " is updated before with " + (int)Footballer.getFootballers().get(selectedFootballer).getPointsThisWeek() +" points.");
+            }
+            //
+
         }else{
             chooseMessageLabel.setText("Choose Footballer First!!");
         }
@@ -221,6 +239,10 @@ public class AddPointsOfTheWeekController implements Initializable {
 
         Footballer.getFootballers().get(selectedFootballer).setPointsThisWeek(points);
 
+        if(!Footballer.getFootballers().get(selectedFootballer).isUpdated()){
+            Footballer.getFootballers().get(selectedFootballer).setUpdated(true);
+            Season.setNumOfUpdatedFootballer(Season.getNumOfUpdatedFootballer() + 1);
+        }
         //  Set Visible of The addPointsPane to false
         addPointsPane.setVisible(false);
 
@@ -262,42 +284,6 @@ public class AddPointsOfTheWeekController implements Initializable {
     }
 
     @FXML
-    // this function to open addNewTeam page if we pressed Add New Team button
-    public void openAddNewTeamPage(ActionEvent event) throws IOException{
-
-        try{
-            // open Add New Team page
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AddNewTeam.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(fxmlLoader.load(),1108,563);
-            stage.setTitle("Fantasy");
-            stage.setScene(scene);
-            stage.resizableProperty().setValue(Boolean.FALSE);
-            stage.show();
-        }catch (Exception ex){
-            System.out.println("Going to Add New Team page failed");
-        }
-    }
-
-    @FXML
-    // this function to open Add New Footballer Page if we pressed Add New Footballer button
-    public void openAddNewFootballerPage(ActionEvent event) throws IOException {
-        try{
-            // open Add New Team page
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AddNewFootballer.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(fxmlLoader.load(),1108,563);
-            stage.setTitle("Fantasy");
-            stage.setScene(scene);
-            stage.resizableProperty().setValue(Boolean.FALSE);
-            stage.show();
-        }catch (Exception ex){
-            System.out.println("Going to Add New Footballer page failed");
-        }
-
-    }
-
-    @FXML
     // this function to open Admin Page if we pressed Admin Photo
     public void openAdminPage(ActionEvent event) throws IOException {
         try {
@@ -315,18 +301,82 @@ public class AddPointsOfTheWeekController implements Initializable {
         }
 
     }
+
+    @FXML
+    // this function to open addNewTeam page if we pressed Add New Team button
+    public void openAddNewTeamPage(ActionEvent event) throws IOException{
+
+        try{
+            if(!Season.isCanModify()) {
+                seasonPane.setVisible(true);
+                addPointsPane.setVisible(false);
+                messagePane.setVisible(false);
+                chooseFootballerPane.setVisible(false);
+                seasonLabel.setText("Please refrain from adding new teams");
+            }else{
+                // open Add New Team page
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AddNewTeam.fxml"));
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(fxmlLoader.load(),1108,563);
+                stage.setTitle("Fantasy");
+                stage.setScene(scene);
+                stage.resizableProperty().setValue(Boolean.FALSE);
+                stage.show();
+            }
+
+        }catch (Exception ex){
+            System.out.println("Going to Add New Team page failed");
+        }
+    }
+
+    @FXML
+    // this function to open Add New Footballer Page if we pressed Add New Footballer button
+    public void openAddNewFootballerPage(ActionEvent event) throws IOException {
+        try{
+            if(!Season.isCanModify()){
+                seasonPane.setVisible(true);
+                addPointsPane.setVisible(false);
+                messagePane.setVisible(false);
+                chooseFootballerPane.setVisible(false);
+
+                seasonLabel.setText("Please refrain from adding new footballers");
+            }else{
+                // open Add New Team page
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AddNewFootballer.fxml"));
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(fxmlLoader.load(),1108,563);
+                stage.setTitle("Fantasy");
+                stage.setScene(scene);
+                stage.resizableProperty().setValue(Boolean.FALSE);
+                stage.show();
+            }
+        }catch (Exception ex){
+            System.out.println("Going to Add New Footballer page failed");
+        }
+    }
+
     @FXML
     // this function to open Update Footballer Data Page if we pressed Update Footballer Data button
     public void openUpdateFootballerDataPage(ActionEvent event) throws IOException {
         try{
-            // open Add New Team page
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("updateFootballerData.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(fxmlLoader.load(),1108,563);
-            stage.setTitle("Fantasy");
-            stage.setScene(scene);
-            stage.resizableProperty().setValue(Boolean.FALSE);
-            stage.show();
+            if(!Season.isCanModify()){
+                seasonPane.setVisible(true);
+                addPointsPane.setVisible(false);
+                messagePane.setVisible(false);
+                chooseFootballerPane.setVisible(false);
+
+                seasonLabel.setText("Please refrain from updating footballer's data");
+            }else{
+                // open Add New Team page
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("updateFootballerData.fxml"));
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(fxmlLoader.load(),1108,563);
+                stage.setTitle("Fantasy");
+                stage.setScene(scene);
+                stage.resizableProperty().setValue(Boolean.FALSE);
+                stage.show();
+            }
+
         }catch (Exception ex){
             System.out.println("Going to Update Footballer page failed");
         }
@@ -336,16 +386,33 @@ public class AddPointsOfTheWeekController implements Initializable {
     // this function to open Delete Footballer Page if we pressed Delete Footballer button
     public void openDeleteFootballerPage(ActionEvent event) throws IOException {
         try{
-            // open Add New Team page
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("DeleteFootballer.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(fxmlLoader.load(),1108,563);
-            stage.setTitle("Fantasy");
-            stage.setScene(scene);
-            stage.resizableProperty().setValue(Boolean.FALSE);
-            stage.show();
+            if(!Season.isCanModify()){
+                seasonPane.setVisible(true);
+                addPointsPane.setVisible(false);
+                messagePane.setVisible(false);
+                chooseFootballerPane.setVisible(false);
+
+                seasonLabel.setText("Please refrain from deleting footballers");
+            }else{
+                // open Add New Team page
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("DeleteFootballer.fxml"));
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(fxmlLoader.load(),1108,563);
+                stage.setTitle("Fantasy");
+                stage.setScene(scene);
+                stage.resizableProperty().setValue(Boolean.FALSE);
+                stage.show();
+            }
+
         }catch (Exception ex){
             System.out.println("Going to Delete Footballer page failed");
         }
+    }
+
+    public void okMessage(){
+        seasonPane.setVisible(false);
+        addPointsPane.setVisible(false);
+        messagePane.setVisible(false);
+        chooseFootballerPane.setVisible(true);
     }
 }
