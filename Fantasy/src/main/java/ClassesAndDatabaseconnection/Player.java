@@ -15,7 +15,7 @@ public class Player {
     private int points =0;
 
     public List<Pair<String , Boolean>> myTeam = new ArrayList<>(); // contain the team of the user
-    public static Hashtable<String,Player> players = new Hashtable<>(); // contains all user of program
+    private static Hashtable<String,Player> players = new Hashtable<>(); // contains all user of program
 
     private static Hashtable<String , Boolean> playersNationalIDs = new Hashtable<>(); // contains all users' id
 
@@ -98,6 +98,12 @@ public class Player {
             myTeam.add(pair);
         }
     }
+
+    public static void deleteFromNationalIDs(String nationalID){
+        playersNationalIDs.remove(nationalID);
+    }
+
+
     /*
         save the data of the player int the database :
          first we save core data of the player (id ,username ,password ,budget ,points) in the player table

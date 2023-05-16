@@ -47,6 +47,12 @@ public class HelloApplication extends Application {
             call function in the player class that load data from database to players hashtable
          */
         Player.loadPlayersFromDatabase();
+
+        /*
+            load data of season in database:
+         */
+        Season.loadSeasonFromDatabase();
+
          /*
               connect with the database :
                 if connection completed print done on console
@@ -59,6 +65,7 @@ public class HelloApplication extends Application {
                 System.out.println("done");
 
             launch();  // launch the stage
+
 
         /*
         // just for test that Teams functions runs successfully
@@ -148,5 +155,14 @@ public class HelloApplication extends Application {
         for(Map.Entry<String , ArrayList<String>> team : Team.getTeams().entrySet()){
             Team.saveTeamsToDatabase(team.getKey());
         }
+
+        query = "DELETE FROM season";
+        con = DatabaseConnection.getConnection();
+        preparedStatement = con.prepareStatement(query);
+        preparedStatement.executeUpdate();
+
+        Season.saveToDatabase();
+
+
     }
 }

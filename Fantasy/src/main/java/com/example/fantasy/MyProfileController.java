@@ -83,11 +83,12 @@ public class MyProfileController implements Initializable {
         try {
             String userName = username_delete.getText();
             if (Player.getPlayers().get(currentPlayer).getUserName().equals(userName)) {
-                Player.players.remove(userName);
+                Player.deleteFromNationalIDs(Player.getPlayers().get(userName).getId());
+                Player.getPlayers().remove(userName);
                 // go to main page
                 try {
                     // open register form
-                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MainPage.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(fxmlLoader.load(), 1108, 563);
                     stage.setTitle("Fantasy");

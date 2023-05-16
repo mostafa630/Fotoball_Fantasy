@@ -8,9 +8,9 @@
    <children>
       <Pane layoutX="-5.0" layoutY="-2.0" prefHeight="291.0" prefWidth="371.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/Dash_Board_Photo.jpg');">
          <children>
-            <Button layoutX="-13.0" mnemonicParsing="false" onAction="#goToDashBoard" prefHeight="291.0" prefWidth="385.0" style="-fx-background-color: light blue;" text="Dash-Board" textFill="#e10b0b">
+            <Button layoutX="-13.0" mnemonicParsing="false" onAction="#openDashBoard" prefHeight="291.0" prefWidth="385.0" style="-fx-background-color: light blue;" text="Leader-Board" textFill="#e10b0b">
                <font>
-                  <Font size="36.0" />
+                  <Font name="Monospaced Bold" size="36.0" />
                </font>
             </Button>
          </children></Pane>
@@ -18,7 +18,7 @@
          <children>
             <Button layoutX="4.0" mnemonicParsing="false" onAction="#openMyTeam" prefHeight="291.0" prefWidth="395.0" style="-fx-background-color: light blue;" text="My_Team" textFill="#ff2b2b">
                <font>
-                  <Font size="36.0" />
+                  <Font name="Monospaced Bold" size="36.0" />
                </font>
             </Button>
          </children>
@@ -27,25 +27,25 @@
          <children>
             <Button layoutY="1.0" mnemonicParsing="false" onAction="#goToMarket" prefHeight="284.0" prefWidth="344.0" style="-fx-background-color: light blue;" text="Market" textFill="#ff3232">
                <font>
-                  <Font size="36.0" />
+                  <Font name="Monospaced Bold" size="36.0" />
                </font>
             </Button>
          </children>
       </Pane>
       <Pane layoutX="372.0" layoutY="294.0" prefHeight="284.0" prefWidth="402.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/Matches_photo.jpg');">
          <children>
-            <Button layoutX="3.0" mnemonicParsing="false" onAction="#goToRules" prefHeight="284.0" prefWidth="395.0" style="-fx-background-color: light blue;" text="Rules" textFill="#ff2b2b">
+            <Button layoutX="3.0" mnemonicParsing="false" onAction="#openRules" prefHeight="284.0" prefWidth="395.0" style="-fx-background-color: light blue;" text="Rules" textFill="#ff2b2b">
                <font>
-                  <Font size="36.0" />
+                  <Font name="Monospaced Bold" size="36.0" />
                </font>
             </Button>
          </children>
       </Pane>
       <Pane layoutX="778.0" layoutY="-2.0" prefHeight="291.0" prefWidth="333.0" style="-fx-background-image: url('file:C:/Users/Admin/Desktop/Fotoball_Fantasy/Fantasy/fantasy.photos/setting_photo.jpg');">
          <children>
-            <Button layoutX="32.0" layoutY="2.0" mnemonicParsing="false" onAction="#goToMyProfile" prefHeight="264.0" prefWidth="293.0" style="-fx-background-color: ligth blue;" text="My_Profile" textFill="#ff3e3e">
+            <Button layoutX="32.0" layoutY="2.0" mnemonicParsing="false" onAction="#openMyProfile" prefHeight="264.0" prefWidth="293.0" style="-fx-background-color: ligth blue;" text="My_Profile" textFill="#ff3e3e">
                <font>
-                  <Font size="36.0" />
+                  <Font name="Monospaced Bold" size="36.0" />
                </font>
             </Button>
          </children></Pane>
@@ -53,7 +53,7 @@
          <children>
             <Button layoutX="-2.0" layoutY="1.0" mnemonicParsing="false" onAction="#goToLoginForm" prefHeight="284.0" prefWidth="334.0" style="-fx-background-color: light blue;" text="Logout" textFill="#ff1e1e">
                <font>
-                  <Font size="36.0" />
+                  <Font name="Monospaced Bold" size="36.0" />
                </font>
             </Button>
          </children></Pane>

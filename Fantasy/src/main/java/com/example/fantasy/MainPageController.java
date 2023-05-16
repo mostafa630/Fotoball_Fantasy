@@ -63,4 +63,58 @@ public class MainPageController {
 
     }
 
+
+    public void openRules(ActionEvent event) throws IOException {
+        try {
+            // open my team form
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Rules.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(), 1108, 563);
+            stage.setTitle("Fantasy");
+            stage.setScene(scene);
+            stage.resizableProperty().setValue(Boolean.FALSE);
+            stage.show();
+        } catch (Exception ex) {
+            System.out.println("going to my team form failed");
+        }
+
+    }
+
+
+
+    public void openDashBoard(ActionEvent event) throws IOException {
+        try {
+            // open my team form
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("DashBoard.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(), 1108, 563);
+            stage.setTitle("Fantasy");
+            stage.setScene(scene);
+            stage.resizableProperty().setValue(Boolean.FALSE);
+            stage.show();
+        } catch (Exception ex) {
+            System.out.println("going to my team form failed");
+        }
+
+    }
+
+
+
+
+    public void openMyProfile(ActionEvent event) throws IOException {
+        try {
+            // open my team form
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("myProfile.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(), 1108, 563);
+            stage.setTitle("Fantasy");
+            stage.setScene(scene);
+            stage.resizableProperty().setValue(Boolean.FALSE);
+            stage.show();
+        } catch (Exception ex) {
+            System.out.println("going to my team form failed");
+        }
+
+    }
+
 }
