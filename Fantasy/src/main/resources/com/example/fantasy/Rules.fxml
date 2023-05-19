@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="563.0" prefWidth="1108.0" style="-fx-background-color: #f0ccd6;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fantasy.RulesController">
+   <children>
+      <Label layoutX="405.0" prefHeight="70.0" prefWidth="297.0" text="Fanatsy Rules">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <TextArea editable="false" layoutX="29.0" layoutY="70.0" prefHeight="462.0" prefWidth="1050.0" text="1-Squad Size&#10;To join the game select a fantasy football squad of 15 players, consisting of:&#10;-Goalkeepers&#10;-Defenders&#10;-Midfielders&#10;-Forwards&#10;----------------------------------------------------------------------------------------------------------------&#10;2-Budget&#10;The total value of your initial squad must not exceed £100k&#10;-----------------------------------------------------------------------------------------------------------------&#10;3-Choosing Your Starting 11&#10;&#10;-From your 15 player squad, select 11 players by the Gameweek deadline to form your team.&#10;&#10;-All your points for the Gameweek will be scored by these 11 players,&#10;  however if one or more doesn't play they may be automatically substituted.&#10;&#10;-Your team can play in any formation providing that 1 goalkeeper, at least 3 defenders &#10;  and at least 1 forward are selected at all times.&#10;--------------------------------------------------------------------------------------------------------------------&#10;&#10;4-Selecting a Captain and a Vice-Captain&#10; -From your starting 11 you nominate a captain and a vice-captain. Your captain's score will be doubled.&#10;&#10; -If your captain plays 0 minutes in the Gameweek, the captain will be changed to the vice-captain.&#10;&#10; -If both captain and vice-captain play 0 minutes in a Gameweek, then no player's score will be doubled.&#10;-----------------------------------------------------------------------------------------------------------------------&#10;5-Transfers&#10;&#10;-After selecting your squad you can buy and sell players in the transfer market. &#10;  Unlimited transfers can be made at no cost until your first deadline.&#10;&#10;-After your first deadline you will receive 1 free transfer each Gameweek. &#10;  Each additional transfer you make in the same Gameweek will deduct 4 points from your total score (Classic scoring)&#10;  and match score (Head-to-Head scoring) at the start of the next Gameweek.&#10;&#10;-If you do not use your free transfer, you are able to make an additional free transfer the following Gameweek.&#10;  If you do not use this saved free transfer in the following Gameweek, it will be carried over until you do.&#10;  You can never have more than 1 saved transfer.&#10;&#10;-Unlimited free transfers can also be made between Sat 12 Nov 13:00 and Mon 26 Dec 13:00 &#10;   when the Premier League season has been adjusted to accommodate the FIFA World Cup Qatar 2022.&#10;&#10;-At other times you are limited to 20 transfers in any single Gameweek.&#10;-------------------------------------------------------------------------------------------------------------------------------&#10;6-Player Prices&#10;-Player prices change during the season dependent on the popularity of the player in the transfer market.&#10;  Player prices do not change until the season starts.&#10;&#10;-Player prices will also be frozen during the FIFA World Cup 2022.&#10;  The last set of price changes will occur on 13 November as a result of transfers that occurred ahead of the GW16 deadline&#10;  at 11:00 GMT on 12 November. Any transfers made after the deadline will not affect player prices.&#10;&#10;-The price shown on your transfers page is a player's selling price. &#10;  This selling price may be less than the player's current purchase price as a sell-on fee of 50% &#10;  (rounded up to the nearest £0.1m) will be applied on any profits made on that player.">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="933.0" layoutY="70.0" mnemonicParsing="false" onAction="#goToMainPage" prefHeight="64.0" prefWidth="127.0" style="-fx-background-color: #f5dde3;" text="Main Page">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

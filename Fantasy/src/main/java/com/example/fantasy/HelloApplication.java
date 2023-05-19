@@ -47,6 +47,13 @@ public class HelloApplication extends Application {
             call function in the player class that load data from database to players hashtable
          */
         Player.loadPlayersFromDatabase();
+
+        /*
+            load data of season in database:
+         */
+        Season.loadSeasonFromDatabase();
+
+
          /*
               connect with the database :
                 if connection completed print done on console
@@ -61,52 +68,51 @@ public class HelloApplication extends Application {
             launch();  // launch the stage
 
 
-
-
+        /*
         // just for test that Teams functions runs successfully
         for(Map.Entry<String , ArrayList<String>> team : Team.getTeams().entrySet()){
             System.out.println(team.getKey() + " team From " + Team.getTeamsLeagueHashtable().get(team.getKey())+ " with players: ");
             for(String footballerName : team.getValue()){
                 System.out.println(footballerName);
+
             }
             System.out.println("----------------------");
         }
         // Done
-
+        */
 
         /*
-        // test the team name validation
+        // test the team name validation and footballer Name Validation
 
-        System.out.print("Manchester United ");
-        if(Validation.teamNameValidation("Manchester United")){
+        System.out.print("Manchester  United ");
+        if(Validation.teamNameValidation("Manchester  United")){
             System.out.println("is valid team name");
         }else {
             System.out.println("is not valid team name");
         }
 
-        System.out.print("liverpool ");
-        if(Validation.teamNameValidation("liverpool")){
-            System.out.println("is valid team name");
+        System.out.print("Farouk");
+        if(Validation.footballerNameValidation("Faro+uk")){
+            System.out.println("is valid footballer name");
         }else {
-            System.out.println("is not valid team name");
+            System.out.println("is not valid footballer name");
         }
 
         System.out.print("Paris san Germain ");
-        if(Validation.teamNameValidation("Paris san Germain")){
+        if(Validation.teamNameValidation("Paris Sa1n Germain")){
             System.out.println("is valid team name");
         }else {
             System.out.println("is not valid team name");
         }
         System.out.print("Paris San Germain ");
-        if(Validation.teamNameValidation("Paris San Germain")){
+        if(Validation.footballerNameValidation("ParisSan Germain")){
             System.out.println("is valid team name");
         }else {
             System.out.println("is not valid team name");
         }
 
         // Done
-         */
-
+        */
 
          /*
            save data to player tale in ata base :
@@ -123,7 +129,6 @@ public class HelloApplication extends Application {
             for (Map.Entry<String, Player> player : Player.getPlayers().entrySet()) {
                 player.getValue().saveToDatebase(player.getValue());
             }
-
           /*
            save data to Footballer table in ata base :
             1-we remove all records from database
@@ -136,9 +141,6 @@ public class HelloApplication extends Application {
             for (Map.Entry<String, Footballer> footballer : Footballer.getFootballers().entrySet()) {
                 footballer.getValue().saveToDatebase(footballer.getValue());
             }
-
-
-
         /*
             save data to fantasy_teams table in database :
             1-we remove all records from fantasy_teams table
@@ -152,10 +154,17 @@ public class HelloApplication extends Application {
         preparedStatement.executeUpdate();
 
         //
-
         for(Map.Entry<String , ArrayList<String>> team : Team.getTeams().entrySet()){
             Team.saveTeamsToDatabase(team.getKey());
         }
+
+        query = "DELETE FROM season";
+        con = DatabaseConnection.getConnection();
+        preparedStatement = con.prepareStatement(query);
+        preparedStatement.executeUpdate();
+
+        Season.saveToDatabase();
+
 
     }
 }

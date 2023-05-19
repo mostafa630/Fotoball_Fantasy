@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,6 +22,8 @@ import java.util.ResourceBundle;
 
 // VERY IMPORTANT NOTE --> To initialize the comboBox you must implement Initializable interface.
 public class AddNewTeamController implements Initializable {
+
+
 
 
     // Get the Team Name
@@ -44,15 +47,33 @@ public class AddNewTeamController implements Initializable {
     Label messageLabel;
 
     public void addNewTeam(){
-        String newTeamName = teamName.getText();
-        String newTeamLeague = leagueComboBox.getSelectionModel().getSelectedItem();
+        String newTeamName = new String(teamName.getText());
+
+        /*
+         to handle the choice of the league's selection, we have two cases:
+         1- if the admin does not touch the ComboBox at all:
+            This will cause runtime exception as we create new String without any value
+         2- if the admin click on the ComboBox but does not choose any league
+
+         */
+
+        String newTeamLeague;
+        try {
+            newTeamLeague= new String(leagueComboBox.getSelectionModel().getSelectedItem());
+        }catch (Exception exception){
+            newTeamLeague = "";
+        }
 
         if(Validation.teamNameValidation(newTeamName)){
             // check if this team is existed before or not
             if(!Team.getTeams().containsKey(newTeamName)){
-                Team.putTeamInTeams(newTeamName);
-                Team.putTeamsInTeamsLeagueHashtable(newTeamName , newTeamLeague);
-                messageLabel.setText("Done!!");
+                if(newTeamLeague.equals("")){
+                    messageLabel.setText("Choose Team League First");
+                }else {
+                    Team.putTeamInTeams(newTeamName);
+                    Team.putTeamsInTeamsLeagueHashtable(newTeamName, newTeamLeague);
+                    messageLabel.setText("Done!!");
+                }
             }else{
                 messageLabel.setText("This Team is already exist");
             }
@@ -123,5 +144,55 @@ public class AddNewTeamController implements Initializable {
     }
 
 
+    @FXML
+    // this function to open Update Footballer Data Page if we pressed Update Footballer Data button
+    public void openUpdateFootballerDataPage(ActionEvent event) throws IOException {
+        try{
+            // open Add New Team page
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("updateFootballerData.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(),1108,563);
+            stage.setTitle("Fantasy");
+            stage.setScene(scene);
+            stage.resizableProperty().setValue(Boolean.FALSE);
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Going to Update Footballer page failed");
+        }
+    }
+
+    @FXML
+    // this function to open Delete Footballer Page if we pressed Delete Footballer button
+    public void openDeleteFootballerPage(ActionEvent event) throws IOException {
+        try{
+            // open Add New Team page
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("DeleteFootballer.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(),1108,563);
+            stage.setTitle("Fantasy");
+            stage.setScene(scene);
+            stage.resizableProperty().setValue(Boolean.FALSE);
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Going to Delete Footballer page failed");
+        }
+    }
+
+    @FXML
+    // this function to open Add Points Of The Week Page if we pressed Add Points Of The Week button
+    public void openAddPointsOfTheWeekPage(ActionEvent event) throws IOException {
+        try{
+            // open Add New Team page
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AddPointsOfTheWeek.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(),1108,563);
+            stage.setTitle("Fantasy");
+            stage.setScene(scene);
+            stage.resizableProperty().setValue(Boolean.FALSE);
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Going to Add Points Of The Week page failed");
+        }
+    }
 
 }

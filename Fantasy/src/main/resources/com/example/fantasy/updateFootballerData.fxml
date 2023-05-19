@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fantasy.UpdateFootballerDataController">
+    <children>
+        <VBox layoutX="942.0" prefHeight="566.0" prefWidth="170.0" style="-fx-background-color: #b0e0e6;">
+            <children>
+                <Pane prefHeight="177.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;">
+                    <children>
+                        <Pane layoutX="29.0" layoutY="20.0" prefHeight="132.0" prefWidth="112.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/admin4.png');" />
+                    </children></Pane>
+                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#openAdminPage" prefHeight="70.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;" text="Home Page">
+                    <font>
+                        <Font size="18.0" />
+                    </font></Button>
+                <Button mnemonicParsing="false" onAction="#openAddNewFootballerPage" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #abbb95;" text="Add New Footballer" />
+                <Button layoutX="10.0" layoutY="59.0" mnemonicParsing="false" onAction="#openDeleteFootballerPage" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Delete Footballer" />
+                <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #abbb95;" text="Update Footballer Data" textFill="#ce0e0e">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+                <Button layoutX="10.0" layoutY="146.0" mnemonicParsing="false" onAction="#openAddNewTeamPage" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #bbc8aa;" text="Add New Team" />
+                <Button mnemonicParsing="false" onAction="#openAddPointsOfTheWeekPage" prefHeight="50.0" prefWidth="176.0" style="-fx-background-color: #abbb95;" text="Add points of the week" />
+                <Button layoutX="10.0" layoutY="436.0" mnemonicParsing="false" onAction="#openLoginForm" prefHeight="65.0" prefWidth="170.0" style="-fx-background-color: #bbc8aa;" text="Logout" />
+            </children></VBox>
+        <Pane layoutX="-3.0" prefHeight="566.0" prefWidth="948.0" style="-fx-background-color: #d5ddca;">
+         <children>
+            <Pane fx:id="chooseFootballerPane" layoutX="255.0" layoutY="154.0" prefHeight="219.0" prefWidth="438.0" style="-fx-background-color: #bbc8aa;">
+               <children>
+                  <Label alignment="CENTER" layoutX="146.0" layoutY="27.0" prefHeight="22.0" prefWidth="180.0" text="Choose Footballer" textFill="#6e3535">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="chooseTeamComboBox" layoutX="14.0" layoutY="97.0" prefWidth="150.0" promptText="Choose Team" />
+                  <ComboBox fx:id="chooseFootballerComboBox" layoutX="274.0" layoutY="97.0" prefWidth="150.0" promptText="Choose Footballer" />
+                  <Label layoutX="65.0" layoutY="71.0" text="Team" textFill="#724040">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="310.0" layoutY="71.0" text="Fotballer" textFill="#724040">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="chooseMessageLabel" alignment="CENTER" layoutX="119.0" layoutY="173.0" prefHeight="22.0" prefWidth="235.0">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="212.0" layoutY="132.0" mnemonicParsing="false" onAction="#chooseFootballer" prefHeight="25.0" prefWidth="28.0" style="-fx-background-image: url('file:C:/Users/Admin/Downloads/search.png');" text="Button" />
+               </children></Pane>
+            <Pane fx:id="updateFootballerPane" layoutX="234.0" layoutY="83.0" prefHeight="400.0" prefWidth="480.0" style="-fx-background-color: #bbc8aa;" visible="false">
+               <children>
+                  <Label fx:id="chosenFootballerLabel" alignment="CENTER" layoutX="128.0" layoutY="33.0" prefHeight="34.0" prefWidth="256.0" text="Footballer Name">
+                     <font>
+                        <Font name="Fira Code Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="99.0" layoutY="124.0" prefHeight="34.0" prefWidth="57.0" text="Team">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="89.0" layoutY="178.0" prefHeight="34.0" prefWidth="78.0" text="Price">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button alignment="CENTER" layoutX="255.0" layoutY="249.0" mnemonicParsing="false" onAction="#updateFootballerData" style="-fx-background-color: #10ce30;" text="Update" textFill="#2b0202">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" layoutX="331.0" layoutY="249.0" mnemonicParsing="false" onAction="#cancelUpdateProcess" style="-fx-background-color: #d91d1d;" text="Cancel" textFill="#1f0303">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="updateMessageLabel" alignment="CENTER" layoutX="202.0" layoutY="304.0" prefHeight="34.0" prefWidth="256.0">
+                     <font>
+                        <Font name="Fira Code Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="updateFootballerTeamComboBox" layoutX="255.0" layoutY="129.0" prefWidth="150.0" />
+                  <TextField fx:id="updateFootballerPrice" layoutX="256.0" layoutY="185.0" prefHeight="29.0" prefWidth="149.0">
+                     <font>
+                        <Font name="Fira Code Medium" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="positionLabel" alignment="CENTER" layoutX="127.0" layoutY="73.0" prefHeight="34.0" prefWidth="256.0" text="Position">
+                     <font>
+                        <Font name="Fira Code Medium" size="24.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+         </children></Pane>
+    </children>
+
+</AnchorPane>

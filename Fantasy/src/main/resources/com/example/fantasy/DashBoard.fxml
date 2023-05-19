@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="563.0" prefWidth="1108.0" style="-fx-background-color: #f0ccd6;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fantasy.DashBoardController">
+   <children>
+      <TextArea fx:id="txtArea" editable="false" layoutX="47.0" layoutY="136.0" prefHeight="394.0" prefWidth="1025.0" style="-fx-background-color: #f0ead6;">
+         <font>
+            <Font size="18.0" />
+         </font></TextArea>
+      <Label alignment="CENTER" layoutX="346.0" layoutY="19.0" prefHeight="70.0" prefWidth="356.0" text="Leader Board">
+         <font>
+            <Font name="Monospaced Bold" size="48.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="79.0" layoutY="90.0" prefHeight="44.0" prefWidth="199.0" text="Username">
+         <font>
+            <Font name="Monospaced Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="738.0" layoutY="90.0" prefHeight="44.0" prefWidth="199.0" text="points">
+         <font>
+            <Font name="Monospaced Bold" size="36.0" />
+         </font>
+      </Label>
+      <Button layoutX="959.0" layoutY="136.0" mnemonicParsing="false" onAction="#goToMainPage" prefHeight="70.0" prefWidth="113.0" style="-fx-background-color: #f5dde3;" text="Main Page">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

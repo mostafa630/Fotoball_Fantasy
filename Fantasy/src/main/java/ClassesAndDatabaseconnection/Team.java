@@ -20,11 +20,9 @@ public class Team {
 
     private static Hashtable<String , String> teamsLeagueHashtable = new Hashtable<>();
 
-
     // key --> String of team name
     // value --> for each team the value is list of its players
     private static Hashtable<String , ArrayList<String>> teams = new Hashtable<>();
-
 
     public static Hashtable<String, String> getTeamsLeagueHashtable() {
         return teamsLeagueHashtable;
@@ -131,5 +129,4 @@ public class Team {
             }
         }
     }
-
 }

@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 
@@ -25,6 +26,7 @@ import java.util.ResourceBundle;
 
 // VERY IMPORTANT NOTE --> To initialize the comboBox you must implement Initializable interface.
 public class AddNewFootballerController implements Initializable{
+
 
     @FXML
     TextField footballerName;
@@ -45,9 +47,10 @@ public class AddNewFootballerController implements Initializable{
     // function to fill ComboBox with data
     public void initialize (URL url , ResourceBundle resourceBundle)
     {
-
+        // fill position comboBox
         ObservableList<String> positionsList = FXCollections.observableArrayList("Defender","Midfielder","Goalkeeper","Forward");
         positionComboBox.setItems(positionsList);
+
 
         ObservableList<String> teamsList = FXCollections.observableArrayList();
         // now we will fill the teams list with teams' name from:
@@ -65,9 +68,30 @@ public class AddNewFootballerController implements Initializable{
 
     public void addNewFootballer(){
         String newFootballerName = footballerName.getText();
-        String newFootballerTeam = teamComboBox.getSelectionModel().getSelectedItem();
-        String newFootballerPosition = positionComboBox.getSelectionModel().getSelectedItem();
+        /*
+         to handle the choice of the ComboBox selection, we have two cases:
+         1- if the admin does not touch the ComboBox at all:
+            This will cause runtime exception as we create new String without any value
+         2- if the admin click on the ComboBox but does not choose anything
+
+         */
+        String newFootballerTeam;
+
+        try{
+            newFootballerTeam = new String(teamComboBox.getSelectionModel().getSelectedItem());
+        }catch (Exception exception){
+            newFootballerTeam = "";
+        }
+
+        String newFootballerPosition;
+        try{
+            newFootballerPosition = new String(positionComboBox.getSelectionModel().getSelectedItem());
+        }catch (Exception exception){
+            newFootballerPosition = "";
+        }
+
         String newFootballerCost = footballerCost.getText();
+
 
         // I will assume that footballer name is valid firstly
         // if valid I will check footballer cost
@@ -79,37 +103,48 @@ public class AddNewFootballerController implements Initializable{
                checkFootballerName = false;
             }
         }else{
+            checkFootballerName = false;
             messageLabel.setText("Invalid Name!!");
         }
 
         // now I will check footballer cost if footballer name is valid
         if(checkFootballerName){
 
-            if(Validation.footballerPriceValidation(newFootballerCost)){
-                float price = Float.parseFloat(newFootballerCost);
+            if(newFootballerTeam.equals("")){
+                messageLabel.setText("Choose Team First!!");
+            }else if(newFootballerPosition.equals("")){
+                messageLabel.setText("Choose Position First!!");
+            }else {
+                if (Validation.footballerPriceValidation(newFootballerCost)) {
+                    float price = Float.parseFloat(newFootballerCost);
 
-                /*
-                Rules for footballers prices:
-                Goalkeeper: £4.0k to £6.0k
-                Defender: £4.5k to £7.5k
-                Midfielder: £5.0k to £12.0k
-                Forward: £6.0k to £14.0k
-                 */
-                Pair<String , Boolean> pair = Validation.footballerPricePositionValidation(newFootballerPosition , price);
-                if(pair.getValue()){
-                    // add footballer in main hashtable
-                    Footballer.addNewFootballer(newFootballerName , newFootballerTeam , newFootballerPosition , price);
-                    // add footballer to its position's list
-                    Footballer.addNewFootballersToPositionList(newFootballerPosition , newFootballerName);
-                    messageLabel.setText("Done");
-                }else{
-                    messageLabel.setText(pair.getKey());
+                    /*
+                    Rules for footballers prices:
+                    Goalkeeper: £4.0k to £6.0k
+                    Defender: £4.5k to £7.5k
+                    Midfielder: £5.0k to £12.0k
+                    Forward: £6.0k to £14.0k
+                     */
+                    Pair<String, Boolean> pair = Validation.footballerPricePositionValidation(newFootballerPosition, price);
+                    if (pair.getValue()) {
+
+                        // add footballer in main Footballer hashtable
+                        Footballer.addNewFootballer(newFootballerName, newFootballerTeam, newFootballerPosition, price);
+
+                        // add footballer to its team list
+                        Team.putFootballerInTeams(newFootballerTeam , newFootballerName);
+
+                        // add footballer to its position's list
+                        Footballer.addNewFootballerToPositionList(newFootballerPosition, newFootballerName);
+                        messageLabel.setText("Done");
+                    } else {
+                        messageLabel.setText(pair.getKey());
+                    }
+
+                } else {
+                    messageLabel.setText("Invalid Price!!");
                 }
-
-            }else{
-                messageLabel.setText("Invalid Price!!");
             }
-
         }
     }
 
@@ -171,5 +206,58 @@ public class AddNewFootballerController implements Initializable{
     }
 
 
-
+    @FXML
+    // this function to open Update Footballer Data Page if we pressed Update Footballer Data button
+    public void openUpdateFootballerDataPage(ActionEvent event) throws IOException {
+        try{
+            // open Add New Team page
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("updateFootballerData.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(),1108,563);
+            stage.setTitle("Fantasy");
+            stage.setScene(scene);
+            stage.resizableProperty().setValue(Boolean.FALSE);
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Going to Update Footballer page failed");
+        }
     }
+
+
+    @FXML
+    // this function to open Delete Footballer Page if we pressed Delete Footballer button
+    public void openDeleteFootballerPage(ActionEvent event) throws IOException {
+        try{
+            // open Add New Team page
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("DeleteFootballer.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(),1108,563);
+            stage.setTitle("Fantasy");
+            stage.setScene(scene);
+            stage.resizableProperty().setValue(Boolean.FALSE);
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Going to Delete Footballer page failed");
+        }
+    }
+
+
+    @FXML
+    // this function to open Add Points Of The Week Page if we pressed Add Points Of The Week button
+    public void openAddPointsOfTheWeekPage(ActionEvent event) throws IOException {
+        try{
+            // open Add New Team page
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AddPointsOfTheWeek.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(),1108,563);
+            stage.setTitle("Fantasy");
+            stage.setScene(scene);
+            stage.resizableProperty().setValue(Boolean.FALSE);
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Going to Add Points Of The Week page failed");
+        }
+    }
+
+
+}

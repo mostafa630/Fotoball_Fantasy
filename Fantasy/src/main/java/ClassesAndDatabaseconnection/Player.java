@@ -10,7 +10,7 @@ import java.util.*;
 public class Player {
     private String id ,userName ,password ;
     private float budget=100;
-    private int points =0 ;
+    private int points =0;
 
     public List<Pair<String , Boolean>> myTeam = new ArrayList<>(); // contain the team of the user
     private static Hashtable<String,Player> players = new Hashtable<>(); // contains all user of program
@@ -62,6 +62,10 @@ public class Player {
     public void setPoints(int points) {
         this.points = points;
     }
+    public void updatePoints(int footballerWeekPoints)
+    {
+        this.points+=footballerWeekPoints;
+}
 
     public void updatePoints_Players()
     {
@@ -98,6 +102,8 @@ public class Player {
                 myTeam.set(index, myPair);
             else if(footballerName.equals("null"))
                 myTeam.set(index, myPair);
+            else if(myTeam.get(index).getKey().equals(footballerName))
+                myTeam.set(index, myPair);
 
     }
 
@@ -123,6 +129,12 @@ public class Player {
             myTeam.add(pair);
         }
     }
+
+    public static void deleteFromNationalIDs(String nationalID){
+        playersNationalIDs.remove(nationalID);
+    }
+
+
     /*
         save the data of the player int the database :
          first we save core data of the player (id ,username ,password ,budget ,points) in the player table
@@ -265,6 +277,5 @@ public class Player {
             }
         }
     }
-
 
 }
