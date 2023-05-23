@@ -200,6 +200,8 @@ public class AddPointsOfTheWeekController implements Initializable {
             //
             if(Footballer.getFootballers().get(selectedFootballer).isUpdated()){
                 checkUpdatedLabel.setText(selectedFootballer + " is updated before with " + (int)Footballer.getFootballers().get(selectedFootballer).getPointsThisWeek() +" points.");
+            }else {
+                checkUpdatedLabel.setText("");
             }
             //
 

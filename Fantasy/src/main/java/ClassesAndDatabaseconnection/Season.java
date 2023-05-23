@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public final class Season {
-    private final static int numOfRounds = 3;
+    private final static int numOfRounds = 38;
     private static int  currentRound = 0;
     private static boolean canModify = true;
     private static int numOfUpdatedFootballer =0;
@@ -79,7 +79,7 @@ public final class Season {
                 setCurrentRound(currentRound);
                 setCanModify(canModify);
                 setNumOfUpdatedFootballer(numOfUpdatedFootballers);
-                System.out.println(getNumOfUpdatedFootballer());
+
             }
 
         } catch (SQLException ex) {

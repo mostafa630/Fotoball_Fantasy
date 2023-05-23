@@ -101,7 +101,6 @@ public class AdminPageController implements Initializable{
             // update total points and cost of footballers
             for (Map.Entry<String, Footballer> footballer : Footballer.getFootballers().entrySet()) {
                 footballer.getValue().updateTotalPoints();
-                footballer.getValue().setPointsThisWeek(0);
                 // update cost of the footballers
                 int pointsOfWeek = (int) footballer.getValue().getPointsThisWeek();
                 float plusCost =pointsOfWeek/100;

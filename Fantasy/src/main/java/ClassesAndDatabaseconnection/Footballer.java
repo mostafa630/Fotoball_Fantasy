@@ -226,7 +226,7 @@ public class Footballer {
 
         // For Gk and Def
         // +4 points for clean sheet
-        if(cleanSheet && (position.equals("GoalKeeper") || position.equals("Defender"))) {
+        if(cleanSheet && (position.equals("Goalkeeper") || position.equals("Defender"))) {
             localPoints += 4;
         }
         // For Mid
@@ -237,7 +237,7 @@ public class Footballer {
 
         // For Gk
         // +5 points for each penalty save.
-        if(position.equals("GoalKeeper")) {
+        if(position.equals("Goalkeeper")) {
             localPoints += penaltySave * 5;
         }
 
