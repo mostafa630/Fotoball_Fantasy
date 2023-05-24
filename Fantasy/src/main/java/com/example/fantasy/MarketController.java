@@ -76,6 +76,14 @@ public class MarketController implements Initializable {
     Label forward3;
   @FXML
   Label budget_label;
+
+    public float convert(float num)
+    {
+        DecimalFormat df = new DecimalFormat("#.0");
+        String formatted = df.format(num);
+        num=Float.parseFloat(formatted);
+        return num ;
+    }
     @FXML
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -107,8 +115,8 @@ public class MarketController implements Initializable {
             if(!footballer.getKey().equals("null"))
                 list5.add(footballer.getKey());
         sellCombobox.setItems(list5);
-
-        budget_label.setText("Budget = "+Player.getPlayers().get(currentPlayer).getBudget()+"k"); // update buget every time
+        // set the budget
+        budget_label.setText("Budget = "+convert(Player.getPlayers().get(currentPlayer).getBudget())+"k"); // update buget every time
         // put my whole team in list in the market
         int i=0;
         for(Pair<String ,Boolean> footballer :Player.getPlayers().get(currentPlayer).myTeam)
@@ -320,13 +328,7 @@ public class MarketController implements Initializable {
     Label wrong_choice_of_sell;
 
 
-    public float convert(float num)
-    {
-        DecimalFormat df = new DecimalFormat("#.0");
-        String formatted = df.format(num);
-        num=Float.parseFloat(formatted);
-        return num ;
-    }
+
 
     public void buyGoolkeeper()
     {

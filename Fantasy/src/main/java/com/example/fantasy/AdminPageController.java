@@ -98,7 +98,7 @@ public class AdminPageController implements Initializable{
             endButton.setVisible(false);
             startButton.setVisible(true);
 
-            // update total points and cost of footballers
+            // update total points  footballers
             for (Map.Entry<String, Footballer> footballer : Footballer.getFootballers().entrySet()) {
                 footballer.getValue().updateTotalPoints();
                 // update cost of the footballers
@@ -113,9 +113,11 @@ public class AdminPageController implements Initializable{
             for (Map.Entry<String, Player> player : Player.getPlayers().entrySet()) {
                 for(Pair<String ,Boolean> footballer: player.getValue().myTeam)
                 {
-                    int footballerPointsThisWeek = (int) Footballer.getFootballers().get(footballer.getKey()).getPointsThisWeek();
-                    if(footballer.getValue()){
-                        player.getValue().updatePoints(footballerPointsThisWeek);
+                    if(!footballer.getKey().equals("null")) {
+                        int footballerPointsThisWeek = (int) Footballer.getFootballers().get(footballer.getKey()).getPointsThisWeek();
+                        if (footballer.getValue()) {
+                            player.getValue().updatePoints(footballerPointsThisWeek);
+                        }
                     }
 
                 }

@@ -133,7 +133,6 @@ public class HelloApplication extends Application {
            save data to Footballer table in ata base :
             1-we remove all records from database
             2-we put all data in footballers has table
-
           */
             query = "DELETE FROM footballer";
             con = DatabaseConnection.getConnection();
@@ -165,7 +164,5 @@ public class HelloApplication extends Application {
         preparedStatement.executeUpdate();
 
         Season.saveToDatabase();
-
-
     }
 }

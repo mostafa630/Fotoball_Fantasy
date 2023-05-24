@@ -167,7 +167,6 @@ public class DeleteFootballerController implements Initializable {
         }
     }
 
-
     @FXML
     // this function to open login form if we pressed Log Out button
     public void openLoginForm(ActionEvent event) throws IOException {

@@ -116,7 +116,7 @@ public class Footballer {
             forwardes.remove(name);
         }else if(currentPosition.equals("Midfielder")) {
             midfielders.remove(name);
-        }else if(currentPosition.equals("GoalKeeper")) {
+        }else if(currentPosition.equals("Goalkeeper")) {
             goolKeepers.remove(name);
         }else {
             // currentPosition = Defender
@@ -133,7 +133,9 @@ public class Footballer {
         String currentPosition = footballers.get(name).position;
         deleteFootballerFromPositionList(currentPosition , name);
 
-        // delete footballers from footballers hash table
+
+        // delete footballer from footballers hash table
+        float footballerPrice =footballers.get(name).getCost() ;
         footballers.remove(name);
 
         // delete footballer from all players that have this footballer.
@@ -144,6 +146,7 @@ public class Footballer {
             {
                 if(playerTeam.getKey().equals(name))
                 {
+                    playerEntry.getValue().setBudget(playerEntry.getValue().getBudget()+footballerPrice);
                     playerEntry.getValue().putFootballerInMyTeam(index,"null", false);
                     break ;
                 }else{
